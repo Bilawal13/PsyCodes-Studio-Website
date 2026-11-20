@@ -59,6 +59,8 @@ const queryClient = new QueryClient({
   },
 });
 
+const ADMIN_ROUTE = import.meta.env.VITE_ADMIN_PATH || '/admin-vault';
+
 export const App: React.FC = () => {
   return (
     <QueryClientProvider client={queryClient}>
@@ -74,8 +76,7 @@ export const App: React.FC = () => {
               <Route path="/arcade/:slug" element={<GameDetailsPage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/contact" element={<ContactPage />} />
-              <Route path="/admin" element={<Navigate to="/psycodespc313adminarea" replace />} />
-              <Route path="/psycodespc313adminarea" element={<AdminPage />} />
+              <Route path={ADMIN_ROUTE} element={<AdminPage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Suspense>
