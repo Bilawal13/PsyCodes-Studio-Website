@@ -1,0 +1,177 @@
+import React, { useState, useEffect, useRef } from 'react';
+import { NavLink, Link, useLocation } from 'react-router-dom';
+import { Menu, X, ArrowRight } from 'lucide-react';
+import { motion, useReducedMotion } from 'framer-motion';
+
+export const Navbar: React.FC = () => {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const lastScrollY = useRef(0);
+  const location = useLocation();
+  const shouldReduceMotion = useReducedMotion();
+
+  // Close mobile menu on route change and restore visibility
+  useEffect(() => {
+    setMobileMenuOpen(false);
+    setIsVisible(true);
+    lastScrollY.current = window.scrollY;
+  }, [location.pathname]);
+
+  // Scroll listener for auto-hiding on scroll-down and re-appearing on scroll-up across all pages
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Always show at top of page
+      if (currentScrollY <= 40) {
+        setIsVisible(true);
+        lastScrollY.current = currentScrollY;
+        return;
+      }
+
+      // Keep navbar locked open if mobile drawer is currently active
+      if (mobileMenuOpen) {
+        setIsVisible(true);
+        lastScrollY.current = currentScrollY;
+        return;
+      }
+
+      // Delta threshold to avoid sensitive micro-jitter
+      const delta = currentScrollY - lastScrollY.current;
+
+      if (delta > 8) {
+        // Scrolling down -> glide up out of view
+        setIsVisible(false);
+      } else if (delta < -8) {
+        // Scrolling up -> glide back into view
+        setIsVisible(true);
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [mobileMenuOpen]);
+
+  const navLinks = [
+    { name: 'Home', path: '/' },
+    { name: 'Products', path: '/projects' },
+    { name: 'Services', path: '/services' },
+    { name: 'Play Games', path: '/arcade' },
+    { name: 'About', path: '/about' },
+    { name: 'Contact', path: '/contact' },
+  ];
+
+  return (
+    <motion.header
+      initial={false}
+      animate={{
+        y: !shouldReduceMotion ? (isVisible ? 0 : '-100%') : 0,
+      }}
+      transition={{
+        duration: 0.3,
+        ease: [0.21, 0.47, 0.32, 0.98],
+      }}
+      className="fixed top-0 left-0 right-0 z-50 bg-surface-glass backdrop-blur-xl border-b border-border-glass shadow-[0_1px_8px_rgba(0,0,0,0.25)] w-full"
+    >
+      <div className="h-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        {/* Brand Logo & Name */}
+        <div className="flex items-center gap-2 sm:gap-space-md min-w-0">
+          <Link to="/" className="flex items-center gap-2.5 sm:gap-3 group focus:outline-none min-w-0">
+            <img
+              src="/assets/logo/Psycodes_logo_trans.png"
+              alt="PsyCodes Studio Logo"
+              className="h-7 sm:h-8 w-auto object-contain transition-transform group-hover:scale-105 shrink-0"
+              onError={(e) => {
+                // Fallback to text or alternate path if needed
+                (e.target as HTMLElement).style.display = 'none';
+              }}
+            />
+            <div className="flex flex-col min-w-0">
+              <span className="font-headline-sm text-sm sm:text-headline-sm font-bold tracking-tight text-text-primary group-hover:text-tertiary transition-colors truncate">
+                PsyCodes Studio
+              </span>
+              <span className="font-label-badge text-[8px] sm:text-label-badge text-tertiary tracking-widest uppercase truncate">
+                CODE. CREATE. AUTOMATE.
+              </span>
+            </div>
+          </Link>
+        </div>
+
+        {/* Desktop Navigation Links */}
+        <nav className="hidden xl:flex items-center gap-2">
+          {navLinks.map((link) => (
+            <NavLink
+              key={link.path}
+              to={link.path}
+              end={link.path === '/'}
+              className={({ isActive }) =>
+                `px-3.5 py-1.5 rounded-lg font-button-text text-button-text transition-all duration-200 ${isActive
+                  ? 'bg-primary-container text-on-primary-container font-semibold shadow-[0_0_16px_rgba(56,144,255,0.4)]'
+                  : 'text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface'
+                }`
+              }
+            >
+              {link.name}
+            </NavLink>
+          ))}
+        </nav>
+
+        {/* Right Action CTA & Mobile Toggle */}
+        <div className="flex items-center gap-2 sm:gap-space-md shrink-0">
+          <Link
+            to="/contact"
+            className="hidden md:inline-flex items-center justify-center gap-1.5 px-3.5 sm:px-space-lg py-2 rounded-lg bg-gradient-to-r from-primary-container to-secondary-container font-button-text text-button-text text-text-primary shadow-[0_0_20px_rgba(37,139,255,0.35)] hover:shadow-[0_0_28px_rgba(18,216,245,0.45)] hover:-translate-y-0.5 transition-all text-xs shrink-0"
+          >
+            <span>Let's Build Something</span>
+            <ArrowRight className="w-4 h-4 ml-0.5" />
+          </Link>
+
+          {/* Mobile menu button */}
+          <button
+            type="button"
+            aria-label="Toggle Menu"
+            className="xl:hidden p-2 sm:p-2.5 rounded-xl bg-surface-container-high/90 text-on-surface hover:text-tertiary transition-colors flex items-center justify-center border border-border-glass cursor-pointer shrink-0"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? <X className="w-5 h-5 text-cyan-400" /> : <Menu className="w-5 h-5 text-white" />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Drawer */}
+      {mobileMenuOpen && (
+        <div className="xl:hidden flex flex-col w-full bg-surface-deep/95 backdrop-blur-2xl px-4 sm:px-6 py-space-lg shadow-2xl gap-space-md border-b border-border-glass animate-in slide-in-from-top-2 duration-200 max-h-[85vh] overflow-y-auto">
+          <nav className="flex flex-col gap-space-sm">
+            {navLinks.map((link) => (
+              <NavLink
+                key={link.path}
+                to={link.path}
+                end={link.path === '/'}
+                className={({ isActive }) =>
+                  `px-space-md py-space-sm rounded-lg font-button-text text-button-text transition-colors ${isActive
+                    ? 'bg-primary-container text-on-primary-container font-semibold'
+                    : 'text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface'
+                  }`
+                }
+              >
+                {link.name}
+              </NavLink>
+            ))}
+          </nav>
+          <div className="pt-space-sm border-t border-border-glass">
+            <Link
+              to="/contact"
+              className="w-full flex items-center justify-center gap-2 px-space-md py-space-sm rounded-lg bg-gradient-to-r from-primary-container to-secondary-container font-button-text text-button-text text-text-primary shadow-[0_0_20px_rgba(37,139,255,0.35)] text-xs"
+            >
+              <span>Let's Build Something</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      )}
+    </motion.header>
+  );
+};
+

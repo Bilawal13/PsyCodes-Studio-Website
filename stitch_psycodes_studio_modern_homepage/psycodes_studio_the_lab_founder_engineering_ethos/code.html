@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_standard" name="shell-type"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;family=Sora:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+html,body{margin:0;padding:0;body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}
+::-webkit-scrollbar{display:none;}
+</style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "on-tertiary": "#00363f",
+        "on-tertiary-container": "#002f36",
+        "on-primary-fixed": "#001b3d",
+        "inverse-primary": "#005db5",
+        "tertiary-container": "#009fb5",
+        "surface-container-low": "#161b2e",
+        "error-container": "#93000a",
+        "on-tertiary-fixed": "#001f25",
+        "surface-container": "#1a1f32",
+        "glow-cyan": "rgba(18, 216, 245, 0.25)",
+        "surface-bright": "#33384d",
+        "on-primary": "#003062",
+        "surface-tint": "#a8c8ff",
+        "on-surface": "#dde1fc",
+        "accent-violet": "#A855F7",
+        "surface-deep": "#0B1530",
+        "error": "#ffb4ab",
+        "primary": "#a8c8ff",
+        "text-primary": "#F5F7FF",
+        "surface-dim": "#0d1225",
+        "surface-container-high": "#24293d",
+        "secondary-fixed-dim": "#dab9ff",
+        "on-secondary-fixed-variant": "#6500b8",
+        "tertiary-fixed-dim": "#18d9f6",
+        "inverse-on-surface": "#2b2f44",
+        "on-error": "#690005",
+        "glow-purple": "rgba(135, 59, 218, 0.25)",
+        "tertiary-fixed": "#a4eeff",
+        "on-tertiary-fixed-variant": "#004e5a",
+        "surface-glass": "rgba(11, 21, 48, 0.65)",
+        "outline-variant": "#414754",
+        "surface-container-highest": "#2f3449",
+        "primary-fixed-dim": "#a8c8ff",
+        "background": "#0d1225",
+        "on-primary-fixed-variant": "#00468a",
+        "secondary-fixed": "#efdbff",
+        "on-secondary-fixed": "#2a0053",
+        "surface": "#0d1225",
+        "on-secondary-container": "#d0a7ff",
+        "tertiary": "#18d9f6",
+        "on-secondary": "#470084",
+        "primary-fixed": "#d6e3ff",
+        "on-surface-variant": "#c0c6d6",
+        "text-muted": "#A5B1CC",
+        "on-background": "#dde1fc",
+        "surface-variant": "#2f3449",
+        "on-error-container": "#ffdad6",
+        "inverse-surface": "#dde1fc",
+        "secondary-container": "#6807bb",
+        "border-glass": "rgba(37, 139, 255, 0.18)",
+        "secondary": "#dab9ff",
+        "on-primary-container": "#002956",
+        "primary-container": "#3890ff",
+        "outline": "#8b919f",
+        "surface-container-lowest": "#080d20"
+      },
+      borderRadius: {
+        DEFAULT: "0.25rem",
+        lg: "0.5rem",
+        xl: "0.75rem",
+        full: "9999px"
+      },
+      spacing: {
+        "space-xs": "0.25rem",
+        "space-xl": "2.5rem",
+        "space-sm": "0.5rem",
+        "space-lg": "1.5rem",
+        "space-md": "1rem",
+        "gutter-mobile": "1rem",
+        "margin": "4rem",
+        "margin-mobile": "1.25rem",
+        "gutter": "1.5rem",
+        "margin-tablet": "2rem"
+      },
+      fontFamily: {
+        "headline-lg": ["Sora"],
+        "body-md": ["Manrope"],
+        "display": ["Sora"],
+        "body-sm": ["Manrope"],
+        "button-text": ["Sora"],
+        "label-badge": ["JetBrains Mono"],
+        "label-code": ["JetBrains Mono"],
+        "headline-lg-mobile": ["Sora"],
+        "headline-md": ["Sora"],
+        "headline-sm": ["Sora"],
+        "body-lg": ["Manrope"],
+        "display-mobile": ["Sora"]
+      }
+    }
+  }
+};
+</script>
+<style>
+.service-card {
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+}
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px -10px rgba(24, 217, 246, 0.2), 0 0 0 1px rgba(24, 217, 246, 0.35);
+}
+.card-icon {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease;
+}
+.service-card:hover .card-icon {
+  transform: scale(1.1) rotate(3deg);
+  filter: drop-shadow(0 0 10px rgba(24, 217, 246, 0.6));
+}
+.tech-chip {
+  transition: all 0.2s ease;
+}
+.tech-chip:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 8px rgba(24, 217, 246, 0.3);
+}
+.spec-arrow {
+  transition: transform 0.2s ease;
+}
+.spec-btn:hover .spec-arrow {
+  transform: translateX(4px);
+}
+.tab-panel {
+  animation: fadeInTab 0.2s ease forwards;
+}
+@keyframes fadeInTab {
+  from { opacity: 0; transform: translateY(3px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+<body class="bg-surface font-body-md text-text-primary antialiased min-h-screen selection:bg-tertiary/20 selection:text-tertiary">
+<!-- HEADER -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-surface-glass backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.25)] border-b border-border-glass">
+  <div class="h-20 w-full px-gutter lg:px-margin flex items-center justify-between">
+    <!-- Brand Logo & Identity -->
+    <a href="index.html" class="flex items-center gap-space-md group">
+      <img alt="PsyCodes Studio Logo" class="h-8 w-auto object-contain" src="assets/logo/Psycodes_logo_trans.png" />
+      <div class="flex flex-col">
+        <span class="font-headline-sm text-headline-sm font-bold text-text-primary tracking-tight group-hover:text-tertiary transition-colors">PsyCodes Studio</span>
+        <span class="font-label-badge text-[10px] tracking-widest uppercase text-tertiary font-semibold">CODE. CREATE. AUTOMATE.</span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation Pill Container -->
+    <nav class="hidden md:flex items-center gap-1 bg-surface-deep/80 backdrop-blur-md p-1.5 rounded-xl border border-border-glass">
+      <a class="px-space-md py-space-sm rounded-lg font-button-text text-button-text transition-all text-on-surface-variant hover:text-tertiary hover:bg-surface-container-high/40 transition-colors border border-border-glass" href="index.html">Home</a>
+      <a class="px-space-md py-space-sm rounded-lg font-button-text text-button-text transition-all text-on-surface-variant hover:text-tertiary hover:bg-surface-container-high/40 transition-colors border border-border-glass" href="products.html">Products</a>
+      <a class="px-space-md py-space-sm rounded-lg font-button-text text-button-text transition-all text-on-surface-variant hover:text-tertiary hover:bg-surface-container-high/40 transition-colors border border-border-glass" href="services.html">Services</a>
+      <a class="px-space-md py-space-sm rounded-lg font-button-text text-button-text transition-all text-on-surface-variant hover:text-tertiary hover:bg-surface-container-high/40 transition-colors border border-border-glass" href="play-games.html">Play Games</a>
+      <a class="px-space-md py-space-sm rounded-lg font-button-text text-button-text transition-all bg-primary-container text-on-primary-container font-semibold shadow-sm" href="about.html">About</a>
+      <a class="px-space-md py-space-sm rounded-lg font-button-text text-button-text transition-all text-on-surface-variant hover:text-tertiary hover:bg-surface-container-high/40 transition-colors border border-border-glass" href="contact.html">Contact</a>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="flex items-center gap-space-sm">
+      <a class="hidden sm:inline-flex items-center justify-center px-space-md py-space-sm rounded-lg bg-gradient-to-r from-primary-container to-secondary-container font-button-text text-button-text text-text-primary shadow-[0_0_20px_rgba(37,139,255,0.35)] hover:shadow-[0_0_25px_rgba(24,217,246,0.5)] hover:-translate-y-0.5 transition-all" href="contact.html">
+        <span>Let's Build Something →</span>
+      </a>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button id="mobile-menu-btn" aria-label="Toggle Navigation Menu" class="md:hidden w-10 h-10 rounded-xl flex items-center justify-center bg-surface-deep border border-border-glass text-text-primary hover:text-tertiary transition-colors" onclick="toggleMobileMenu()">
+        <span class="material-symbols-outlined text-[24px]">menu</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobile-menu" class="hidden md:hidden px-gutter pb-6 pt-2 bg-surface-deep/95 backdrop-blur-2xl border-b border-border-glass flex flex-col gap-2">
+    <a class="px-4 py-2.5 rounded-lg font-button-text text-sm text-on-surface-variant hover:text-tertiary hover:bg-surface-container-high/40 transition-colors border border-border-glass" href="index.html">Home</a>
+    <a class="px-4 py-2.5 rounded-lg font-button-text text-sm text-on-surface-variant hover:text-tertiary hover:bg-surface-container-high/40 transition-colors border border-border-glass" href="products.html">Products</a>
+    <a class="px-4 py-2.5 rounded-lg font-button-text text-sm text-on-surface-variant hover:text-tertiary hover:bg-surface-container-high/40 transition-colors border border-border-glass" href="services.html">Services</a>
+    <a class="px-4 py-2.5 rounded-lg font-button-text text-sm text-on-surface-variant hover:text-tertiary hover:bg-surface-container-high/40 transition-colors border border-border-glass" href="play-games.html">Play Games</a>
+    <a class="px-4 py-2.5 rounded-lg font-button-text text-sm bg-primary-container text-on-primary-container font-semibold shadow-sm" href="about.html">About</a>
+    <a class="px-4 py-2.5 rounded-lg font-button-text text-sm text-on-surface-variant hover:text-tertiary hover:bg-surface-container-high/40 transition-colors border border-border-glass" href="contact.html">Contact</a>
+    <a class="mt-2 text-center py-3 rounded-lg bg-gradient-to-r from-primary-container to-secondary-container font-button-text text-sm text-text-primary font-bold shadow-md" href="contact.html">Let's Build Something →</a>
+  </div>
+</header>
+<main class="w-full pt-28 lg:pt-32 pb-16 flex-1"><div class="flex flex-col w-full relative">
+<!-- ATMOSPHERIC BACKGROUND AMBIENT GLOWS -->
+<div class="absolute top-20 left-1/2 -translate-x-1/2 w-[720px] h-[340px] bg-gradient-to-tr from-primary/10 via-tertiary/15 to-accent-violet/10 blur-[130px] pointer-events-none -z-10"></div>
+<div class="absolute top-[1100px] -right-24 w-[460px] h-[460px] bg-tertiary/10 blur-[140px] pointer-events-none -z-10"></div>
+<div class="absolute top-[2100px] -left-20 w-[480px] h-[480px] bg-accent-violet/15 blur-[160px] pointer-events-none -z-10"></div>
+<!-- 1. HERO SECTION -->
+<section class="max-w-7xl mx-auto px-6 pt-12 lg:pt-16 pb-16 w-full flex flex-col items-center text-center relative">
+<!-- Telemetry Tag -->
+<div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-surface-container-high/90 shadow-[0_0_24px_rgba(24,217,246,0.15)] mb-8 border border-border-glass">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span>
+</span>
+<span class="font-label-badge text-label-badge text-tertiary tracking-widest uppercase">STUDIO PROFILE KARACHI, PAKISTAN · EST. 2026</span>
+</div>
+<!-- Main Headline with Gradient Punch -->
+<h1 class="font-headline-lg text-headline-lg max-w-4xl font-extrabold text-text-primary tracking-tight mb-6">
+      Bridging Algorithmic Rigor &amp; <span class="bg-gradient-to-r from-tertiary via-primary to-accent-violet bg-clip-text text-transparent">Playable Worlds.</span>
+</h1>
+<!-- Subtitle -->
+<p class="font-body-lg text-body-lg text-text-muted max-w-3xl mb-12">
+      PsyCodes Studio is an independent software, mobile, and game engineering laboratory founded in Karachi, Pakistan. We fuse mathematical software architecture, fluid 60fps game mechanics, and autonomous intelligence into resilient products that ship on time and scale without compromise.
+    </p>
+<!-- 4-Item Telemetry Strip -->
+<div class="w-full max-w-5xl grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="p-5 rounded-xl bg-surface-container/70 shadow-lg backdrop-blur-md flex flex-col items-center justify-center text-center transition-all duration-300 hover:bg-surface-container-high/80 hover:-translate-y-0.5 border border-border-glass">
+<span class="font-label-code text-label-code text-tertiary mb-1">01 CHRONO</span>
+<span class="font-headline-sm text-headline-sm text-text-primary font-bold">Est. 2026</span>
+<span class="font-body-sm text-body-sm text-text-muted mt-0.5">Foundational Milestone</span>
+</div>
+<div class="p-5 rounded-xl bg-surface-container/70 shadow-lg backdrop-blur-md flex flex-col items-center justify-center text-center transition-all duration-300 hover:bg-surface-container-high/80 hover:-translate-y-0.5 border border-border-glass">
+<span class="font-label-code text-label-code text-primary mb-1">02 LOCUS</span>
+<span class="font-headline-sm text-headline-sm text-text-primary font-bold">Karachi, PK</span>
+<span class="font-body-sm text-body-sm text-text-muted mt-0.5">Global Engineering Lab</span>
+</div>
+<div class="p-5 rounded-xl bg-surface-container/70 shadow-lg backdrop-blur-md flex flex-col items-center justify-center text-center transition-all duration-300 hover:bg-surface-container-high/80 hover:-translate-y-0.5 border border-border-glass">
+<span class="font-label-code text-label-code text-accent-violet mb-1">03 ETHOS</span>
+<span class="font-headline-sm text-headline-sm text-text-primary font-bold">Zero Bureaucracy</span>
+<span class="font-body-sm text-body-sm text-text-muted mt-0.5">Direct-to-Builder Access</span>
+</div>
+<div class="p-5 rounded-xl bg-surface-container/70 shadow-lg backdrop-blur-md flex flex-col items-center justify-center text-center transition-all duration-300 hover:bg-surface-container-high/80 hover:-translate-y-0.5 border border-border-glass">
+<span class="font-label-code text-label-code text-secondary mb-1">04 STANDARD</span>
+<span class="font-headline-sm text-headline-sm text-text-primary font-bold">0% Tech Debt</span>
+<span class="font-body-sm text-body-sm text-text-muted mt-0.5">Modular Strict Repositories</span>
+</div>
+</div>
+</section>
+<!-- 2. FOUNDER & LEAD ARCHITECT DOSSIER -->
+<section class="max-w-7xl mx-auto px-6 py-14 w-full">
+<div class="rounded-2xl bg-surface-container-low/90 backdrop-blur-xl shadow-2xl p-8 md:p-12 relative overflow-hidden border border-border-glass">
+<!-- Glow Refraction Effect in Corner -->
+<div class="absolute -right-20 -bottom-20 w-80 h-80 bg-primary/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+<!-- Visual Column: Brand Monogram & Portrait Identity -->
+<div class="lg:col-span-4 flex flex-col items-center lg:items-start gap-6">
+<div class="relative w-44 h-44 rounded-2xl bg-surface-deep/90 shadow-[0_0_40px_rgba(24,217,246,0.25)] flex items-center justify-center overflow-hidden border border-border-glass">
+<img class="w-full h-full object-cover p-3 rounded-2xl" data-alt="PsyCodes Studio circular futuristic 3D emblem with volumetric glowing PC monogram rendered in metallic electric cyan and neon violet against obsidian carbon-fiber texture backdrop with computational data circuitry." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP9rtom1sZaNzNplHnIwNheRPJnh5Xhem9zUsQOQuQsPkY641zyWWjVroXvuMG7Eeh__9WalBY53YPUNXs6l8BfKagO56Q-QUIXUhLZRrEJl3gXEWc0paWZ31-Hj6nzRkbnynprMEg7peznFcpZ-ss8cfYuMSIIDP0xcuA2nUHs0d0Gv_JYgtZqa7Xe9bs1mMYhAk9hm3872DFCK7PaXbKshnxX1YLCa9HfhDXid4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-deep/90 via-transparent to-transparent"></div>
+<div class="absolute bottom-2.5 left-3.5 right-3.5 flex items-center justify-between text-[10px] font-label-code text-tertiary">
+<span>LEAD ARCHITECT</span>
+<span class="flex h-1.5 w-1.5 rounded-full bg-tertiary animate-pulse"></span>
+</div>
+</div>
+<div class="text-center lg:text-left">
+<span class="font-label-badge text-label-badge text-tertiary uppercase tracking-wider">FOUNDER &amp; LEAD SYSTEMS ARCHITECT</span>
+<h2 class="font-headline-md text-headline-md text-text-primary font-bold mt-1">Bilawal Feroze</h2>
+<p class="font-body-sm text-body-sm text-text-muted mt-1">Software Architect · Game Systems Engineer · Autonomous AI Builder</p>
+</div>
+<!-- Social / Comm Quick-Links -->
+<div class="flex items-center gap-3">
+<a class="p-2.5 rounded-lg bg-surface-container-high/90 text-text-muted hover:text-tertiary hover:bg-surface-bright transition-all shadow-sm border border-border-glass" href="https://linkedin.com" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-sm">terminal</span>
+</a>
+<a class="p-2.5 rounded-lg bg-surface-container-high/90 text-text-muted hover:text-tertiary hover:bg-surface-bright transition-all shadow-sm border border-border-glass" href="https://x.com/PsyCodesAI" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-sm">alternate_email</span>
+</a>
+<a class="p-2.5 rounded-lg bg-surface-container-high/90 text-text-muted hover:text-tertiary hover:bg-surface-bright transition-all shadow-sm border border-border-glass" href="mailto:psycodestech@gmail.com">
+<span class="material-symbols-outlined text-sm">mail</span>
+</a>
+</div>
+</div>
+<!-- Content Column: Thesis & Milestones -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<!-- Quote Callout Card -->
+<div class="p-6 rounded-xl bg-surface-deep/80 shadow-md relative border border-border-glass">
+<span class="material-symbols-outlined absolute top-4 right-4 text-primary/30 text-3xl select-none">format_quote</span>
+<p class="font-headline-sm text-headline-sm text-primary font-medium italic leading-relaxed">
+              “No account managers, no layers of bureaucratic telephone. You collaborate directly with senior engineers who translate abstract intent into clean C#, Flutter, and Next.js repositories.”
+            </p>
+<div class="mt-3 flex items-center gap-2">
+<span class="font-label-code text-label-code text-tertiary">BILAWAL FEROZE</span>
+<span class="text-text-muted text-xs">· Karachi Studio Command</span>
+</div>
+</div>
+<!-- Technical Specializations Badges -->
+<div>
+<span class="font-label-badge text-label-badge text-text-muted uppercase tracking-wider block mb-3">CORE SPECIALIZATIONS &amp; APPLIED DISCIPLINE</span>
+<div class="flex flex-wrap gap-2.5">
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-deep/90 shadow-sm text-xs font-body-sm text-text-primary border border-border-glass">
+<span class="material-symbols-outlined text-tertiary text-sm">sports_esports</span>
+<span>Unity 6 (URP, C#, Deterministic Physics)</span>
+</div>
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-deep/90 shadow-sm text-xs font-body-sm text-text-primary border border-border-glass">
+<span class="material-symbols-outlined text-primary text-sm">phone_iphone</span>
+<span>Flutter &amp; Dart (Offline-First, Biometric Enclaves)</span>
+</div>
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-deep/90 shadow-sm text-xs font-body-sm text-text-primary border border-border-glass">
+<span class="material-symbols-outlined text-accent-violet text-sm">globe</span>
+<span>Next.js &amp; TS (Zero-CLS, Sub-second Edge APIs)</span>
+</div>
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-deep/90 shadow-sm text-xs font-body-sm text-text-primary border border-border-glass">
+<span class="material-symbols-outlined text-secondary text-sm">psychology</span>
+<span>Autonomous AI (Multi-Agent Swarms, RAG, Vectors)</span>
+</div>
+</div>
+</div>
+<!-- Milestone Timeline -->
+<div class="pt-4">
+<span class="font-label-badge text-label-badge text-text-muted uppercase tracking-wider block mb-4">ENGINEERING TRACK RECORD &amp; DEPLOYMENT MILESTONES</span>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+<div class="p-3.5 rounded-lg bg-surface-deep/60 shadow-sm border border-border-glass">
+<span class="font-label-code text-label-code text-tertiary block">2026.Q1 GENESIS</span>
+<span class="font-headline-sm text-base text-text-primary font-semibold block mt-0.5">PsyCodes Studio Founded</span>
+<span class="font-body-sm text-body-sm text-text-muted mt-1 block">Launched lab in Karachi focusing on unified AI, game loops, &amp; high-performance web.</span>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-deep/60 shadow-sm border border-border-glass">
+<span class="font-label-code text-label-code text-primary block">2026.Q2 FLAGSHIP APPS</span>
+<span class="font-headline-sm text-base text-text-primary font-semibold block mt-0.5">FitLyfe &amp; Hot Cocoa Run</span>
+<span class="font-body-sm text-body-sm text-text-muted mt-1 block">Shipped offline-first workout tracking suite and instant browser WebGL endless runner.</span>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-deep/60 shadow-sm border border-border-glass">
+<span class="font-label-code text-label-code text-accent-violet block">2026.Q3 ENTERPRISE AI</span>
+<span class="font-headline-sm text-base text-text-primary font-semibold block mt-0.5">Autonomous Client Deployments</span>
+<span class="font-body-sm text-body-sm text-text-muted mt-1 block">Commissioned multi-agent RAG workflow pipelines and bespoke SaaS platforms with zero tech debt.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. THE STUDIO TENETS -->
+<section class="max-w-7xl mx-auto px-6 py-14 w-full">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+<div>
+<div class="flex items-center gap-2 mb-2 text-tertiary">
+<span class="material-symbols-outlined text-sm">shield</span>
+<span class="font-label-badge text-label-badge uppercase tracking-wider">FOUNDATIONAL PRINCIPLES</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-text-primary">The Studio Tenets</h2>
+</div>
+<p class="font-body-md text-body-md text-text-muted max-w-md">
+        We adhere to strict engineering axioms that govern every repository, game build, and neural vector workflow we ship.
+      </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Pillar 01 -->
+<div class="p-8 rounded-2xl bg-surface-container/70 shadow-lg backdrop-blur-md relative overflow-hidden group hover:bg-surface-container-high transition-all duration-300 border border-border-glass">
+<div class="flex items-center justify-between mb-5">
+<div class="w-12 h-12 rounded-xl bg-surface-deep flex items-center justify-center text-tertiary shadow-[0_0_20px_rgba(24,217,246,0.3)] border border-border-glass">
+<span class="material-symbols-outlined text-2xl">sports_esports</span>
+</div>
+<span class="font-label-code text-label-code text-tertiary">PILLAR 01</span>
+</div>
+<h3 class="font-headline-md text-xl font-bold text-text-primary mb-2">Playable Mechanics &amp; Game Feel</h3>
+<p class="font-body-md text-body-md text-text-muted leading-relaxed mb-4">
+          Zero-input-lag, deterministic game loops, micro-feedback, and sensory physics engineered for instant player immersion. We treat software feel with the obsessive polish of arcade game responsiveness.
+        </p>
+<div class="flex items-center gap-2 text-xs font-label-code text-tertiary">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+<span>Deterministic Tick Rates · 60/120 FPS Target</span>
+</div>
+</div>
+<!-- Pillar 02 -->
+<div class="p-8 rounded-2xl bg-surface-container/70 shadow-lg backdrop-blur-md relative overflow-hidden group hover:bg-surface-container-high transition-all duration-300 border border-border-glass">
+<div class="flex items-center justify-between mb-5">
+<div class="w-12 h-12 rounded-xl bg-surface-deep flex items-center justify-center text-primary shadow-[0_0_20px_rgba(37,139,255,0.3)] border border-border-glass">
+<span class="material-symbols-outlined text-2xl">offline_bolt</span>
+</div>
+<span class="font-label-code text-label-code text-primary">PILLAR 02</span>
+</div>
+<h3 class="font-headline-md text-xl font-bold text-text-primary mb-2">Offline-First &amp; Local Resilience</h3>
+<p class="font-body-md text-body-md text-text-muted leading-relaxed mb-4">
+          Applications designed around local SQLite and CRDT synchronization so interfaces never hang on network loading spinners. Your application works flawlessly on high-speed fiber or inside a signal-dead subway tunnel.
+        </p>
+<div class="flex items-center gap-2 text-xs font-label-code text-primary">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+<span>Zero Spinners · Conflict-Free Replicated State</span>
+</div>
+</div>
+<!-- Pillar 03 -->
+<div class="p-8 rounded-2xl bg-surface-container/70 shadow-lg backdrop-blur-md relative overflow-hidden group hover:bg-surface-container-high transition-all duration-300 border border-border-glass">
+<div class="flex items-center justify-between mb-5">
+<div class="w-12 h-12 rounded-xl bg-surface-deep flex items-center justify-center text-accent-violet shadow-[0_0_20px_rgba(168,85,247,0.3)] border border-border-glass">
+<span class="material-symbols-outlined text-2xl">hub</span>
+</div>
+<span class="font-label-code text-label-code text-accent-violet">PILLAR 03</span>
+</div>
+<h3 class="font-headline-md text-xl font-bold text-text-primary mb-2">Practical Autonomous Intelligence</h3>
+<p class="font-body-md text-body-md text-text-muted leading-relaxed mb-4">
+          AI deployed where it creates measurable velocity: multi-agent task execution, self-healing background synchronization engines, and contextual embeddings with strict deterministic boundary validations.
+        </p>
+<div class="flex items-center gap-2 text-xs font-label-code text-accent-violet">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+<span>LangChain Swarms · Zero-Hallucination Guardrails</span>
+</div>
+</div>
+<!-- Pillar 04 -->
+<div class="p-8 rounded-2xl bg-surface-container/70 shadow-lg backdrop-blur-md relative overflow-hidden group hover:bg-surface-container-high transition-all duration-300 border border-border-glass">
+<div class="flex items-center justify-between mb-5">
+<div class="w-12 h-12 rounded-xl bg-surface-deep flex items-center justify-center text-secondary shadow-[0_0_20px_rgba(218,185,255,0.3)] border border-border-glass">
+<span class="material-symbols-outlined text-2xl">auto_fix_high</span>
+</div>
+<span class="font-label-code text-label-code text-secondary">PILLAR 04</span>
+</div>
+<h3 class="font-headline-md text-xl font-bold text-text-primary mb-2">Mathematical Design &amp; Token Fidelity</h3>
+<p class="font-body-md text-body-md text-text-muted leading-relaxed mb-4">
+          Design token parity bridging Figma primitives directly into Tailwind CSS with zero aesthetic drift. Every layout element adheres to mathematical scaling, proportional padding tiers, and crisp typographic cadence.
+        </p>
+<div class="flex items-center gap-2 text-xs font-label-code text-secondary">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+<span>100% Token Sync · WCAG AA Contrast Ratios</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. TECH ARSENAL & LAB INFRASTRUCTURE -->
+<section class="max-w-7xl mx-auto px-6 py-14 w-full">
+<div class="text-center max-w-2xl mx-auto mb-12">
+<div class="inline-flex items-center gap-2 text-tertiary mb-2">
+<span class="material-symbols-outlined text-sm">memory</span>
+<span class="font-label-badge text-label-badge uppercase tracking-wider">LAB INFRASTRUCTURE</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-text-primary">Studio Tech Arsenal</h2>
+<p class="font-body-md text-body-md text-text-muted mt-2">
+        Curated high-velocity engineering stacks calibrated for deterministic execution, extreme runtime speeds, and rock-solid maintainability.
+      </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Discipline 1: Game Engine -->
+<div class="p-6 rounded-xl bg-surface-container-low shadow-lg flex flex-col justify-between hover:bg-surface-container transition-all border border-border-glass">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-code text-label-code text-tertiary">01 GAMING</span>
+<span class="material-symbols-outlined text-tertiary text-xl">sports_esports</span>
+</div>
+<h3 class="font-headline-sm text-lg font-bold text-text-primary mb-3">Game Engine &amp; Runtime</h3>
+<p class="font-body-sm text-body-sm text-text-muted mb-4">
+            Deterministic physics, custom URP shaders, and instant-play WebGL browser streaming.
+          </p>
+</div>
+<div class="flex flex-wrap gap-2 pt-2">
+<span class="px-2.5 py-1 rounded bg-surface-deep text-text-primary text-xs font-label-code border border-border-glass">Unity 6</span>
+<span class="px-2.5 py-1 rounded bg-surface-deep text-text-primary text-xs font-label-code border border-border-glass">C# Scripting</span>
+<span class="px-2.5 py-1 rounded bg-surface-deep text-text-primary text-xs font-label-code border border-border-glass">URP 2D/3D</span>
+<span class="px-2.5 py-1 rounded bg-surface-deep text-text-primary text-xs font-label-code border border-border-glass">WebGL 2.0</span>
+<span class="px-2.5 py-1 rounded bg-surface-deep text-text-primary text-xs font-label-code border border-border-glass">Blender 3D</span>
+</div>
+</div>
+<!-- Discipline 2: Mobile -->
+<div class="p-6 rounded-xl bg-surface-container-low shadow-lg flex flex-col justify-between hover:bg-surface-container transition-all border border-border-glass">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-code text-label-code text-primary">02 MOBILE</span>
+<span class="material-symbols-outlined text-primary text-xl">phone_iphone</span>
+</div>
+<h3 class="font-headline-sm text-lg font-bold text-text-primary mb-3">Mobile &amp; Cross-Platform</h3>
+<p class="font-body-sm text-body-sm text-text-muted mb-4">
+            Zero-latency native compiled UIs with offline-first reactive state graphs and hardware biometrics.
+          </p>
+</div>
+<div class="flex flex-wrap gap-2 pt-2">
+<span class="px-2.5 py-1 rounded bg-surface-deep text-text-primary text-xs font-label-code border border-border-glass">Flutter 3.x</span>
+<span class="px-2.5 py-1 rounded bg-surface-deep text-text-primary text-xs font-label-code border border-border-glass">Dart 3</span>
+<span class="px-2.5 py-1 rounded bg-surface-deep text-text-primary text-xs font-label-code border border-border-glass">Riverpod 2</span>
+<span class="px-2.5 py-1 rounded bg-surface-deep text-text-primary text-xs font-label-code border border-border-glass">Isar DB</span>
+<span class="px-2.5 py-1 rounded bg-surface-deep text-text-primary text-xs font-label-code border border-border-glass">SQLite</span>
+</div>
+</div>
+<!-- Discipline 3: Web Platforms -->
+<div class="p-6 rounded-xl bg-surface-container-low shadow-lg flex flex-col justify-between hover:bg-surface-container transition-all border border-border-glass">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-code text-label-code text-accent-violet">03 CLOUD &amp; WEB</span>
+<span class="material-symbols-outlined text-accent-violet text-xl">cloud_sync</span>
+</div>
+<h3 class="font-headline-sm text-lg font-bold text-text-primary mb-3">Web &amp; Microservices</h3>
+<p class="font-body-sm text-body-sm text-text-muted mb-4">
+            100/100 Core Web Vitals architectures, multi-tenant databases, and WebGL canvas shaders.
+          </p>
+</div>
+<div class="flex flex-wrap gap-2 pt-2">
+<span class="px-2.5 py-1 rounded bg-surface-deep text-text-primary text-xs font-label-code border border-border-glass">Next.js 14</span>
+<span class="px-2.5 py-1 rounded bg-surface-deep text-text-primary text-xs font-label-code border border-border-glass">TypeScript</span>
+<span class="px-2.5 py-1 rounded bg-surface-deep text-text-primary text-xs font-label-code border border-border-glass">React</span>
+<span class="px-2.5 py-1 rounded bg-surface-deep text-text-primary text-xs font-label-code border border-border-glass">Tailwind CSS</span>
+<span class="px-2.5 py-1 rounded bg-surface-deep text-text-primary text-xs font-label-code border border-border-glass">Three.js</span>
+</div>
+</div>
+<!-- Discipline 4: AI & Automation -->
+<div class="p-6 rounded-xl bg-surface-container-low shadow-lg flex flex-col justify-between hover:bg-surface-container transition-all border border-border-glass">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-code text-label-code text-secondary">04 NEURAL AI</span>
+<span class="material-symbols-outlined text-secondary text-xl">psychology</span>
+</div>
+<h3 class="font-headline-sm text-lg font-bold text-text-primary mb-3">AI &amp; Pipelines</h3>
+<p class="font-body-sm text-body-sm text-text-muted mb-4">
+            Multi-agent asynchronous swarms, semantic vector indices, and fault-tolerant background queues.
+          </p>
+</div>
+<div class="flex flex-wrap gap-2 pt-2">
+<span class="px-2.5 py-1 rounded bg-surface-deep text-text-primary text-xs font-label-code border border-border-glass">Python 3.11</span>
+<span class="px-2.5 py-1 rounded bg-surface-deep text-text-primary text-xs font-label-code border border-border-glass">FastAPI</span>
+<span class="px-2.5 py-1 rounded bg-surface-deep text-text-primary text-xs font-label-code border border-border-glass">LangChain</span>
+<span class="px-2.5 py-1 rounded bg-surface-deep text-text-primary text-xs font-label-code border border-border-glass">Pinecone DB</span>
+<span class="px-2.5 py-1 rounded bg-surface-deep text-text-primary text-xs font-label-code border border-border-glass">Docker</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. INTERACTIVE STUDIO FAQ ACCORDION -->
+<section class="max-w-5xl mx-auto px-6 py-14 w-full">
+<div class="text-center mb-10">
+<div class="inline-flex items-center gap-2 text-tertiary mb-2">
+<span class="material-symbols-outlined text-sm">quiz</span>
+<span class="font-label-badge text-label-badge uppercase tracking-wider">COLLABORATION PROTOCOLS</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-text-primary">Studio Operational FAQ</h2>
+<p class="font-body-md text-body-md text-text-muted mt-2">
+        Transparent mechanics on how we quote, engineer, deliver, and support systems worldwide.
+      </p>
+</div>
+<!-- Accordion Wrapper -->
+<div class="flex flex-col gap-4" id="studio-faq">
+<!-- Item 1 -->
+<div class="faq-item rounded-xl bg-surface-container/70 shadow-md backdrop-blur-md overflow-hidden transition-all duration-300 border border-border-glass">
+<button aria-expanded="false" class="faq-trigger w-full p-5 text-left flex items-center justify-between gap-4 cursor-pointer focus:outline-none">
+<span class="font-headline-sm text-base md:text-lg font-semibold text-text-primary">
+            How does PsyCodes Studio operate without account managers?
+          </span>
+<span class="faq-icon material-symbols-outlined text-tertiary transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content hidden px-5 pb-5 pt-1 text-text-muted font-body-md text-body-md">
+<p>
+            When you contract PsyCodes Studio, you interface directly through a private Slack or Discord channel and automated GitHub pull requests with Bilawal Feroze and the active lab systems engineers. There are zero non-technical intermediaries to distort requirements, introduce delays, or mismanage expectations. Every discussion produces actionable code and architecture updates.
+          </p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="faq-item rounded-xl bg-surface-container/70 shadow-md backdrop-blur-md overflow-hidden transition-all duration-300 border border-border-glass">
+<button aria-expanded="false" class="faq-trigger w-full p-5 text-left flex items-center justify-between gap-4 cursor-pointer focus:outline-none">
+<span class="font-headline-sm text-base md:text-lg font-semibold text-text-primary">
+            What are your typical delivery standards and engineering timelines?
+          </span>
+<span class="faq-icon material-symbols-outlined text-tertiary transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content hidden px-5 pb-5 pt-1 text-text-muted font-body-md text-body-md">
+<p>
+            We adhere to continuous rapid delivery cadences. Rapid interactive MVPs or game prototypes are shipped within 2–4 weeks. Production-grade SaaS platforms, cross-platform Flutter applications, and multi-agent AI automation pipelines are delivered in 4–8 weeks with automated CI/CD staging environments and bi-weekly interactive demos.
+          </p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="faq-item rounded-xl bg-surface-container/70 shadow-md backdrop-blur-md overflow-hidden transition-all duration-300 border border-border-glass">
+<button aria-expanded="false" class="faq-trigger w-full p-5 text-left flex items-center justify-between gap-4 cursor-pointer focus:outline-none">
+<span class="font-headline-sm text-base md:text-lg font-semibold text-text-primary">
+            Do you provide full Intellectual Property (IP) ownership and NDAs?
+          </span>
+<span class="faq-icon material-symbols-outlined text-tertiary transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content hidden px-5 pb-5 pt-1 text-text-muted font-body-md text-body-md">
+<p>
+            Yes, completely. Prior to technical discovery, we execute standard bilateral non-disclosure agreements. Upon completion and milestone sign-off, all intellectual property, source repositories, documentation, deployment credentials, and Figma assets are transferred directly to your organization with zero ongoing studio royalties.
+          </p>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="faq-item rounded-xl bg-surface-container/70 shadow-md backdrop-blur-md overflow-hidden transition-all duration-300 border border-border-glass">
+<button aria-expanded="false" class="faq-trigger w-full p-5 text-left flex items-center justify-between gap-4 cursor-pointer focus:outline-none">
+<span class="font-headline-sm text-base md:text-lg font-semibold text-text-primary">
+            Can you modernize or rebuild existing legacy systems?
+          </span>
+<span class="faq-icon material-symbols-outlined text-tertiary transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content hidden px-5 pb-5 pt-1 text-text-muted font-body-md text-body-md">
+<p>
+            Yes. We frequently conduct deep codebase and infrastructure audits for existing products. We pinpoint critical bottlenecks—such as slow render cycles, unoptimized vector search latency, or sluggish mobile databases—and either refactor the core performance hot-spots or orchestrate safe, zero-downtime greenfield migrations.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. DIRECT DISPATCH / TRANSMISSION TERMINAL (CTA) -->
+<section class="max-w-7xl mx-auto px-6 py-16 w-full" id="order">
+<div class="rounded-3xl bg-gradient-to-b from-surface-container-high/90 to-surface-deep/90 shadow-[0_0_50px_rgba(37,139,255,0.18)] p-8 md:p-14 relative overflow-hidden backdrop-blur-2xl">
+<!-- Ambient Glow Behind CTA -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[250px] bg-tertiary/10 blur-[120px] pointer-events-none"></div>
+<div class="relative z-10 flex flex-col items-center text-center max-w-3xl mx-auto">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-deep/80 text-xs font-label-badge text-tertiary mb-6 border border-border-glass">
+<span class="material-symbols-outlined text-sm">sensors</span>
+<span>READY FOR TRANSMISSION DIRECT LAB INTAKE</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-text-primary mb-4">
+          Ready to Architect Something Extraordinary?
+        </h2>
+<p class="font-body-lg text-body-lg text-text-muted mb-8 leading-relaxed">
+          Whether you need a full-scale AI platform, a responsive 60fps mobile application, or a high-velocity WebGL game engine, connect directly with the laboratory.
+        </p>
+<!-- Direct Email Dispatch Card -->
+<div class="w-full max-w-md p-4 rounded-xl bg-surface-deep/90 shadow-inner flex flex-col sm:flex-row items-center justify-between gap-3 mb-8 border border-border-glass">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary">forward_to_inbox</span>
+<div class="text-left">
+<span class="text-[10px] font-label-code text-text-muted block">DIRECT DISPATCH</span>
+<span class="font-label-code text-sm font-semibold text-text-primary">psycodestech@gmail.com</span>
+</div>
+</div>
+<a class="w-full sm:w-auto px-4 py-2 rounded-lg bg-tertiary/20 text-tertiary hover:bg-tertiary hover:text-surface-deep font-label-badge text-xs transition-all shadow-sm" href="mailto:psycodestech@gmail.com">
+            Launch Mailer →
+          </a>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-wrap items-center justify-center gap-4 mb-10">
+<a class="px-6 py-3 rounded-lg bg-gradient-to-r from-primary-container to-accent-violet text-white font-button-text text-button-text shadow-[0_0_24px_rgba(37,139,255,0.4)] hover:shadow-[0_0_32px_rgba(24,217,246,0.6)] transition-all" href="#order">
+            Initiate Architecture Call →
+          </a>
+<a class="px-6 py-3 rounded-lg bg-surface-deep/80 text-text-primary hover:text-tertiary font-button-text text-button-text shadow-sm hover:bg-surface-bright transition-all border border-border-glass" href="#">
+            Explore Services
+          </a>
+<a class="px-6 py-3 rounded-lg bg-surface-deep/80 text-text-primary hover:text-secondary font-button-text text-button-text shadow-sm hover:bg-surface-bright transition-all border border-border-glass" href="#">
+            Play Arcade Games
+          </a>
+</div>
+<!-- Network Transmissions Channels -->
+<div class="flex items-center gap-6 text-xs font-label-code text-text-muted">
+<span>FOLLOW LAB:</span>
+<a class="hover:text-tertiary transition-colors" href="https://instagram.com/psycodestudios" rel="noopener noreferrer" target="_blank">@psycodestudios</a>
+<span>·</span>
+<a class="hover:text-tertiary transition-colors" href="https://x.com/PsyCodesAI" rel="noopener noreferrer" target="_blank">@PsyCodesAI</a>
+<span>·</span>
+<a class="hover:text-tertiary transition-colors" href="https://linkedin.com" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+</div>
+</div>
+</div>
+</section>
+<!-- CLIENT-SIDE MICRO-INTERACTIONS (FAQ ACCORDION) -->
+<script>
+    (function initFAQ() {
+      const triggers = document.querySelectorAll('.faq-trigger');
+      triggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+          const item = trigger.closest('.faq-item');
+          const content = item.querySelector('.faq-content');
+          const icon = item.querySelector('.faq-icon');
+          const isOpen = !content.classList.contains('hidden');
+
+          Close all items
+          document.querySelectorAll('.faq-item').forEach(otherItem => {
+            otherItem.querySelector('.faq-content').classList.add('hidden');
+            otherItem.querySelector('.faq-icon').classList.remove('rotate-180');
+            otherItem.querySelector('.faq-trigger').setAttribute('aria-expanded', 'false');
+            otherItem.classList.remove('bg-surface-container-high');
+          });
+
+          Toggle current
+          if (!isOpen) {
+            content.classList.remove('hidden');
+            icon.classList.add('rotate-180');
+            trigger.setAttribute('aria-expanded', 'true');
+            item.classList.add('bg-surface-container-high');
+          }
+        });
+      });
+    })();
+  </script>
+</div></main>
+<!-- MODAL SPEC INSPECTOR -->
+<div class="fixed inset-0 z-50 hidden bg-surface-deep/80 backdrop-blur-xl flex items-center justify-center p-4 border border-border-glass" id="spec-modal">
+<div class="w-full max-w-2xl rounded-2xl bg-surface-container p-6 border border-border-glass shadow-2xl relative max-h-[90vh] overflow-y-auto">
+<button class="absolute top-4 right-4 p-1.5 rounded-lg bg-surface-deep text-text-muted hover:text-white border border-border-glass" id="close-spec-modal">
+<span class="material-symbols-outlined text-base">close</span>
+</button>
+<div class="flex items-center gap-2 mb-1 text-tertiary">
+<span class="material-symbols-outlined text-sm">memory</span>
+<span class="font-label-badge text-xs uppercase">ARCHITECTURE SPECIFICATION DOSSIER</span>
+</div>
+<h3 class="font-headline-md text-xl font-bold text-text-primary mb-2" id="modal-title">Technical Specification</h3>
+<p class="text-xs text-text-muted mb-4" id="modal-desc">In-depth architecture breakdown and engineering parameters.</p>
+<div class="p-3 rounded-xl bg-surface-deep mb-4 font-label-code text-xs border border-border-glass">
+<div class="text-tertiary mb-1">TECHNICAL PIPELINE STACK</div>
+<div class="text-text-muted" id="modal-stack">Python 3.11, LangChain, Pinecone Vector DB, Docker</div>
+</div>
+<div class="mb-6">
+<h4 class="text-xs font-bold text-text-primary mb-2 uppercase font-label-code">Deliverable Scope Checklist:</h4>
+<ul class="flex flex-col gap-2 text-xs text-text-muted" id="modal-checklist"></ul>
+</div>
+<div class="flex justify-end gap-3 pt-3 border-t border-border-glass">
+<button class="px-4 py-2 rounded-lg bg-surface-container-high text-xs font-semibold text-text-primary hover:bg-surface-deep border border-border-glass" id="modal-close-btn">Close Inspector</button>
+<a class="px-4 py-2 rounded-lg bg-primary-container text-white text-xs font-bold shadow-[0_0_12px_rgba(37,139,255,0.4)]" href="#order" onclick="document.getElementById('spec-modal').classList.add('hidden')">Commission This Spec →</a>
+</div>
+</div>
+</div>
+<!-- FOOTER -->
+<footer class="w-full bg-surface-container-lowest text-on-surface-variant shadow-[0_-1px_12px_rgba(0,0,0,0.3)] mt-margin border-t border-border-glass">
+  <div class="w-full px-gutter lg:px-margin py-margin">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl">
+      <!-- Col 1: Brand & Tagline -->
+      <div class="flex flex-col gap-space-md">
+        <div class="flex items-center gap-space-sm">
+          <img alt="PsyCodes Studio Logo" class="h-7 w-auto object-contain" src="assets/logo/Psycodes_logo_trans.png" />
+          <span class="font-headline-sm text-headline-sm font-bold text-text-primary tracking-tight">PsyCodes Studio</span>
+        </div>
+        <p class="font-body-sm text-body-sm text-text-muted leading-relaxed">
+          Architecting elite AI systems, hyper-performing web platforms, and independent interactive entertainment. Built with mathematical precision.
+        </p>
+        <div class="flex items-center gap-space-xs">
+          <span class="inline-block w-2 h-2 rounded-full bg-tertiary shadow-[0_0_8px_#18d9f6]"></span>
+          <span class="font-label-badge text-label-badge text-tertiary uppercase tracking-wider">CODE. CREATE. AUTOMATE.</span>
+        </div>
+      </div>
+
+      <!-- Col 2: Quick Nav -->
+      <div class="flex flex-col gap-space-md">
+        <span class="font-headline-sm text-headline-sm font-semibold text-text-primary">Quick Nav</span>
+        <ul class="flex flex-col gap-space-sm font-body-sm text-body-sm">
+          <li><a class="text-on-surface-variant hover:text-tertiary transition-colors" href="index.html">Home</a></li>
+          <li><a class="text-on-surface-variant hover:text-tertiary transition-colors" href="products.html">Products</a></li>
+          <li><a class="text-on-surface-variant hover:text-tertiary transition-colors" href="services.html">Services</a></li>
+          <li><a class="text-on-surface-variant hover:text-tertiary transition-colors" href="play-games.html">Play Games</a></li>
+          <li><a class="text-on-surface-variant hover:text-tertiary transition-colors" href="about.html">About</a></li>
+          <li><a class="text-on-surface-variant hover:text-tertiary transition-colors" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Studio Credentials -->
+      <div class="flex flex-col gap-space-md">
+        <span class="font-headline-sm text-headline-sm font-semibold text-text-primary">Studio Credentials</span>
+        <div class="flex flex-col gap-space-xs font-body-sm text-body-sm text-text-muted">
+          <div class="flex items-center gap-space-xs">
+            <span class="material-symbols-outlined text-[16px] text-primary">person</span>
+            <span>Founded by <strong class="text-text-primary font-medium">Bilawal Feroze</strong></span>
+          </div>
+          <div class="flex items-center gap-space-xs">
+            <span class="material-symbols-outlined text-[16px] text-primary">location_on</span>
+            <span>Karachi, Pakistan</span>
+          </div>
+          <div class="flex items-center gap-space-xs">
+            <span class="material-symbols-outlined text-[16px] text-primary">calendar_today</span>
+            <span>Est. 2026</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Col 4: Connect -->
+      <div class="flex flex-col gap-space-md">
+        <span class="font-headline-sm text-headline-sm font-semibold text-text-primary">Connect</span>
+        <div class="flex flex-col gap-space-sm font-body-sm text-body-sm">
+          <a class="flex items-center gap-space-xs text-on-surface-variant hover:text-tertiary transition-colors" href="mailto:psycodestech@gmail.com">
+            <span class="material-symbols-outlined text-[16px]">mail</span>
+            <span class="font-label-code text-label-code">psycodestech@gmail.com</span>
+          </a>
+          <a class="flex items-center gap-space-xs text-on-surface-variant hover:text-tertiary transition-colors" href="https://linkedin.com/in/bilawalferoze" target="_blank" rel="noreferrer">
+            <span class="material-symbols-outlined text-[16px]">link</span>
+            <span>LinkedIn: <span class="text-text-primary">bilawalferoze</span></span>
+          </a>
+          <a class="flex items-center gap-space-xs text-on-surface-variant hover:text-tertiary transition-colors" href="https://instagram.com/psycodestudio" target="_blank" rel="noreferrer">
+            <span class="material-symbols-outlined text-[16px]">tag</span>
+            <span>Instagram: <span class="text-text-primary">@psycodestudio</span></span>
+          </a>
+          <a class="flex items-center gap-space-xs text-on-surface-variant hover:text-tertiary transition-colors" href="https://github.com/bilawalferoze" target="_blank" rel="noreferrer">
+            <span class="material-symbols-outlined text-[16px]">code</span>
+            <span>GitHub: <span class="text-text-primary">@bilawalferoze</span></span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="mt-space-xl pt-space-lg border-t border-border-glass flex flex-col md:flex-row items-center justify-between gap-space-md font-body-sm text-body-sm text-text-muted">
+      <p>© 2026 PsyCodes Studio. All computational rights reserved.</p>
+      <p class="font-label-badge text-label-badge uppercase text-outline">Code. Create. Automate.</p>
+    </div>
+  </div>
+</footer>
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu) menu.classList.toggle('hidden');
+  }
+</script>
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu) menu.classList.toggle('hidden');
+  }
+</script>
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu) menu.classList.toggle('hidden');
+  }
+</script>
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu) menu.classList.toggle('hidden');
+  }
+</script>
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu) menu.classList.toggle('hidden');
+  }
+</script>
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu) menu.classList.toggle('hidden');
+  }
+</script>
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu) menu.classList.toggle('hidden');
+  }
+</script>
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu) menu.classList.toggle('hidden');
+  }
+</script>
+<script>
+1. Tab switching inside each service card
+(function initTabs() {
+  const cards = document.querySelectorAll('.service-card');
+  cards.forEach(card => {
+    const tabBtns = card.querySelectorAll('.card-tab-btn');
+    const panels = card.querySelectorAll('.tab-panel');
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const targetTab = btn.getAttribute('data-tab');
+
+        Determine active accent color class
+        const isSecondary = card.getAttribute('data-category') === 'mobile' || card.getAttribute('data-category') === 'gaming';
+        const isPrimary = card.getAttribute('data-category') === 'saas' || card.getAttribute('data-category') === 'design';
+        const activeColor = isSecondary ? 'text-secondary border-secondary/30' : (isPrimary ? 'text-primary border-primary/30' : 'text-tertiary border-tertiary/30');
+
+        tabBtns.forEach(b => {
+          b.className = 'card-tab-btn flex-1 py-1 px-1.5 rounded text-[11px] font-label-badge text-center text-text-muted hover:text-text-primary';
+        });
+
+        btn.className = `card-tab-btn flex-1 py-1 px-1.5 rounded text-[11px] font-label-badge text-center bg-surface-bright border ${activeColor} shadow-sm`;
+
+        panels.forEach(panel => {
+          if (panel.getAttribute('data-panel') === targetTab) {
+            panel.classList.remove('hidden');
+            panel.classList.add('flex');
+          } else {
+            panel.classList.add('hidden');
+            panel.classList.remove('flex');
+          }
+        });
+      });
+    });
+  });
+})();
+
+2. Filter Bar
+(function initFilters() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.service-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => {
+        b.className = 'filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-text-muted hover:text-white hover:bg-surface-container-high';
+      });
+      btn.className = 'filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-primary-container text-white shadow-[0_0_10px_rgba(37,139,255,0.4)]';
+
+      const category = btn.getAttribute('data-filter');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+})();
+
+3. Calculator
+(function initCalculator() {
+  let selectedDiscipline = 'ai';
+  let selectedTier = 'prod';
+
+  const data = {
+    ai: { base: 3, deliverables: ['Multi-Agent Swarm Orchestrator (FastAPI/LangChain)', 'Pinecone Contextual Retrieval Pipeline & Chunker', 'Full CI/CD GitHub Actions & Docker manifest', 'Evaluation & Benchmark Test Harness'] },
+    saas: { base: 4, deliverables: ['Next.js 14 App Router + Multi-Tenant Schema', 'PostgreSQL / Prisma Database Architecture', 'Metered Stripe Webhook & Subscription Integration', 'Redis / BullMQ Background Job Worker Cluster'] },
+    mobile: { base: 4, deliverables: ['Unified iOS & Android Flutter Codebase', 'Riverpod 2.x State Management Graph', 'Isar DB Local Bi-Directional Offline Storage', 'App Store & Google Play Store Submission Build'] },
+    game: { base: 3, deliverables: ['Zero-Install Unity 6 WebGL 2.0 Streaming Engine', 'Custom URP Shaders & Particle Effects System', 'Mobile Touch Controller & Keyboard Layouts', 'Cloudflare Global Edge WebGL Compression Asset Pack'] },
+    web: { base: 2, deliverables: ['100/100 Core Web Vitals Next.js Architecture', 'Interactive Three.js / WebGL Scene Shaders', 'Bespoke Micro-Interactions & Accessible UI Nodes', 'Edge CDN Global Deployment & DNS Configuration'] },
+    design: { base: 2, deliverables: ['W3C Standard Design Token JSON Repository', 'Figma Master Component Library (Auto-layout 5.0)', 'Tailwind CSS Config Sync CLI Tooling', 'Living Documentation Storybook / Zeroheight Spec'] }
+  };
+
+  const discBtns = document.querySelectorAll('.calc-disc-btn');
+  const tierBtns = document.querySelectorAll('.calc-tier-btn');
+  const timelineEl = document.getElementById('calc-timeline');
+  const listEl = document.getElementById('calc-deliverables-list');
+  const refIdEl = document.getElementById('calc-ref-id');
+
+  function update() {
+    const d = data[selectedDiscipline];
+    const mult = selectedTier === 'mvp' ? 0.7 : (selectedTier === 'prod' ? 1.0 : 1.6);
+    const low = Math.max(2, Math.round(d.base * mult));
+    timelineEl.textContent = `${low}-${low + 1}`;
+    refIdEl.textContent = `PSC-${selectedDiscipline.toUpperCase()}-${Math.floor(100 + Math.random() * 900)}`;
+
+    listEl.innerHTML = '';
+    d.deliverables.forEach(item => {
+      const li = document.createElement('li');
+      li.className = 'flex items-center gap-2';
+      li.innerHTML = `<span class="material-symbols-outlined text-tertiary text-sm">verified</span><span>${item}</span>`;
+      listEl.appendChild(li);
+    });
+  }
+
+  discBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      discBtns.forEach(b => {
+        b.className = 'calc-disc-btn p-3 rounded-lg bg-surface-container border border-border-glass hover:bg-surface-deep text-left text-xs';
+        const sub = b.querySelector('span:last-child');
+        if (sub) sub.className = 'block text-text-muted text-[11px]';
+      });
+      btn.className = 'calc-disc-btn p-3 rounded-lg bg-surface-deep border border-tertiary text-left text-xs';
+      const activeSub = btn.querySelector('span:last-child');
+      if (activeSub) activeSub.className = 'block text-tertiary text-[11px]';
+      selectedDiscipline = btn.getAttribute('data-discipline');
+      update();
+    });
+  });
+
+  tierBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tierBtns.forEach(b => {
+        b.className = 'calc-tier-btn p-3 rounded-lg bg-surface-container border border-border-glass hover:bg-surface-deep text-left text-xs';
+        const sub = b.querySelector('span:last-child');
+        if (sub) sub.className = 'block text-text-muted text-[11px]';
+      });
+      btn.className = 'calc-tier-btn p-3 rounded-lg bg-surface-deep border border-tertiary text-left text-xs';
+      const activeSub = btn.querySelector('span:last-child');
+      if (activeSub) activeSub.className = 'block text-tertiary text-[11px]';
+      selectedTier = btn.getAttribute('data-tier');
+      update();
+    });
+  });
+})();
+
+4. Modal
+(function initModal() {
+  const modal = document.getElementById('spec-modal');
+  const closeBtn = document.getElementById('close-spec-modal');
+  const closeAction = document.getElementById('modal-close-btn');
+  const title = document.getElementById('modal-title');
+  const desc = document.getElementById('modal-desc');
+  const stack = document.getElementById('modal-stack');
+  const checklist = document.getElementById('modal-checklist');
+
+  const specs = {
+    'ai-spec': {
+      title: 'AI Solutions & Autonomous Workflows Spec',
+      desc: 'Architected for asynchronous multi-agent coordination with low-latency Pinecone embeddings and strict hallucination boundaries.',
+      stack: 'Python 3.11, LangChain, FastAPI, Pinecone, vLLM, Docker',
+      items: ['Multi-Agent graph routing with sub-second decision fallback', 'Context-aware chunking with reciprocal rank fusion (RRF)', 'Deterministic JSON output validation and guardrail checks', 'Observability through OpenTelemetry and Langfuse metrics']
+    },
+    'saas-spec': {
+      title: 'SaaS Platform Architecture Spec',
+      desc: 'Multi-tenant high-availability cloud architecture optimized for database connection pooling and metered SaaS monetization.',
+      stack: 'Next.js 14, TypeScript, PostgreSQL, Prisma, Redis, Stripe, BullMQ',
+      items: ['Tenant schema isolation preventing cross-tenant data leakage', 'Idempotent Stripe webhook listeners with signature verification', 'Asynchronous background workers for bulk jobs', 'Automated database migrations and zero-downtime rollback scripts']
+    },
+    'mobile-spec': {
+      title: 'Mobile Architecture Spec (Flutter)',
+      desc: 'Cross-platform reactive UI system designed for offline-first availability, local biometric auth, and consistent 60/120 FPS renders.',
+      stack: 'Flutter 3.x, Dart, Riverpod 2.x, Isar Database, Firebase, SecureStorage',
+      items: ['Isar local indexed DB syncing to cloud on reconnection', 'Hardware enclave key generation for biometric sessions', 'Optimized image caches with automatic webp downsampling', 'Continuous App Store & Play Store Fastlane deployment workflows']
+    },
+    'web-spec': {
+      title: 'Ultra-Performant Web Architecture Spec',
+      desc: 'Extreme performance web rendering stack with zero runtime render blocking and bespoke GLSL shaders.',
+      stack: 'React, Next.js, Tailwind CSS, Three.js, Cloudflare Workers',
+      items: ['Core Web Vitals FCP < 450ms and LCP < 1.1s worldwide', 'Shader canvas fallback for low-spec GPU/mobile environments', 'Micro-animations compliant with prefers-reduced-motion', 'Automated edge caching rules with stale-while-revalidate headers']
+    },
+    'game-spec': {
+      title: 'Unity WebGL & Desktop Engine Spec',
+      desc: 'Custom game pipeline enabling frictionless instant browser play without sacrificing visual quality or particle fidelity.',
+      stack: 'Unity 6, C#, Universal Render Pipeline (URP), WebGL 2.0, WebAudio API',
+      items: ['Brotli-compressed asset streaming for sub-30s initial launch', 'Custom mobile virtual joysticks and touch gesture decoders', 'Optimized memory lifecycle managing heap fragmentation', 'Custom HLSL fragment shaders for atmospheric lighting']
+    },
+    'design-spec': {
+      title: 'UI/UX & Design Token System Spec',
+      desc: 'Single source of truth design architecture eliminating translation defects between design handoffs and frontend builds.',
+      stack: 'Figma, Tokens Studio, Style-Dictionary, Tailwind CSS, Storybook',
+      items: ['W3C-compliant token hierarchies (Semantic, Component, Global)', 'Automated GitHub Pull Request creation from Figma token updates', 'Strict WCAG 2.1 AA accessibility contrast compliance', 'Reusable component variants built with pure compositional auto-layout']
+    },
+    'auto-spec': {
+      title: 'Autonomous Workflow & Integration Spec',
+      desc: 'Fault-tolerant background automation pipelines engineered for headless data sync, invoice parsing, and multi-service workflows.',
+      stack: 'Python 3.11, n8n Enterprise, Docker, Apache Airflow, Redis, Slack API',
+      items: ['Self-healing workflow retry blocks with exponential backoff', 'Encrypted secret vault with dynamic key rotation', 'Bi-directional CRM & accounting synchronization', 'Immutable audit logs with zero-data-loss FIFO queues']
+    }
+  };
+
+  document.querySelectorAll('.spec-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.getAttribute('data-modal');
+      const item = specs[id];
+      if (!item) return;
+      title.textContent = item.title;
+      desc.textContent = item.desc;
+      stack.textContent = item.stack;
+      checklist.innerHTML = '';
+      item.items.forEach(t => {
+        const li = document.createElement('li');
+        li.className = 'flex items-center gap-2';
+        li.innerHTML = `<span class="material-symbols-outlined text-tertiary text-sm">check_circle</span><span>${t}</span>`;
+        checklist.appendChild(li);
+      });
+      modal.classList.remove('hidden');
+    });
+  });
+
+  closeBtn.addEventListener('click', () => modal.classList.add('hidden'));
+  closeAction.addEventListener('click', () => modal.classList.add('hidden'));
+  modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.add('hidden'); });
+})();
+</script>
+</body></html>

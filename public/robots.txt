@@ -1,0 +1,10 @@
+# PsyCodes Studio — Robots Exclusion Protocol
+# https://www.psycodestudio.tech
+
+User-agent: *
+Allow: /
+Disallow: /psycodespc313adminarea
+Disallow: /admin
+
+# Host & Sitemap
+Sitemap: https://www.psycodestudio.tech/sitemap.xml

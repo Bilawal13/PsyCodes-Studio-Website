@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_standard" name="shell-type"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;family=Sora:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+html,body{margin:0;padding:0;body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}
+::-webkit-scrollbar{display:none;}
+</style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "outline-variant": "#414754",
+        "primary": "#a8c8ff",
+        "on-tertiary-fixed": "#001f25",
+        "primary-fixed": "#d6e3ff",
+        "tertiary-container": "#009fb5",
+        "on-tertiary-container": "#002f36",
+        "tertiary": "#18d9f6",
+        "inverse-surface": "#dde1fc",
+        "surface-dim": "#0d1225",
+        "on-primary": "#003062",
+        "secondary-fixed": "#efdbff",
+        "surface-glass": "rgba(11, 21, 48, 0.65)",
+        "surface-container-high": "#24293d",
+        "error": "#ffb4ab",
+        "on-surface-variant": "#c0c6d6",
+        "secondary-container": "#6807bb",
+        "on-primary-fixed-variant": "#00468a",
+        "secondary-fixed-dim": "#dab9ff",
+        "surface-deep": "#0B1530",
+        "tertiary-fixed": "#a4eeff",
+        "tertiary-fixed-dim": "#18d9f6",
+        "surface-variant": "#2f3449",
+        "outline": "#8b919f",
+        "surface-container": "#1a1f32",
+        "inverse-on-surface": "#2b2f44",
+        "primary-fixed-dim": "#a8c8ff",
+        "surface": "#0d1225",
+        "surface-container-highest": "#2f3449",
+        "surface-tint": "#a8c8ff",
+        "on-secondary-fixed": "#2a0053",
+        "on-tertiary": "#00363f",
+        "surface-container-lowest": "#080d20",
+        "border-glass": "rgba(37, 139, 255, 0.18)",
+        "on-error": "#690005",
+        "on-surface": "#dde1fc",
+        "surface-bright": "#33384d",
+        "inverse-primary": "#005db5",
+        "glow-purple": "rgba(135, 59, 218, 0.25)",
+        "on-background": "#dde1fc",
+        "on-tertiary-fixed-variant": "#004e5a",
+        "on-secondary-fixed-variant": "#6500b8",
+        "background": "#0d1225",
+        "text-primary": "#F5F7FF",
+        "error-container": "#93000a",
+        "secondary": "#dab9ff",
+        "text-muted": "#A5B1CC",
+        "primary-container": "#3890ff",
+        "on-error-container": "#ffdad6",
+        "glow-cyan": "rgba(18, 216, 245, 0.25)",
+        "accent-violet": "#A855F7",
+        "surface-container-low": "#161b2e",
+        "on-secondary-container": "#d0a7ff",
+        "on-secondary": "#470084",
+        "on-primary-container": "#002956",
+        "on-primary-fixed": "#001b3d"
+      },
+      borderRadius: {
+        DEFAULT: "0.25rem",
+        lg: "0.5rem",
+        xl: "0.75rem",
+        full: "9999px"
+      },
+      spacing: {
+        "space-xl": "2.5rem",
+        "space-md": "1rem",
+        "gutter-mobile": "1rem",
+        "gutter": "1.5rem",
+        "space-lg": "1.5rem",
+        "margin-tablet": "2rem",
+        "margin-mobile": "1.25rem",
+        "margin": "4rem",
+        "space-sm": "0.5rem",
+        "space-xs": "0.25rem"
+      },
+      fontFamily: {
+        "label-badge": ["JetBrains Mono"],
+        "display": ["Sora"],
+        "button-text": ["Sora"],
+        "body-sm": ["Manrope"],
+        "body-md": ["Manrope"],
+        "label-code": ["JetBrains Mono"],
+        "headline-lg-mobile": ["Sora"],
+        "headline-md": ["Sora"],
+        "headline-lg": ["Sora"],
+        "body-lg": ["Manrope"],
+        "headline-sm": ["Sora"],
+        "display-mobile": ["Sora"]
+      },
+      fontSize: {
+        "label-badge": ["11px", { lineHeight: "14px", letterSpacing: "0.08em", fontWeight: "600" }],
+        "display": ["56px", { lineHeight: "64px", letterSpacing: "-0.03em", fontWeight: "700" }],
+        "button-text": ["14px", { lineHeight: "20px", letterSpacing: "0.02em", fontWeight: "600" }],
+        "body-sm": ["13px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "400" }],
+        "body-md": ["15px", { lineHeight: "24px", letterSpacing: "0em", fontWeight: "400" }],
+        "label-code": ["13px", { lineHeight: "18px", letterSpacing: "0.04em", fontWeight: "500" }],
+        "headline-lg-mobile": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "600" }],
+        "headline-md": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "600" }],
+        "headline-lg": ["40px", { lineHeight: "48px", letterSpacing: "-0.02em", fontWeight: "600" }],
+        "body-lg": ["18px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "400" }],
+        "headline-sm": ["20px", { lineHeight: "28px", letterSpacing: "0em", fontWeight: "500" }],
+        "display-mobile": ["38px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700" }]
+      }
+    }
+  }
+};
+</script>
+<style>
+.service-card {
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+}
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px -10px rgba(24, 217, 246, 0.2), 0 0 0 1px rgba(24, 217, 246, 0.35);
+}
+.card-icon {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease;
+}
+.service-card:hover .card-icon {
+  transform: scale(1.1) rotate(3deg);
+  filter: drop-shadow(0 0 10px rgba(24, 217, 246, 0.6));
+}
+.tech-chip {
+  transition: all 0.2s ease;
+}
+.tech-chip:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 8px rgba(24, 217, 246, 0.3);
+}
+.spec-arrow {
+  transition: transform 0.2s ease;
+}
+.spec-btn:hover .spec-arrow {
+  transform: translateX(4px);
+}
+.tab-panel {
+  animation: fadeInTab 0.2s ease forwards;
+}
+@keyframes fadeInTab {
+  from { opacity: 0; transform: translateY(3px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+<body class="bg-surface font-body-md text-text-primary antialiased min-h-screen selection:bg-tertiary/20 selection:text-tertiary">
+<!-- HEADER -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-surface-glass backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.25)] border-b border-border-glass">
+  <div class="h-20 w-full px-gutter lg:px-margin flex items-center justify-between">
+    <!-- Brand Logo & Identity -->
+    <a href="index.html" class="flex items-center gap-space-md group">
+      <img alt="PsyCodes Studio Logo" class="h-8 w-auto object-contain" src="assets/logo/Psycodes_logo_trans.png" />
+      <div class="flex flex-col">
+        <span class="font-headline-sm text-headline-sm font-bold text-text-primary tracking-tight group-hover:text-tertiary transition-colors">PsyCodes Studio</span>
+        <span class="font-label-badge text-[10px] tracking-widest uppercase text-tertiary font-semibold">CODE. CREATE. AUTOMATE.</span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation Pill Container -->
+    <nav class="hidden md:flex items-center gap-1 bg-surface-deep/80 backdrop-blur-md p-1.5 rounded-xl border border-border-glass">
+      <a class="px-space-md py-space-sm rounded-lg font-button-text text-button-text transition-all text-on-surface-variant hover:text-tertiary hover:bg-surface-container-high/40 transition-colors border border-border-glass" href="index.html">Home</a>
+      <a class="px-space-md py-space-sm rounded-lg font-button-text text-button-text transition-all text-on-surface-variant hover:text-tertiary hover:bg-surface-container-high/40 transition-colors border border-border-glass" href="products.html">Products</a>
+      <a class="px-space-md py-space-sm rounded-lg font-button-text text-button-text transition-all text-on-surface-variant hover:text-tertiary hover:bg-surface-container-high/40 transition-colors border border-border-glass" href="services.html">Services</a>
+      <a class="px-space-md py-space-sm rounded-lg font-button-text text-button-text transition-all text-on-surface-variant hover:text-tertiary hover:bg-surface-container-high/40 transition-colors border border-border-glass" href="play-games.html">Play Games</a>
+      <a class="px-space-md py-space-sm rounded-lg font-button-text text-button-text transition-all text-on-surface-variant hover:text-tertiary hover:bg-surface-container-high/40 transition-colors border border-border-glass" href="about.html">About</a>
+      <a class="px-space-md py-space-sm rounded-lg font-button-text text-button-text transition-all bg-primary-container text-on-primary-container font-semibold shadow-sm" href="contact.html">Contact</a>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="flex items-center gap-space-sm">
+      <a class="hidden sm:inline-flex items-center justify-center px-space-md py-space-sm rounded-lg bg-gradient-to-r from-primary-container to-secondary-container font-button-text text-button-text text-text-primary shadow-[0_0_20px_rgba(37,139,255,0.35)] hover:shadow-[0_0_25px_rgba(24,217,246,0.5)] hover:-translate-y-0.5 transition-all" href="contact.html">
+        <span>Let's Build Something →</span>
+      </a>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button id="mobile-menu-btn" aria-label="Toggle Navigation Menu" class="md:hidden w-10 h-10 rounded-xl flex items-center justify-center bg-surface-deep border border-border-glass text-text-primary hover:text-tertiary transition-colors" onclick="toggleMobileMenu()">
+        <span class="material-symbols-outlined text-[24px]">menu</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobile-menu" class="hidden md:hidden px-gutter pb-6 pt-2 bg-surface-deep/95 backdrop-blur-2xl border-b border-border-glass flex flex-col gap-2">
+    <a class="px-4 py-2.5 rounded-lg font-button-text text-sm text-on-surface-variant hover:text-tertiary hover:bg-surface-container-high/40 transition-colors border border-border-glass" href="index.html">Home</a>
+    <a class="px-4 py-2.5 rounded-lg font-button-text text-sm text-on-surface-variant hover:text-tertiary hover:bg-surface-container-high/40 transition-colors border border-border-glass" href="products.html">Products</a>
+    <a class="px-4 py-2.5 rounded-lg font-button-text text-sm text-on-surface-variant hover:text-tertiary hover:bg-surface-container-high/40 transition-colors border border-border-glass" href="services.html">Services</a>
+    <a class="px-4 py-2.5 rounded-lg font-button-text text-sm text-on-surface-variant hover:text-tertiary hover:bg-surface-container-high/40 transition-colors border border-border-glass" href="play-games.html">Play Games</a>
+    <a class="px-4 py-2.5 rounded-lg font-button-text text-sm text-on-surface-variant hover:text-tertiary hover:bg-surface-container-high/40 transition-colors border border-border-glass" href="about.html">About</a>
+    <a class="px-4 py-2.5 rounded-lg font-button-text text-sm bg-primary-container text-on-primary-container font-semibold shadow-sm" href="contact.html">Contact</a>
+    <a class="mt-2 text-center py-3 rounded-lg bg-gradient-to-r from-primary-container to-secondary-container font-button-text text-sm text-text-primary font-bold shadow-md" href="contact.html">Let's Build Something →</a>
+  </div>
+</header>
+<main class="w-full pt-28 lg:pt-32 pb-16 flex-1"><div class="flex flex-col w-full">
+<!-- AMBIENT TOP LIGHT GRADIENT SCRIM -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[400px] bg-gradient-to-b from-tertiary/10 via-primary-container/10 to-transparent blur-3xl pointer-events-none -z-10"></div>
+<div class="absolute top-48 right-12 w-96 h-96 bg-accent-violet/10 rounded-full blur-[120px] pointer-events-none -z-10"></div>
+<div class="absolute top-96 left-8 w-80 h-80 bg-tertiary/10 rounded-full blur-[100px] pointer-events-none -z-10"></div>
+<!-- MAIN WRAPPER CONTAINER -->
+<div class="max-w-7xl mx-auto px-6 py-8 flex flex-col gap-16">
+<!-- SECTION 1: HERO & TELEMETRY CLUSTER -->
+<section class="flex flex-col gap-8 pt-12 lg:pt-16">
+<!-- Telemetry Kicker Badge -->
+<div class="flex items-center gap-3">
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container border border-tertiary/30 shadow-[0_0_12px_rgba(24,217,246,0.15)]">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse shadow-[0_0_8px_#18d9f6]"></span>
+<span class="font-label-badge text-label-badge text-tertiary tracking-wider">TRANSMISSION PORTAL DIRECT LAB DISPATCH · KARACHI, PK</span>
+</div>
+<div class="hidden sm:flex items-center gap-2 text-text-muted font-label-code text-body-sm">
+<span class="text-outline">SYS_STATE:</span>
+<span class="text-tertiary font-semibold">LISTEN_STREAM_READY</span>
+</div>
+</div>
+<!-- Headline & Subtitle -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
+<div class="max-w-3xl flex flex-col gap-4">
+<h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight font-bold">
+              Initiate Transmission.
+              <span class="block bg-gradient-to-r from-tertiary via-primary-container to-accent-violet bg-clip-text text-transparent">
+                Build Directly with Engineers.
+              </span>
+</h1>
+<p class="font-body-lg text-body-lg text-text-muted leading-relaxed">
+              No account managers, no layers of gatekeepers. Whether you require a deterministic Unity 6 game, a zero-CLS reactive web platform, an offline-first Flutter application, or an autonomous multi-agent AI pipeline — your specifications route directly to Bilawal Feroze and the core engineering squad.
+            </p>
+</div>
+<!-- Quick Action Node -->
+<div class="flex flex-col sm:flex-row lg:flex-col gap-3 shrink-0">
+<a class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-gradient-to-r from-primary-container to-accent-violet text-text-primary font-button-text text-button-text font-bold shadow-[0_0_20px_rgba(37,139,255,0.4)] hover:shadow-[0_0_28px_rgba(24,217,246,0.5)] transition-all transform hover:-translate-y-0.5" href="#dossier-terminal">
+<span>Deploy Specification Dossier</span>
+<span class="material-symbols-outlined text-base">arrow_downward</span>
+</a>
+<div class="flex items-center gap-2 px-3 py-1 font-label-code text-body-sm text-text-muted">
+<span class="material-symbols-outlined text-tertiary text-sm">lock</span>
+<span>Encrypted SSL 256-bit Routing</span>
+</div>
+</div>
+</div>
+<!-- 4-Card Quick Telemetry Metric Bar -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
+<!-- Metric 1 -->
+<div class="p-4 rounded-xl bg-surface-container/70 backdrop-blur-md border border-border-glass hover:border-tertiary/40 transition-all flex flex-col gap-2">
+<div class="flex items-center justify-between text-text-muted">
+<span class="font-label-badge text-label-badge tracking-widest text-primary">01 RESPONSE SLA</span>
+<span class="material-symbols-outlined text-primary text-lg">bolt</span>
+</div>
+<div class="font-display text-2xl font-bold text-text-primary">&lt; 24 Hours</div>
+<div class="font-body-sm text-body-sm text-text-muted">Direct engineer review &amp; architectural preliminary feedback.</div>
+</div>
+<!-- Metric 2 -->
+<div class="p-4 rounded-xl bg-surface-container/70 backdrop-blur-md border border-border-glass hover:border-accent-violet/40 transition-all flex flex-col gap-2">
+<div class="flex items-center justify-between text-text-muted">
+<span class="font-label-badge text-label-badge tracking-widest text-accent-violet">02 CONFIDENTIALITY</span>
+<span class="material-symbols-outlined text-accent-violet text-lg">verified_user</span>
+</div>
+<div class="font-display text-2xl font-bold text-text-primary">Mutual NDA Ready</div>
+<div class="font-body-sm text-body-sm text-text-muted">Pre-executed standard bilateral agreement upon formal request.</div>
+</div>
+<!-- Metric 3 -->
+<div class="p-4 rounded-xl bg-surface-container/70 backdrop-blur-md border border-border-glass hover:border-tertiary/40 transition-all flex flex-col gap-2">
+<div class="flex items-center justify-between text-text-muted">
+<span class="font-label-badge text-label-badge tracking-widest text-tertiary">03 HQ LOCATION</span>
+<span class="material-symbols-outlined text-tertiary text-lg">share_location</span>
+</div>
+<div class="font-display text-2xl font-bold text-text-primary">Karachi, PK</div>
+<div class="font-body-sm text-body-sm text-text-muted">UTC+5 synchronous cadence overlapping EU, ME &amp; US mornings.</div>
+</div>
+<!-- Metric 4 -->
+<div class="p-4 rounded-xl bg-surface-container/70 backdrop-blur-md border border-border-glass hover:border-primary-container/40 transition-all flex flex-col gap-2">
+<div class="flex items-center justify-between text-text-muted">
+<span class="font-label-badge text-label-badge tracking-widest text-primary-fixed-dim">04 PROTOCOL</span>
+<span class="material-symbols-outlined text-primary-fixed-dim text-lg">terminal</span>
+</div>
+<div class="font-display text-2xl font-bold text-text-primary">Zero Bureaucracy</div>
+<div class="font-body-sm text-body-sm text-text-muted">Direct Git repository, automated CI/CD &amp; dedicated client channel.</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: TWO-COLUMN INTAKE CONSOLE -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- LEFT COLUMN: DIRECT CHANNELS & EMERGENCY COMM (5 COLS) -->
+<div class="lg:col-span-5 flex flex-col gap-6">
+<!-- Studio Direct Channels Card -->
+<div class="p-6 rounded-2xl bg-surface-container/80 backdrop-blur-xl border border-border-glass flex flex-col gap-6 shadow-xl relative overflow-hidden">
+<div class="flex items-center justify-between border-b border-border-glass/40 pb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-xl">satellite_alt</span>
+<h2 class="font-headline-sm text-headline-sm font-bold text-text-primary">Direct Studio Hub</h2>
+</div>
+<span class="px-2.5 py-0.5 rounded font-label-badge text-[10px] bg-primary/10 text-primary uppercase">Lab Online</span>
+</div>
+<!-- Primary Email Box -->
+<div class="p-4 rounded-xl bg-surface-container-low border border-border-glass/60 flex flex-col gap-3 group">
+<div class="flex items-center justify-between">
+<span class="font-label-badge text-[10px] text-tertiary uppercase tracking-wider font-semibold">PRIMARY INTAKE MONITORED CONSTANTLY</span>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-ping"></span>
+</div>
+<div class="flex items-center justify-between gap-3">
+<div class="font-label-code text-body-md text-text-primary font-bold truncate">psycodestech@gmail.com</div>
+<div class="flex items-center gap-1.5 shrink-0">
+<button class="p-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-text-muted hover:text-tertiary transition-all border border-border-glass/50" id="copy-email-btn" title="Copy email address" type="button">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+</button>
+<a class="p-2 rounded-lg bg-primary-container/20 hover:bg-primary-container text-primary-fixed hover:text-white transition-all border border-primary-container/30" href="mailto:psycodestech@gmail.com?subject=Studio%20Intake%20Inquiry%20-%20PsyCodes%20Studio">
+<span class="material-symbols-outlined text-sm">outgoing_mail</span>
+</a>
+</div>
+</div>
+<div class="hidden text-xs text-tertiary font-label-code flex items-center gap-1" id="copy-notification">
+<span class="material-symbols-outlined text-xs">check_circle</span> Copied to clipboard!
+              </div>
+</div>
+<!-- Founder & Lead Architect Identity -->
+<div class="flex items-start gap-4 p-4 rounded-xl bg-surface-container-low/60 border border-border-glass/40">
+<div class="relative shrink-0">
+<img alt="Bilawal Feroze" class="w-12 h-12 rounded-xl object-cover ring-1 ring-tertiary/40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjx0zidRm7etQctxUbI32vNSDGDSRGOGAxup551A6Ay3pH2stpmJ8hyELZrCcqhG-2bpBKVjs6ZbAh1PfhVWiW_HvZdthr9AJKt6bgy4e1cBtsrNikIQweXc22NUZwUqZnaJzSXOu-uoSOeX7i0rNy1FxvpSCdMZ0IiJSG8G_J9MG1hnQMVNti2gXtM3kAQbNXlMxGYmCZ4LGumsa4xl8bnW14bwMirBTUSBmWIi2bml4dJyz1tjC-"/>
+<span class="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-tertiary rounded-full ring-2 ring-surface"></span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-sm font-bold text-text-primary">Bilawal Feroze</span>
+<span class="font-label-badge text-[11px] text-tertiary uppercase tracking-wide">Founder &amp; Principal Systems Architect</span>
+<p class="font-body-sm text-xs text-text-muted mt-1">Reviewing every intake specification with direct architectural analysis.</p>
+</div>
+</div>
+<!-- Verified Social Nodes -->
+<div class="flex flex-col gap-2.5">
+<span class="font-label-badge text-xs uppercase tracking-widest text-text-muted">Verified Studio Nodes</span>
+<!-- LinkedIn -->
+<a class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low hover:bg-surface-container-high/80 border border-border-glass/40 hover:border-primary/40 transition-all group" href="https://linkedin.com/company/psycodestudios" rel="noopener noreferrer" target="_blank">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-primary-container/20 flex items-center justify-center text-primary-fixed group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-sm">hub</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-xs font-bold text-text-primary">LinkedIn Corporate</span>
+<span class="font-label-code text-[11px] text-text-muted">linkedin.com/company/psycodestudios</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors text-sm">arrow_outward</span>
+</a>
+<!-- Instagram -->
+<a class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low hover:bg-surface-container-high/80 border border-border-glass/40 hover:border-accent-violet/40 transition-all group" href="https://instagram.com/psycodestudios" rel="noopener noreferrer" target="_blank">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-accent-violet/20 flex items-center justify-center text-accent-violet group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-sm">photo_camera</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-xs font-bold text-text-primary">Instagram Laboratory</span>
+<span class="font-label-code text-[11px] text-text-muted">@psycodestudios · Dev logs &amp; builds</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-text-muted group-hover:text-accent-violet transition-colors text-sm">arrow_outward</span>
+</a>
+<!-- X / Twitter -->
+<a class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low hover:bg-surface-container-high/80 border border-border-glass/40 hover:border-tertiary/40 transition-all group" href="https://x.com/PsyCodesAI" rel="noopener noreferrer" target="_blank">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-tertiary/20 flex items-center justify-center text-tertiary group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-sm">alternate_email</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-xs font-bold text-text-primary">X / Twitter Research Feed</span>
+<span class="font-label-code text-[11px] text-text-muted">@PsyCodesAI · Model weights &amp; notes</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-text-muted group-hover:text-tertiary transition-colors text-sm">arrow_outward</span>
+</a>
+<!-- Private Slack / Discord note -->
+<div class="p-3 rounded-xl bg-surface-container-low/40 border border-dashed border-border-glass/60 flex items-center gap-3">
+<span class="material-symbols-outlined text-text-muted text-base">forum</span>
+<span class="font-body-sm text-xs text-text-muted">Private Slack &amp; Discord war rooms deployed upon project agreement.</span>
+</div>
+</div>
+</div>
+<!-- What Happens After You Transmit (3-Step Roadmap) -->
+<div class="p-6 rounded-2xl bg-surface-container/70 backdrop-blur-xl border border-border-glass flex flex-col gap-5 shadow-xl">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">linear_scale</span>
+<h3 class="font-headline-sm text-sm font-bold text-text-primary uppercase tracking-wide">Protocol: Post-Transmission Flow</h3>
+</div>
+<div class="flex flex-col gap-4 relative">
+<div class="absolute left-3.5 top-3 bottom-3 w-px bg-gradient-to-b from-tertiary via-primary-container to-accent-violet opacity-30"></div>
+<!-- Step 1 -->
+<div class="flex gap-4 items-start relative z-10">
+<div class="w-7 h-7 rounded-full bg-surface-deep border border-tertiary/50 text-tertiary font-label-code text-xs font-bold flex items-center justify-center shrink-0 shadow-[0_0_8px_rgba(24,217,246,0.3)]">
+                  01
+                </div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-xs font-bold text-text-primary">Deep Technical Assessment</span>
+<span class="font-label-code text-[10px] text-tertiary px-1.5 py-0.2 rounded bg-tertiary/10">Hours 0–12</span>
+</div>
+<p class="font-body-sm text-xs text-text-muted leading-relaxed">Bilawal Feroze audits specifications, architectural feasibility, dependency risks, and system bounds.</p>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="flex gap-4 items-start relative z-10">
+<div class="w-7 h-7 rounded-full bg-surface-deep border border-primary/50 text-primary font-label-code text-xs font-bold flex items-center justify-center shrink-0">
+                  02
+                </div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-xs font-bold text-text-primary">Milestone Architecture &amp; Fixed Scope</span>
+<span class="font-label-code text-[10px] text-primary px-1.5 py-0.2 rounded bg-primary/10">Hours 12–24</span>
+</div>
+<p class="font-body-sm text-xs text-text-muted leading-relaxed">You receive a deterministic engineering roadmap, sprint breakdown, and fixed deliverables schedule with zero ambiguity.</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex gap-4 items-start relative z-10">
+<div class="w-7 h-7 rounded-full bg-surface-deep border border-accent-violet/50 text-accent-violet font-label-code text-xs font-bold flex items-center justify-center shrink-0">
+                  03
+                </div>
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-xs font-bold text-text-primary">Kickoff &amp; Provisioning</span>
+<span class="font-label-code text-[10px] text-accent-violet px-1.5 py-0.2 rounded bg-accent-violet/10">Hour 48</span>
+</div>
+<p class="font-body-sm text-xs text-text-muted leading-relaxed">Bilateral NDA executed, Git repositories initialized, CI/CD deployed, and first sprint velocity ignited.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Studio Live Radar / Karachi Status -->
+<div class="p-5 rounded-2xl bg-surface-container/60 backdrop-blur-md border border-border-glass flex items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-surface-deep border border-tertiary/30 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-lg">schedule</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-badge text-[10px] text-text-muted uppercase">HQ Engineering Clock</span>
+<span class="font-label-code text-sm font-bold text-text-primary" id="karachi-clock">--:--:-- PKT (UTC+5)</span>
+</div>
+</div>
+<div class="flex items-center gap-2 bg-surface-deep px-3 py-1.5 rounded-lg border border-border-glass">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="font-label-badge text-[10px] text-tertiary uppercase">Active Dispatch</span>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: INTERACTIVE PROJECT DOSSIER TERMINAL (7 COLS) -->
+<div class="lg:col-span-7 flex flex-col gap-4" id="dossier-terminal">
+<div class="rounded-2xl bg-surface-container/90 backdrop-blur-2xl border border-border-glass shadow-2xl overflow-hidden relative">
+<!-- Terminal Acrylic Topbar -->
+<div class="px-6 py-4 bg-surface-deep/90 border-b border-border-glass flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-error/70"></span>
+<span class="w-3 h-3 rounded-full bg-primary/70"></span>
+<span class="w-3 h-3 rounded-full bg-tertiary/70"></span>
+</div>
+<div class="h-4 w-px bg-border-glass"></div>
+<span class="font-label-code text-xs text-text-primary font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-xs text-tertiary">terminal</span>
+                  PROJECT SPECIFICATION DOSSIER DIRECT PIPELINE
+                </span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="hidden sm:inline font-label-badge text-[10px] text-tertiary uppercase tracking-wider">SYSTEM READY</span>
+</div>
+</div>
+<!-- Form Payload Area -->
+<form class="p-6 md:p-8 flex flex-col gap-6" id="project-dossier-form" onsubmit="event.preventDefault(); submitDossier();">
+<!-- Row 1: Name and Email -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<div class="flex flex-col gap-2">
+<label class="font-label-code text-xs text-text-primary flex items-center justify-between" for="client-name">
+<span>01. FULL NAME / ORGANIZATION *</span>
+<span class="text-tertiary text-[11px] font-normal">REQUIRED</span>
+</label>
+<input class="w-full px-4 py-3 rounded-xl bg-surface-deep border border-outline-variant/40 focus:border-tertiary focus:ring-1 focus:ring-tertiary text-text-primary placeholder:text-text-muted/40 font-body-md text-sm outline-none transition-all" id="client-name" placeholder="e.g. Tariq Vance Obsidian Dynamics" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-code text-xs text-text-primary flex items-center justify-between" for="client-email">
+<span>02. CORPORATE EMAIL *</span>
+<span class="text-tertiary text-[11px] font-normal">REQUIRED</span>
+</label>
+<input class="w-full px-4 py-3 rounded-xl bg-surface-deep border border-outline-variant/40 focus:border-tertiary focus:ring-1 focus:ring-tertiary text-text-primary placeholder:text-text-muted/40 font-body-md text-sm outline-none transition-all" id="client-email" placeholder="e.g. tariq@obsidiandynamics.com" required="" type="email"/>
+</div>
+</div>
+<!-- Row 2: Architectural Discipline Selection (Pills) -->
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<label class="font-label-code text-xs text-text-primary font-bold">
+                    03. PRIMARY DISCIPLINE / ARCHITECTURAL NEED *
+                  </label>
+<span class="font-label-badge text-[10px] text-text-muted">SELECT APPLICABLE DOMAIN</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5" id="discipline-group">
+<!-- Discipline Pill 1 -->
+<label class="relative flex items-center gap-2.5 p-3 rounded-xl bg-surface-deep/80 border border-border-glass hover:border-tertiary/50 cursor-pointer transition-all discipline-pill">
+<input checked="" class="peer sr-only" name="discipline" type="radio" value="AI &amp; Autonomous Workflows"/>
+<div class="w-3.5 h-3.5 rounded-full border border-outline-variant flex items-center justify-center peer-checked:border-tertiary peer-checked:bg-tertiary/20">
+<div class="w-1.5 h-1.5 rounded-full bg-transparent peer-checked:bg-tertiary"></div>
+</div>
+<span class="font-label-code text-xs text-text-primary peer-checked:text-tertiary">AI &amp; Autonomous Workflows</span>
+</label>
+<!-- Discipline Pill 2 -->
+<label class="relative flex items-center gap-2.5 p-3 rounded-xl bg-surface-deep/80 border border-border-glass hover:border-tertiary/50 cursor-pointer transition-all discipline-pill">
+<input class="peer sr-only" name="discipline" type="radio" value="Unity Game Development"/>
+<div class="w-3.5 h-3.5 rounded-full border border-outline-variant flex items-center justify-center peer-checked:border-tertiary peer-checked:bg-tertiary/20">
+<div class="w-1.5 h-1.5 rounded-full bg-transparent peer-checked:bg-tertiary"></div>
+</div>
+<span class="font-label-code text-xs text-text-primary peer-checked:text-tertiary">Unity Game Development</span>
+</label>
+<!-- Discipline Pill 3 -->
+<label class="relative flex items-center gap-2.5 p-3 rounded-xl bg-surface-deep/80 border border-border-glass hover:border-tertiary/50 cursor-pointer transition-all discipline-pill">
+<input class="peer sr-only" name="discipline" type="radio" value="Cross-Platform Mobile (Flutter)"/>
+<div class="w-3.5 h-3.5 rounded-full border border-outline-variant flex items-center justify-center peer-checked:border-tertiary peer-checked:bg-tertiary/20">
+<div class="w-1.5 h-1.5 rounded-full bg-transparent peer-checked:bg-tertiary"></div>
+</div>
+<span class="font-label-code text-xs text-text-primary peer-checked:text-tertiary">Mobile Apps (Flutter)</span>
+</label>
+<!-- Discipline Pill 4 -->
+<label class="relative flex items-center gap-2.5 p-3 rounded-xl bg-surface-deep/80 border border-border-glass hover:border-tertiary/50 cursor-pointer transition-all discipline-pill">
+<input class="peer sr-only" name="discipline" type="radio" value="SaaS &amp; Web Platforms (Next.js/React)"/>
+<div class="w-3.5 h-3.5 rounded-full border border-outline-variant flex items-center justify-center peer-checked:border-tertiary peer-checked:bg-tertiary/20">
+<div class="w-1.5 h-1.5 rounded-full bg-transparent peer-checked:bg-tertiary"></div>
+</div>
+<span class="font-label-code text-xs text-text-primary peer-checked:text-tertiary">SaaS / Web (Next.js/React)</span>
+</label>
+<!-- Discipline Pill 5 -->
+<label class="relative flex items-center gap-2.5 p-3 rounded-xl bg-surface-deep/80 border border-border-glass hover:border-tertiary/50 cursor-pointer transition-all discipline-pill">
+<input class="peer sr-only" name="discipline" type="radio" value="UI/UX &amp; Design Systems"/>
+<div class="w-3.5 h-3.5 rounded-full border border-outline-variant flex items-center justify-center peer-checked:border-tertiary peer-checked:bg-tertiary/20">
+<div class="w-1.5 h-1.5 rounded-full bg-transparent peer-checked:bg-tertiary"></div>
+</div>
+<span class="font-label-code text-xs text-text-primary peer-checked:text-tertiary">UI/UX &amp; Design Systems</span>
+</label>
+<!-- Discipline Pill 6 -->
+<label class="relative flex items-center gap-2.5 p-3 rounded-xl bg-surface-deep/80 border border-border-glass hover:border-tertiary/50 cursor-pointer transition-all discipline-pill">
+<input class="peer sr-only" name="discipline" type="radio" value="Custom System Modernization"/>
+<div class="w-3.5 h-3.5 rounded-full border border-outline-variant flex items-center justify-center peer-checked:border-tertiary peer-checked:bg-tertiary/20">
+<div class="w-1.5 h-1.5 rounded-full bg-transparent peer-checked:bg-tertiary"></div>
+</div>
+<span class="font-label-code text-xs text-text-primary peer-checked:text-tertiary">System Modernization</span>
+</label>
+</div>
+</div>
+<!-- Row 3: Target Timeline & Investment Tier -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<div class="flex flex-col gap-2">
+<label class="font-label-code text-xs text-text-primary" for="project-timeline">
+                    04. TARGET TIMELINE &amp; ENGAGEMENT MODEL
+                  </label>
+<select class="w-full px-4 py-3 rounded-xl bg-surface-deep border border-outline-variant/40 focus:border-tertiary focus:ring-1 focus:ring-tertiary text-text-primary font-body-md text-sm outline-none transition-all" id="project-timeline">
+<option value="Immediate Sprint (2–4 Weeks)">Immediate Sprint (2–4 Weeks)</option>
+<option selected="" value="Production MVP (4–8 Weeks)">Production MVP (4–8 Weeks)</option>
+<option value="Dedicated Studio Retainer">Dedicated Studio Retainer</option>
+<option value="Game Prototyping Lab">Game Prototyping Lab</option>
+<option value="Exploratory / Feasibility Consultation">Exploratory / Feasibility Consultation</option>
+</select>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-code text-xs text-text-primary" for="project-budget">
+                    05. PROJECTED INVESTMENT TIER
+                  </label>
+<select class="w-full px-4 py-3 rounded-xl bg-surface-deep border border-outline-variant/40 focus:border-tertiary focus:ring-1 focus:ring-tertiary text-text-primary font-body-md text-sm outline-none transition-all" id="project-budget">
+<option selected="" value="International Tier ($2,500 – $7,500 USD)">International Tier ($2,500 – $7,500 USD)</option>
+<option value="Enterprise Tier ($7,500+ USD)">Enterprise Tier ($7,500+ USD)</option>
+<option value="PKR 150,000 – 500,000">PKR 150,000 – 500,000 (Domestic)</option>
+<option value="PKR 500,000 – 1,500,000">PKR 500,000 – 1,500,000 (Domestic)</option>
+<option value="Prefer to scope together">Prefer to scope together</option>
+</select>
+</div>
+</div>
+<!-- Row 4: Preferred Communication Node -->
+<div class="flex flex-col gap-2">
+<label class="font-label-code text-xs text-text-primary font-bold">
+                  06. PREFERRED COMMUNICATION CHANNEL
+                </label>
+<div class="flex flex-wrap gap-2">
+<label class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-deep border border-border-glass hover:border-tertiary cursor-pointer transition-all">
+<input checked="" class="peer text-tertiary" name="comm_channel" type="radio" value="Direct Email"/>
+<span class="font-label-code text-xs text-text-primary">Direct Email</span>
+</label>
+<label class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-deep border border-border-glass hover:border-tertiary cursor-pointer transition-all">
+<input class="peer text-tertiary" name="comm_channel" type="radio" value="LinkedIn Message"/>
+<span class="font-label-code text-xs text-text-primary">LinkedIn</span>
+</label>
+<label class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-deep border border-border-glass hover:border-tertiary cursor-pointer transition-all">
+<input class="peer text-tertiary" name="comm_channel" type="radio" value="Instagram DM"/>
+<span class="font-label-code text-xs text-text-primary">Instagram DM</span>
+</label>
+<label class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-deep border border-border-glass hover:border-tertiary cursor-pointer transition-all">
+<input class="peer text-tertiary" name="comm_channel" type="radio" value="Private Slack / Discord"/>
+<span class="font-label-code text-xs text-text-primary">Slack / Discord</span>
+</label>
+<label class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-deep border border-border-glass hover:border-tertiary cursor-pointer transition-all">
+<input class="peer text-tertiary" name="comm_channel" type="radio" value="WhatsApp / Signal"/>
+<span class="font-label-code text-xs text-text-primary">WhatsApp / Signal</span>
+</label>
+</div>
+</div>
+<!-- Row 5: Detailed Specifications Textarea -->
+<div class="flex flex-col gap-2">
+<label class="font-label-code text-xs text-text-primary flex items-center justify-between" for="project-specs">
+<span>07. ARCHITECTURAL OBJECTIVES &amp; SYSTEM SCOPE *</span>
+<span class="text-text-muted text-[11px]">Markdown accepted</span>
+</label>
+<div class="relative">
+<textarea class="w-full px-4 py-3 rounded-xl bg-surface-deep border border-outline-variant/40 focus:border-tertiary focus:ring-1 focus:ring-tertiary text-text-primary placeholder:text-text-muted/40 font-body-md text-sm outline-none transition-all resize-y" id="project-specs" placeholder="Describe target users, technical constraints, required third-party APIs (e.g. Stripe, OpenAI, Pinecone), game mechanics, or links to existing Git repos..." required="" rows="5"></textarea>
+</div>
+<div class="flex items-center gap-2 text-[11px] font-label-code text-text-muted">
+<span class="text-tertiary font-bold">HINT:</span> Mention if you already possess architectural diagrams, Figma components, or existing codebases.
+                </div>
+</div>
+<!-- Row 6: NDA Checkbox -->
+<label class="flex items-start gap-3 p-3.5 rounded-xl bg-surface-deep/60 border border-border-glass/60 cursor-pointer hover:border-tertiary/40 transition-all">
+<input class="mt-1 rounded bg-surface border-outline-variant text-primary focus:ring-0 w-4 h-4" id="nda-request" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-headline-sm text-xs font-bold text-text-primary">Bilateral NDA Enforcement</span>
+<span class="font-body-sm text-xs text-text-muted">Transmit a mutual non-disclosure agreement prior to exchanging confidential proprietary repository links or business logic.</span>
+</div>
+</label>
+<!-- Row 7: Action & Submission -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
+<div class="flex items-center gap-2 text-xs font-label-code text-text-muted">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>Payload routed directly to Bilawal Feroze</span>
+</div>
+<button class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-tertiary-container via-primary-container to-accent-violet text-text-primary font-button-text text-button-text font-bold shadow-[0_0_24px_rgba(24,217,246,0.35)] hover:shadow-[0_0_36px_rgba(24,217,246,0.55)] transition-all flex items-center justify-center gap-2 transform hover:-translate-y-0.5" id="submit-btn" type="submit">
+<span>Transmit Project Dossier to Studio Inbox</span>
+<span class="material-symbols-outlined text-lg">send</span>
+</button>
+</div>
+</form>
+<!-- TRANSMISSION FEEDBACK MODAL / DRAWER -->
+<div class="hidden absolute inset-0 bg-surface-deep/95 backdrop-blur-2xl z-30 p-8 flex flex-col justify-between overflow-y-auto border border-border-glass" id="submission-drawer">
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between border-b border-border-glass pb-4">
+<div class="flex items-center gap-2 text-tertiary">
+<span class="material-symbols-outlined text-2xl">verified</span>
+<span class="font-headline-sm text-base font-bold text-text-primary">Dossier Encrypted &amp; Ready For Dispatch</span>
+</div>
+<button class="p-1 rounded bg-surface-container text-text-muted hover:text-white border border-border-glass" onclick="closeSubmissionDrawer()" type="button">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+</div>
+<p class="font-body-md text-sm text-text-muted">
+                  Your project specifications have been serialized into our direct intake format. You can launch your pre-formatted mail client instantly or copy the raw specification markdown below to deliver through private channel (LinkedIn, WhatsApp, or Slack).
+                </p>
+<!-- Serialized Preview Area -->
+<div class="p-4 rounded-xl bg-surface-container font-label-code text-xs text-text-primary border border-border-glass max-h-52 overflow-y-auto" id="serialized-output">
+<!-- Output populated dynamically -->
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-center justify-end gap-3 pt-4 border-t border-border-glass">
+<button class="w-full sm:w-auto px-4 py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high border border-border-glass text-xs font-label-code text-text-primary flex items-center justify-center gap-2" id="copy-spec-btn" onclick="copyDossierText()" type="button">
+<span class="material-symbols-outlined text-sm">copy_all</span>
+<span>Copy Raw Specification</span>
+</button>
+<a class="w-full sm:w-auto px-6 py-2.5 rounded-lg bg-primary-container text-white font-button-text text-button-text font-bold shadow-[0_0_16px_rgba(37,139,255,0.4)] flex items-center justify-center gap-2" href="#" id="mailto-launch-btn" target="_blank">
+<span>Open Direct Mail Client</span>
+<span class="material-symbols-outlined text-sm">outgoing_mail</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: STUDIO OPERATIONAL PROTOCOLS & SECURITY GUARANTEES -->
+<section class="flex flex-col gap-8 pt-12 lg:pt-16">
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2 text-tertiary">
+<span class="material-symbols-outlined text-sm">shield</span>
+<span class="font-label-badge text-label-badge uppercase tracking-wider">ASSURANCE SPECIFICATIONS</span>
+</div>
+<h2 class="font-headline-md text-headline-md font-bold text-text-primary">
+            Studio Operational Protocols &amp; Guarantees
+          </h2>
+<p class="font-body-md text-body-md text-text-muted max-w-2xl">
+            We operate with the precision and transparency of an elite lab. Every engagement is bound by clear, enforceable architectural commitments.
+          </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="p-6 rounded-2xl bg-surface-container/70 backdrop-blur-md border border-border-glass hover:border-tertiary/40 transition-all flex flex-col gap-4 group">
+<div class="w-12 h-12 rounded-xl bg-tertiary/10 border border-tertiary/30 text-tertiary flex items-center justify-center group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl">copyright</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-badge text-[10px] text-tertiary uppercase">IP ENFORCEMENT</span>
+<h3 class="font-headline-sm text-base font-bold text-text-primary">Full IP Ownership Day Zero</h3>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted leading-relaxed">
+              Every Git commit, shader, database schema, AI orchestration pipeline, and design token belongs 100% to your enterprise upon milestone clearance. No hostage code.
+            </p>
+</div>
+<!-- Card 2 -->
+<div class="p-6 rounded-2xl bg-surface-container/70 backdrop-blur-md border border-border-glass hover:border-primary/40 transition-all flex flex-col gap-4 group">
+<div class="w-12 h-12 rounded-xl bg-primary/10 border border-primary/30 text-primary flex items-center justify-center group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl">deployed_code</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-badge text-[10px] text-primary uppercase">RADICAL TRANSPARENCY</span>
+<h3 class="font-headline-sm text-base font-bold text-text-primary">Deterministic Bi-Weekly Demos</h3>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted leading-relaxed">
+              Zero phantom engineering. Staging URLs, interactive Unity WebGL/APK builds, and milestone screen walk-throughs delivered continuously without excuses.
+            </p>
+</div>
+<!-- Card 3 -->
+<div class="p-6 rounded-2xl bg-surface-container/70 backdrop-blur-md border border-border-glass hover:border-accent-violet/40 transition-all flex flex-col gap-4 group">
+<div class="w-12 h-12 rounded-xl bg-accent-violet/10 border border-accent-violet/30 text-accent-violet flex items-center justify-center group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl">verified</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-badge text-[10px] text-accent-violet uppercase">RUNTIME ASSURANCE</span>
+<h3 class="font-headline-sm text-base font-bold text-text-primary">30-Day Stability Warranty</h3>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted leading-relaxed">
+              Every production deliverable comes with 30 days of complimentary engineering remediation for unexpected regressions, platform patches, or runtime anomalies post-launch.
+            </p>
+</div>
+</div>
+</section>
+<!-- SECTION 4: STUDIO GEOGRAPHY & GLOBAL COLLABORATION MAP CARD -->
+<section class="rounded-3xl bg-surface-container/80 backdrop-blur-xl border border-border-glass p-8 md:p-12 relative overflow-hidden flex flex-col lg:flex-row items-center gap-10">
+<!-- Visual Map Graphic / Node representation -->
+<div class="w-full lg:w-1/2 flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary animate-pulse shadow-[0_0_10px_#18d9f6]"></span>
+<span class="font-label-badge text-label-badge text-tertiary uppercase">CENTRAL ARCHITECTURE NODE</span>
+</div>
+<h2 class="font-headline-lg text-2xl md:text-3xl font-bold text-text-primary">
+            Karachi, Pakistan. <br/>
+<span class="text-tertiary">Connected Globally.</span>
+</h2>
+<p class="font-body-md text-text-muted leading-relaxed">
+            Operating from Karachi, Pakistan (PKT UTC+5), seamlessly collaborating across North America, EMEA, and APAC time zones through structured asynchronous hand-offs and focused synchronous architecture meetings.
+          </p>
+<!-- Timezone Convergence Chips -->
+<div class="flex flex-wrap gap-2 pt-2">
+<div class="px-3 py-1.5 rounded-lg bg-surface-deep border border-border-glass font-label-code text-xs text-text-primary flex items-center gap-2">
+<span class="text-tertiary font-bold">US EST:</span> -10 Hours Overlap
+            </div>
+<div class="px-3 py-1.5 rounded-lg bg-surface-deep border border-border-glass font-label-code text-xs text-text-primary flex items-center gap-2">
+<span class="text-primary font-bold">UK / GMT:</span> -5 Hours High Sync
+            </div>
+<div class="px-3 py-1.5 rounded-lg bg-surface-deep border border-border-glass font-label-code text-xs text-text-primary flex items-center gap-2">
+<span class="text-accent-violet font-bold">UAE / GST:</span> -1 Hour Real-Time
+            </div>
+</div>
+</div>
+<!-- Inline Visual SVG: Karachi Orbital Grid & Node Visualization -->
+<div class="w-full lg:w-1/2 flex items-center justify-center relative">
+<div class="relative w-full max-w-md aspect-video rounded-2xl bg-surface-deep/90 border border-border-glass p-6 flex flex-col justify-between overflow-hidden shadow-2xl">
+<!-- Background Hairstyle Radar Grid -->
+<svg class="absolute inset-0 w-full h-full opacity-20 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="30" id="grid-pattern" patternunits="userSpaceOnUse" width="30">
+<path class="text-tertiary" d="M 30 0 L 0 0 0 30" fill="none" stroke="currentColor" stroke-width="0.5"></path>
+</pattern>
+</defs>
+<rect fill="url(#grid-pattern)" height="100%" width="100%"></rect>
+<!-- Target circles -->
+<circle class="text-tertiary" cx="50%" cy="50%" fill="none" r="40" stroke="currentColor" stroke-width="1"></circle>
+<circle class="text-primary" cx="50%" cy="50%" fill="none" r="80" stroke="currentColor" stroke-dasharray="4 4" stroke-width="0.7"></circle>
+<circle class="text-accent-violet" cx="50%" cy="50%" fill="none" r="120" stroke="currentColor" stroke-width="0.5"></circle>
+</svg>
+<!-- Card Content Overlays -->
+<div class="flex items-center justify-between relative z-10">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-sm">radar</span>
+<span class="font-label-code text-xs text-text-primary font-bold">PSYCODES_CORE_NODE</span>
+</div>
+<span class="font-label-badge text-[10px] text-tertiary bg-tertiary/10 px-2 py-0.5 rounded">LAT 24.8607° N LON 67.0011° E</span>
+</div>
+<!-- Central Hub Node Marker -->
+<div class="flex flex-col items-center justify-center my-6 relative z-10">
+<div class="relative flex items-center justify-center">
+<span class="absolute w-12 h-12 rounded-full bg-tertiary/20 animate-ping"></span>
+<div class="w-10 h-10 rounded-full bg-gradient-to-tr from-primary-container to-tertiary flex items-center justify-center text-white shadow-[0_0_20px_#18d9f6]">
+<span class="material-symbols-outlined text-lg">terminal</span>
+</div>
+</div>
+<span class="font-headline-sm text-sm font-bold text-text-primary mt-3">PsyCodes Studio HQ</span>
+<span class="font-label-code text-xs text-text-muted">Direct Engineering Infrastructure</span>
+</div>
+<div class="flex items-center justify-between text-xs font-label-code text-text-muted relative z-10 border-t border-border-glass/60 pt-3">
+<span class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span> Direct Pipeline Ready
+              </span>
+<a class="text-tertiary hover:underline" href="mailto:psycodestech@gmail.com">psycodestech@gmail.com</a>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<!-- CLIENT MICRO-INTERACTIONS SCRIPT -->
+<script>
+  1. Live Karachi Time Clock (UTC+5)
+  function updateKarachiClock() {
+    const clockEl = document.getElementById('karachi-clock');
+    if (!clockEl) return;
+    try {
+      const now = new Date();
+      const options = {
+        timeZone: 'Asia/Karachi',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+      };
+      const timeFormatter = new Intl.DateTimeFormat('en-GB', options);
+      clockEl.textContent = `${timeFormatter.format(now)} PKT (UTC+5)`;
+    } catch (e) {
+      clockEl.textContent = 'UTC+5 Active';
+    }
+  }
+  updateKarachiClock();
+  setInterval(updateKarachiClock, 1000);
+
+  2. Email Copy Button Functionality
+  const copyBtn = document.getElementById('copy-email-btn');
+  const notification = document.getElementById('copy-notification');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', () => {
+      const email = 'psycodestech@gmail.com';
+      navigator.clipboard.writeText(email).then(() => {
+        if (notification) {
+          notification.classList.remove('hidden');
+          setTimeout(() => {
+            notification.classList.add('hidden');
+          }, 3000);
+        }
+      });
+    });
+  }
+
+  3. Dynamic Dossier Terminal Submission Handler
+  function submitDossier() {
+    const name = document.getElementById('client-name').value.trim();
+    const email = document.getElementById('client-email').value.trim();
+    
+    Checked Discipline
+    const disciplineInput = document.querySelector('input[name="discipline"]:checked');
+    const discipline = disciplineInput ? disciplineInput.value : 'General Software Specification';
+
+    const timeline = document.getElementById('project-timeline').value;
+    const budget = document.getElementById('project-budget').value;
+    
+    const commInput = document.querySelector('input[name="comm_channel"]:checked');
+    const commChannel = commInput ? commInput.value : 'Direct Email';
+
+    const specs = document.getElementById('project-specs').value.trim();
+    const nda = document.getElementById('nda-request').checked ? 'YES (Mutual NDA requested prior to repo access)' : 'Standard confidentiality acceptable';
+
+    Build Formatted Output Markdown
+    const dossierMarkdown = 
+`PSYCODES STUDIO — PROJECT SPECIFICATION TRANSMISSION
+-----------------------------------------------------------
+CLIENT IDENTITY     : ${name}
+CONTACT VECTOR      : ${email}
+PRIMARY DISCIPLINE  : ${discipline}
+TARGET TIMELINE     : ${timeline}
+PROJECTED BUDGET    : ${budget}
+PREFERRED CHANNEL   : ${commChannel}
+NDA REQUIREMENT     : ${nda}
+-----------------------------------------------------------
+ARCHITECTURAL SPECIFICATIONS & SCOPE:
+${specs}
+-----------------------------------------------------------
+DISPATCHED VIA PSYCODES STUDIO TRANSMISSION PORTAL
+TIMESTAMP: ${new Date().toISOString()}`;
+
+    Render in feedback drawer
+    const outputEl = document.getElementById('serialized-output');
+    if (outputEl) {
+      outputEl.textContent = dossierMarkdown;
+    }
+
+    Prepare Mailto Link
+    const mailtoBtn = document.getElementById('mailto-launch-btn');
+    if (mailtoBtn) {
+      const subject = encodeURIComponent(`[PROJECT INTAKE] ${discipline} — ${name}`);
+      const body = encodeURIComponent(dossierMarkdown);
+      mailtoBtn.href = `mailto:psycodestech@gmail.com?subject=${subject}&body=${body}`;
+    }
+
+    Show Drawer
+    const drawer = document.getElementById('submission-drawer');
+    if (drawer) {
+      drawer.classList.remove('hidden');
+    }
+  }
+
+  function closeSubmissionDrawer() {
+    const drawer = document.getElementById('submission-drawer');
+    if (drawer) {
+      drawer.classList.add('hidden');
+    }
+  }
+
+  function copyDossierText() {
+    const outputEl = document.getElementById('serialized-output');
+    if (!outputEl) return;
+    navigator.clipboard.writeText(outputEl.textContent).then(() => {
+      const copyBtn = document.getElementById('copy-spec-btn');
+      if (copyBtn) {
+        const origHtml = copyBtn.innerHTML;
+        copyBtn.innerHTML = '<span class="material-symbols-outlined text-sm text-tertiary">check</span><span>Copied to Clipboard!</span>';
+        setTimeout(() => {
+          copyBtn.innerHTML = origHtml;
+        }, 2500);
+      }
+    });
+  }
+</script></main>
+<!-- MODAL SPEC INSPECTOR -->
+<div class="fixed inset-0 z-50 hidden bg-surface-deep/80 backdrop-blur-xl flex items-center justify-center p-4 border border-border-glass" id="spec-modal">
+<div class="w-full max-w-2xl rounded-2xl bg-surface-container p-6 border border-border-glass shadow-2xl relative max-h-[90vh] overflow-y-auto">
+<button class="absolute top-4 right-4 p-1.5 rounded-lg bg-surface-deep text-text-muted hover:text-white border border-border-glass" id="close-spec-modal">
+<span class="material-symbols-outlined text-base">close</span>
+</button>
+<div class="flex items-center gap-2 mb-1 text-tertiary">
+<span class="material-symbols-outlined text-sm">memory</span>
+<span class="font-label-badge text-xs uppercase">ARCHITECTURE SPECIFICATION DOSSIER</span>
+</div>
+<h3 class="font-headline-md text-xl font-bold text-text-primary mb-2" id="modal-title">Technical Specification</h3>
+<p class="text-xs text-text-muted mb-4" id="modal-desc">In-depth architecture breakdown and engineering parameters.</p>
+<div class="p-3 rounded-xl bg-surface-deep mb-4 font-label-code text-xs border border-border-glass">
+<div class="text-tertiary mb-1">TECHNICAL PIPELINE STACK</div>
+<div class="text-text-muted" id="modal-stack">Python 3.11, LangChain, Pinecone Vector DB, Docker</div>
+</div>
+<div class="mb-6">
+<h4 class="text-xs font-bold text-text-primary mb-2 uppercase font-label-code">Deliverable Scope Checklist:</h4>
+<ul class="flex flex-col gap-2 text-xs text-text-muted" id="modal-checklist"></ul>
+</div>
+<div class="flex justify-end gap-3 pt-3 border-t border-border-glass">
+<button class="px-4 py-2 rounded-lg bg-surface-container-high text-xs font-semibold text-text-primary hover:bg-surface-deep border border-border-glass" id="modal-close-btn">Close Inspector</button>
+<a class="px-4 py-2 rounded-lg bg-primary-container text-white text-xs font-bold shadow-[0_0_12px_rgba(37,139,255,0.4)]" href="#order" onclick="document.getElementById('spec-modal').classList.add('hidden')">Commission This Spec →</a>
+</div>
+</div>
+</div>
+<!-- FOOTER -->
+<footer class="w-full bg-surface-container-lowest text-on-surface-variant shadow-[0_-1px_12px_rgba(0,0,0,0.3)] mt-margin border-t border-border-glass">
+  <div class="w-full px-gutter lg:px-margin py-margin">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl">
+      <!-- Col 1: Brand & Tagline -->
+      <div class="flex flex-col gap-space-md">
+        <div class="flex items-center gap-space-sm">
+          <img alt="PsyCodes Studio Logo" class="h-7 w-auto object-contain" src="assets/logo/Psycodes_logo_trans.png" />
+          <span class="font-headline-sm text-headline-sm font-bold text-text-primary tracking-tight">PsyCodes Studio</span>
+        </div>
+        <p class="font-body-sm text-body-sm text-text-muted leading-relaxed">
+          Architecting elite AI systems, hyper-performing web platforms, and independent interactive entertainment. Built with mathematical precision.
+        </p>
+        <div class="flex items-center gap-space-xs">
+          <span class="inline-block w-2 h-2 rounded-full bg-tertiary shadow-[0_0_8px_#18d9f6]"></span>
+          <span class="font-label-badge text-label-badge text-tertiary uppercase tracking-wider">CODE. CREATE. AUTOMATE.</span>
+        </div>
+      </div>
+
+      <!-- Col 2: Quick Nav -->
+      <div class="flex flex-col gap-space-md">
+        <span class="font-headline-sm text-headline-sm font-semibold text-text-primary">Quick Nav</span>
+        <ul class="flex flex-col gap-space-sm font-body-sm text-body-sm">
+          <li><a class="text-on-surface-variant hover:text-tertiary transition-colors" href="index.html">Home</a></li>
+          <li><a class="text-on-surface-variant hover:text-tertiary transition-colors" href="products.html">Products</a></li>
+          <li><a class="text-on-surface-variant hover:text-tertiary transition-colors" href="services.html">Services</a></li>
+          <li><a class="text-on-surface-variant hover:text-tertiary transition-colors" href="play-games.html">Play Games</a></li>
+          <li><a class="text-on-surface-variant hover:text-tertiary transition-colors" href="about.html">About</a></li>
+          <li><a class="text-on-surface-variant hover:text-tertiary transition-colors" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Studio Credentials -->
+      <div class="flex flex-col gap-space-md">
+        <span class="font-headline-sm text-headline-sm font-semibold text-text-primary">Studio Credentials</span>
+        <div class="flex flex-col gap-space-xs font-body-sm text-body-sm text-text-muted">
+          <div class="flex items-center gap-space-xs">
+            <span class="material-symbols-outlined text-[16px] text-primary">person</span>
+            <span>Founded by <strong class="text-text-primary font-medium">Bilawal Feroze</strong></span>
+          </div>
+          <div class="flex items-center gap-space-xs">
+            <span class="material-symbols-outlined text-[16px] text-primary">location_on</span>
+            <span>Karachi, Pakistan</span>
+          </div>
+          <div class="flex items-center gap-space-xs">
+            <span class="material-symbols-outlined text-[16px] text-primary">calendar_today</span>
+            <span>Est. 2026</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Col 4: Connect -->
+      <div class="flex flex-col gap-space-md">
+        <span class="font-headline-sm text-headline-sm font-semibold text-text-primary">Connect</span>
+        <div class="flex flex-col gap-space-sm font-body-sm text-body-sm">
+          <a class="flex items-center gap-space-xs text-on-surface-variant hover:text-tertiary transition-colors" href="mailto:psycodestech@gmail.com">
+            <span class="material-symbols-outlined text-[16px]">mail</span>
+            <span class="font-label-code text-label-code">psycodestech@gmail.com</span>
+          </a>
+          <a class="flex items-center gap-space-xs text-on-surface-variant hover:text-tertiary transition-colors" href="https://linkedin.com/in/bilawalferoze" target="_blank" rel="noreferrer">
+            <span class="material-symbols-outlined text-[16px]">link</span>
+            <span>LinkedIn: <span class="text-text-primary">bilawalferoze</span></span>
+          </a>
+          <a class="flex items-center gap-space-xs text-on-surface-variant hover:text-tertiary transition-colors" href="https://instagram.com/psycodestudio" target="_blank" rel="noreferrer">
+            <span class="material-symbols-outlined text-[16px]">tag</span>
+            <span>Instagram: <span class="text-text-primary">@psycodestudio</span></span>
+          </a>
+          <a class="flex items-center gap-space-xs text-on-surface-variant hover:text-tertiary transition-colors" href="https://github.com/bilawalferoze" target="_blank" rel="noreferrer">
+            <span class="material-symbols-outlined text-[16px]">code</span>
+            <span>GitHub: <span class="text-text-primary">@bilawalferoze</span></span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="mt-space-xl pt-space-lg border-t border-border-glass flex flex-col md:flex-row items-center justify-between gap-space-md font-body-sm text-body-sm text-text-muted">
+      <p>© 2026 PsyCodes Studio. All computational rights reserved.</p>
+      <p class="font-label-badge text-label-badge uppercase text-outline">Code. Create. Automate.</p>
+    </div>
+  </div>
+</footer>
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu) menu.classList.toggle('hidden');
+  }
+</script>
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu) menu.classList.toggle('hidden');
+  }
+</script>
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu) menu.classList.toggle('hidden');
+  }
+</script>
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu) menu.classList.toggle('hidden');
+  }
+</script>
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu) menu.classList.toggle('hidden');
+  }
+</script>
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu) menu.classList.toggle('hidden');
+  }
+</script>
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu) menu.classList.toggle('hidden');
+  }
+</script>
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu) menu.classList.toggle('hidden');
+  }
+</script>
+</body></html>

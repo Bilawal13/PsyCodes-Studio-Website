@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;family=Sora:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>html,body{margin:0;padding:0;body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "glow-cyan": "rgba(18, 216, 245, 0.25)", "outline-variant": "#414754", "on-secondary-fixed": "#2a0053", "inverse-surface": "#dde1fc", "on-primary-container": "#002956", "on-surface": "#dde1fc", "surface-glass": "rgba(11, 21, 48, 0.65)", "surface-container-highest": "#2f3449", "secondary-fixed": "#efdbff", "on-error": "#690005", "on-primary-fixed": "#001b3d", "surface-deep": "#0B1530", "surface-tint": "#a8c8ff", "on-surface-variant": "#c0c6d6", "glow-purple": "rgba(135, 59, 218, 0.25)", "background": "#0d1225", "surface-container-high": "#24293d", "on-error-container": "#ffdad6", "on-tertiary-container": "#002f36", "tertiary-fixed-dim": "#18d9f6", "accent-violet": "#A855F7", "secondary": "#dab9ff", "on-secondary-container": "#d0a7ff", "surface-bright": "#33384d", "tertiary-fixed": "#a4eeff", "primary-fixed-dim": "#a8c8ff", "text-muted": "#A5B1CC", "border-glass": "rgba(37, 139, 255, 0.18)", "secondary-fixed-dim": "#dab9ff", "outline": "#8b919f", "inverse-primary": "#005db5", "surface-variant": "#2f3449", "surface": "#0d1225", "surface-dim": "#0d1225", "error": "#ffb4ab", "primary-container": "#3890ff", "primary": "#a8c8ff", "secondary-container": "#6807bb", "tertiary": "#18d9f6", "on-background": "#dde1fc", "on-tertiary-fixed-variant": "#004e5a", "text-primary": "#F5F7FF", "surface-container-lowest": "#080d20", "on-primary-fixed-variant": "#00468a", "on-primary": "#003062", "primary-fixed": "#d6e3ff", "error-container": "#93000a", "tertiary-container": "#009fb5", "on-secondary-fixed-variant": "#6500b8", "surface-container": "#1a1f32", "inverse-on-surface": "#2b2f44", "on-tertiary": "#00363f", "on-secondary": "#470084", "surface-container-low": "#161b2e", "on-tertiary-fixed": "#001f25" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter-mobile": "1rem", "gutter": "1.5rem", "space-md": "1rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "margin-tablet": "2rem", "space-xl": "2.5rem", "margin": "4rem", "space-sm": "0.5rem", "margin-mobile": "1.25rem" }, "fontFamily": { "display-mobile": ["Sora"], "label-badge": ["JetBrains Mono"], "display": ["Sora"], "headline-lg": ["Sora"], "body-sm": ["Manrope"], "headline-md": ["Sora"], "headline-sm": ["Sora"], "body-md": ["Manrope"], "label-code": ["JetBrains Mono"], "headline-lg-mobile": ["Sora"], "body-lg": ["Manrope"], "button-text": ["Sora"] }, "fontSize": { "display-mobile": ["38px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-badge": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "600" }], "display": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-sm": ["13px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }], "headline-md": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "500" }], "body-md": ["15px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }], "label-code": ["13px", { "lineHeight": "18px", "letterSpacing": "0.04em", "fontWeight": "500" }], "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "button-text": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600" }] } } } }</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased selection:bg-tertiary/20 selection:text-tertiary min-h-screen flex flex-col"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-glass backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.25)] border-b border-border-glass">
+  <div class="h-20 w-full px-gutter lg:px-margin flex items-center justify-between">
+    <!-- Brand Logo & Identity -->
+    <a href="index.html" class="flex items-center gap-space-md group">
+      <img alt="PsyCodes Studio Logo" class="h-8 w-auto object-contain" src="assets/logo/Psycodes_logo_trans.png" />
+      <div class="flex flex-col">
+        <span class="font-headline-sm text-headline-sm font-bold text-text-primary tracking-tight group-hover:text-tertiary transition-colors">PsyCodes Studio</span>
+        <span class="font-label-badge text-[10px] tracking-widest uppercase text-tertiary font-semibold">CODE. CREATE. AUTOMATE.</span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation Pill Container -->
+    <nav class="hidden md:flex items-center gap-1 bg-surface-deep/80 backdrop-blur-md p-1.5 rounded-xl border border-border-glass">
+      <a class="px-space-md py-space-sm rounded-lg font-button-text text-button-text transition-all bg-primary-container text-on-primary-container font-semibold shadow-sm" href="index.html">Home</a>
+      <a class="px-space-md py-space-sm rounded-lg font-button-text text-button-text transition-all text-on-surface-variant hover:text-tertiary hover:bg-surface-container-high/40 transition-colors border border-border-glass" href="products.html">Products</a>
+      <a class="px-space-md py-space-sm rounded-lg font-button-text text-button-text transition-all text-on-surface-variant hover:text-tertiary hover:bg-surface-container-high/40 transition-colors border border-border-glass" href="services.html">Services</a>
+      <a class="px-space-md py-space-sm rounded-lg font-button-text text-button-text transition-all text-on-surface-variant hover:text-tertiary hover:bg-surface-container-high/40 transition-colors border border-border-glass" href="play-games.html">Play Games</a>
+      <a class="px-space-md py-space-sm rounded-lg font-button-text text-button-text transition-all text-on-surface-variant hover:text-tertiary hover:bg-surface-container-high/40 transition-colors border border-border-glass" href="about.html">About</a>
+      <a class="px-space-md py-space-sm rounded-lg font-button-text text-button-text transition-all text-on-surface-variant hover:text-tertiary hover:bg-surface-container-high/40 transition-colors border border-border-glass" href="contact.html">Contact</a>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="flex items-center gap-space-sm">
+      <a class="hidden sm:inline-flex items-center justify-center px-space-md py-space-sm rounded-lg bg-gradient-to-r from-primary-container to-secondary-container font-button-text text-button-text text-text-primary shadow-[0_0_20px_rgba(37,139,255,0.35)] hover:shadow-[0_0_25px_rgba(24,217,246,0.5)] hover:-translate-y-0.5 transition-all" href="contact.html">
+        <span>Let's Build Something →</span>
+      </a>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button id="mobile-menu-btn" aria-label="Toggle Navigation Menu" class="md:hidden w-10 h-10 rounded-xl flex items-center justify-center bg-surface-deep border border-border-glass text-text-primary hover:text-tertiary transition-colors" onclick="toggleMobileMenu()">
+        <span class="material-symbols-outlined text-[24px]">menu</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobile-menu" class="hidden md:hidden px-gutter pb-6 pt-2 bg-surface-deep/95 backdrop-blur-2xl border-b border-border-glass flex flex-col gap-2">
+    <a class="px-4 py-2.5 rounded-lg font-button-text text-sm bg-primary-container text-on-primary-container font-semibold shadow-sm" href="index.html">Home</a>
+    <a class="px-4 py-2.5 rounded-lg font-button-text text-sm text-on-surface-variant hover:text-tertiary hover:bg-surface-container-high/40 transition-colors border border-border-glass" href="products.html">Products</a>
+    <a class="px-4 py-2.5 rounded-lg font-button-text text-sm text-on-surface-variant hover:text-tertiary hover:bg-surface-container-high/40 transition-colors border border-border-glass" href="services.html">Services</a>
+    <a class="px-4 py-2.5 rounded-lg font-button-text text-sm text-on-surface-variant hover:text-tertiary hover:bg-surface-container-high/40 transition-colors border border-border-glass" href="play-games.html">Play Games</a>
+    <a class="px-4 py-2.5 rounded-lg font-button-text text-sm text-on-surface-variant hover:text-tertiary hover:bg-surface-container-high/40 transition-colors border border-border-glass" href="about.html">About</a>
+    <a class="px-4 py-2.5 rounded-lg font-button-text text-sm text-on-surface-variant hover:text-tertiary hover:bg-surface-container-high/40 transition-colors border border-border-glass" href="contact.html">Contact</a>
+    <a class="mt-2 text-center py-3 rounded-lg bg-gradient-to-r from-primary-container to-secondary-container font-button-text text-sm text-text-primary font-bold shadow-md" href="contact.html">Let's Build Something →</a>
+  </div>
+</header><main class="w-full pt-28 lg:pt-32 bg-surface flex-1"><div class="flex flex-col w-full text-on-surface">
+<!-- ========================================================================= -->
+<!-- SECTION A: IMMERSIVE HERO                                                 -->
+<!-- ========================================================================= -->
+<section class="relative w-full px-gutter lg:px-margin pt-12 lg:pt-16 pb-24 overflow-hidden">
+<!-- Ambient Dynamic Radials -->
+<div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-tertiary/10 blur-[120px] pointer-events-none"></div>
+<div class="absolute top-1/3 right-0 w-[30rem] h-[30rem] rounded-full bg-accent-violet/10 blur-[150px] pointer-events-none"></div>
+<div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-24 bg-gradient-to-t from-surface to-transparent pointer-events-none"></div>
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center relative z-10">
+<!-- Left Column: Studio Pitch -->
+<div class="lg:col-span-7 flex flex-col gap-space-md">
+<!-- Live System Telemetry Badge -->
+<div class="inline-flex items-center gap-space-xs px-3.5 py-1.5 rounded-full bg-surface-deep/80 backdrop-blur-md shadow-sm w-fit border border-border-glass">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary shadow-[0_0_8px_#18d9f6]"></span>
+</span>
+<span class="font-label-badge text-label-badge text-tertiary tracking-widest uppercase">Independent Digital Product Studio</span>
+</div>
+<!-- Master Headline -->
+<h1 class="font-display text-display font-bold tracking-tight text-text-primary leading-[1.08]">
+          We Build <span class="bg-gradient-to-r from-tertiary via-primary to-accent-violet bg-clip-text text-transparent">Digital Experiences</span> That <span class="bg-gradient-to-r from-accent-violet via-primary to-tertiary bg-clip-text text-transparent">Move You Forward.</span>
+</h1>
+<!-- Supporting Value Copy -->
+<p class="font-body-lg text-body-lg text-text-muted max-w-2xl leading-relaxed">
+          From intelligent AI solutions and scalable software to engaging mobile applications and immersive games, we turn ambitious ideas into products people love.
+        </p>
+<!-- CTAs Strip -->
+<div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+<a class="inline-flex items-center justify-center gap-2 px-space-lg py-3 rounded-lg bg-gradient-to-r from-primary-container to-secondary-container font-button-text text-button-text text-text-primary shadow-lg shadow-primary-container/20 hover:shadow-xl hover:shadow-tertiary/25 hover:-translate-y-0.5 transition-all" href="#work">
+<span>Explore Our Work</span>
+<span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2 px-space-lg py-3 rounded-lg bg-surface-container-high/80 text-on-surface font-button-text text-button-text shadow-sm hover:bg-surface-container-highest hover:text-tertiary transition-all border border-border-glass" href="#order">
+<span>Start a Project</span>
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</a>
+</div>
+<!-- Operational Code Marker & Metadata -->
+<div class="flex items-center gap-space-md pt-space-sm text-text-muted">
+<div class="flex items-center gap-2 bg-surface-container-low px-3 py-1.5 rounded border border-border-glass">
+<span class="material-symbols-outlined text-tertiary text-[16px]">terminal</span>
+<span class="font-label-code text-label-code text-on-surface-variant">CODE. CREATE. AUTOMATE.</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline-variant">•</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Karachi, Pakistan · Est. 2026</span>
+</div>
+</div>
+<!-- Right Column: Layered Hardware & Product Visual Showcase -->
+<div class="lg:col-span-5 relative flex flex-col items-center">
+<!-- Backlit Ambient Canvas -->
+<div class="w-full relative group">
+<div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-tertiary/20 via-primary/30 to-secondary-container/40 blur-xl opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+<div class="relative bg-surface-deep/90 rounded-2xl p-3 shadow-2xl backdrop-blur-xl border border-border-glass">
+<!-- Studio Showcase Graphic Canvas -->
+<div class="relative rounded-xl overflow-hidden shadow-inner aspect-[16/9] w-full bg-surface-container-lowest border border-border-glass">
+<img class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700" data-alt="PsyCodes Studio brand identity artwork displaying a bold futuristic PC logo in electric cyan and ultraviolet neon, with glowing neural AI network nodes on the left and stylized mobile glass screens on the right on a deep obsidian background with the tagline Code Create Automate." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhr58591ieTbgscUkduWLhWsmNSKDA4dR8GwIThyBym_ldt6YIQ3OULhvT1sqTE9WSsoYJoFWH_2SEkzIh3GFW0qcbST-MZHVn2CDj5YSrEykONzgse5-yfhPa9wI5tCKWKaqb6abi_PfxVGUAjNZ9hy93taNK3I8OxuzFkCDbBVe12Nw2mMKfAERUVgEnR4P8kVI0VEjfrARLzGhcH2nyXOZ3TGIvEgJP9VqJMro"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-deep/90 via-surface-deep/20 to-transparent"></div>
+<!-- Floating Corner Beacon -->
+<div class="absolute top-3 right-3 px-2.5 py-1 rounded bg-surface-container-lowest/80 backdrop-blur-md flex items-center gap-1.5 shadow-sm border border-border-glass">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+<span class="font-label-badge text-label-badge text-tertiary">STU-V2.6</span>
+</div>
+<div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-text-primary">
+<div>
+<p class="font-headline-sm text-headline-sm font-semibold text-text-primary leading-tight">PsyCodes Engine</p>
+<p class="font-body-sm text-body-sm text-text-muted">Engineering Multi-Disciplinary Digital Products</p>
+</div>
+<span class="material-symbols-outlined text-tertiary text-[22px]">memory</span>
+</div>
+</div>
+<!-- Floating Micro-Telemetry Cards -->
+<div class="grid grid-cols-3 gap-2 mt-3">
+<div class="flex flex-col p-2.5 rounded-lg bg-surface-container-low shadow-sm border border-border-glass">
+<div class="flex items-center gap-1 text-tertiary mb-1">
+<span class="material-symbols-outlined text-[16px]">sports_esports</span>
+<span class="font-label-badge text-[10px] tracking-wider uppercase font-semibold">Unity</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-primary font-medium">Games</span>
+<span class="text-[11px] text-text-muted">2D &amp; 3D Builds</span>
+</div>
+<div class="flex flex-col p-2.5 rounded-lg bg-surface-container-low shadow-sm border border-border-glass">
+<div class="flex items-center gap-1 text-secondary mb-1">
+<span class="material-symbols-outlined text-[16px]">smart_toy</span>
+<span class="font-label-badge text-[10px] tracking-wider uppercase font-semibold">AI Agents</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-primary font-medium">Neural</span>
+<span class="text-[11px] text-text-muted">LLM Workflows</span>
+</div>
+<div class="flex flex-col p-2.5 rounded-lg bg-surface-container-low shadow-sm border border-border-glass">
+<div class="flex items-center gap-1 text-primary mb-1">
+<span class="material-symbols-outlined text-[16px]">smartphone</span>
+<span class="font-label-badge text-[10px] tracking-wider uppercase font-semibold">Flutter</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-primary font-medium">Mobile</span>
+<span class="text-[11px] text-text-muted">iOS &amp; Android</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Studio Statistics 4 Pillars Strip -->
+        <div class="w-full mt-6 bg-surface-container-low/70 backdrop-blur-md rounded-2xl p-4 shadow-md grid grid-cols-2 md:grid-cols-4 gap-4 text-center border border-border-glass">
+          <div class="p-2">
+            <div class="font-headline-sm text-base md:text-lg font-bold text-tertiary font-display">AI &amp; Agents</div>
+            <div class="font-label-badge text-[10px] text-text-muted uppercase tracking-wider mt-0.5">Autonomous Swarms</div>
+          </div>
+          <div class="p-2">
+            <div class="font-headline-sm text-base md:text-lg font-bold text-primary font-display">SaaS &amp; Web</div>
+            <div class="font-label-badge text-[10px] text-text-muted uppercase tracking-wider mt-0.5">Sub-Second Apps</div>
+          </div>
+          <div class="p-2">
+            <div class="font-headline-sm text-base md:text-lg font-bold text-secondary font-display">Flutter Apps</div>
+            <div class="font-label-badge text-[10px] text-text-muted uppercase tracking-wider mt-0.5">60 FPS Offline</div>
+          </div>
+          <div class="p-2">
+            <div class="font-headline-sm text-base md:text-lg font-bold text-accent-violet font-display">Unity Games</div>
+            <div class="font-label-badge text-[10px] text-text-muted uppercase tracking-wider mt-0.5">Instant WebGL</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ========================================================================= -->
+<!-- SECTION C: FEATURED PRODUCTS (FITLYFE & HOT COCOA RUN)                   -->
+<!-- ========================================================================= -->
+<section class="w-full px-gutter lg:px-margin py-24 relative" id="products">
+<div class="max-w-7xl mx-auto flex flex-col gap-16">
+<div class="flex flex-col gap-2 max-w-2xl">
+<span class="font-label-code text-label-code text-tertiary uppercase tracking-widest">PROPRIETARY IP</span>
+<h2 class="font-headline-lg text-headline-lg font-bold text-text-primary tracking-tight">
+          Built By Us. Designed For The World.
+        </h2>
+<p class="font-body-md text-body-md text-text-muted">
+          We don't just build client visions—we invent and deploy our own software products, testing and polishing real-world solutions directly.
+        </p>
+</div>
+<!-- PRODUCT 1: FITLYFE (Deep Glass Split Showcase) -->
+<div class="relative bg-surface-deep/80 rounded-3xl p-8 lg:p-12 shadow-2xl overflow-hidden border border-border-glass">
+<!-- Accent Glow background -->
+<div class="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-tertiary/10 blur-[100px] pointer-events-none"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+<div class="lg:col-span-6 flex flex-col gap-5">
+<div class="flex items-center gap-2">
+<span class="px-3 py-1 rounded-full bg-tertiary/10 text-tertiary font-label-badge text-label-badge uppercase tracking-wider flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+                Launching Soon · Mobile
+              </span>
+<span class="font-label-code text-[12px] text-text-muted">Flutter / Cross-Platform</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg font-bold text-text-primary">
+              FitLyfe
+            </h3>
+<p class="font-body-lg text-body-lg text-text-muted leading-relaxed">
+              A smart, friction-free calorie and fitness tracking application designed to transform wellness routines into effortless daily streaks. Engineered with an offline-first architecture, rich nutritional telemetry, and gamified tier progressions.
+            </p>
+<!-- Feature Bullet Matrix -->
+<div class="grid grid-cols-2 gap-3 pt-2">
+<div class="flex items-start gap-2.5 p-3 rounded-lg bg-surface-container-high/60 shadow-sm border border-border-glass">
+<span class="material-symbols-outlined text-tertiary text-[20px] mt-0.5">save_as</span>
+<div>
+<div class="font-button-text text-button-text text-text-primary">Daily Calorie Engine</div>
+<div class="font-body-sm text-[12px] text-text-muted">Dynamic macro calculation</div>
+</div>
+</div>
+<div class="flex items-start gap-2.5 p-3 rounded-lg bg-surface-container-high/60 shadow-sm border border-border-glass">
+<span class="material-symbols-outlined text-tertiary text-[20px] mt-0.5">restaurant</span>
+<div>
+<div class="font-button-text text-button-text text-text-primary">Curated Food Library</div>
+<div class="font-body-sm text-[12px] text-text-muted">Regional meal presets</div>
+</div>
+</div>
+<div class="flex items-start gap-2.5 p-3 rounded-lg bg-surface-container-high/60 shadow-sm border border-border-glass">
+<span class="material-symbols-outlined text-tertiary text-[20px] mt-0.5">military_tech</span>
+<div>
+<div class="font-button-text text-button-text text-text-primary">Gamified Rank Roadmap</div>
+<div class="font-body-sm text-[12px] text-text-muted">Badges &amp; streak momentum</div>
+</div>
+</div>
+<div class="flex items-start gap-2.5 p-3 rounded-lg bg-surface-container-high/60 shadow-sm border border-border-glass">
+<span class="material-symbols-outlined text-tertiary text-[20px] mt-0.5">query_stats</span>
+<div>
+<div class="font-button-text text-button-text text-text-primary">Metabolic Analytics</div>
+<div class="font-body-sm text-[12px] text-text-muted">Interactive trend charts</div>
+</div>
+</div>
+</div>
+<!-- Action CTAs -->
+<div class="flex items-center gap-4 pt-4">
+<button class="px-space-md py-2.5 rounded-lg bg-primary-container hover:bg-primary-container/80 text-on-primary-container font-button-text text-button-text shadow-md transition-all flex items-center gap-2" onclick="openProjectModal('fitlyfe')">
+<span>View Product Breakdown</span>
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<div class="flex items-center gap-2 text-text-muted font-body-sm text-body-sm px-3 py-2 rounded bg-surface-container-high border border-border-glass">
+<span class="material-symbols-outlined text-[18px] text-tertiary">android</span>
+<span>Google Play Alpha Pending</span>
+</div>
+</div>
+</div>
+<!-- Right: Interactive Dynamic Mockup with In-Card Telemetry -->
+<div class="lg:col-span-6 flex flex-col items-center">
+<div class="w-full max-w-md bg-surface-container-lowest rounded-2xl p-4 shadow-2xl border border-border-glass">
+<!-- Tab Header Simulator -->
+<div class="flex items-center justify-between pb-3 mb-3">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-error"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+<span class="ml-2 font-label-code text-[11px] text-text-muted">FitLyfe_v1.0.apk</span>
+</div>
+<span class="font-label-badge text-[10px] px-2 py-0.5 rounded bg-tertiary/20 text-tertiary">ACTIVE PROFILE</span>
+</div>
+<!-- Product Graphic Simulation Preview -->
+<div class="relative rounded-xl overflow-hidden aspect-[4/3] bg-surface-deep border border-border-glass">
+<img class="w-full h-full object-cover" data-alt="Modern high-tech mobile fitness app UI showing sleek dark interface with neon cyan circular progress ring for 1,840 calories remaining, protein progress bar, clean food log feed, and subtle glowing biometric charts on dark glass panels." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4VTDfV43Xr8GyNOzSA3PVa7tDsWhOGwRHsNSRkabc9wg0yIVMItWoOFmmOIBBmpiP7wy0Tf0vdXkyCveTTEZ0nTjvxKL2al0voAWhpRFwB6HobM6qXZ_ppFpQdYSqlBA4CJqmbJNcEE_xzffbGobkYktwwdzH_-TwPwn11KmXLzyzsq5DdR2UXurlFAIqxie81NeYUknKzRDpKp1ug4dmR6oK36Jsh5xfivkY1XM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-deep via-transparent to-transparent"></div>
+<div class="absolute bottom-3 left-3 right-3 p-3 rounded-lg bg-surface-deep/90 backdrop-blur-md flex items-center justify-between border border-border-glass">
+<div>
+<span class="font-label-badge text-[10px] text-tertiary">TODAY'S INTAKE</span>
+<p class="font-headline-sm text-headline-sm font-bold text-text-primary">1,840 / 2,200 kcal</p>
+</div>
+<div class="flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container-high text-tertiary font-label-badge text-[11px] border border-border-glass">
+<span class="material-symbols-outlined text-[14px]">local_fire_department</span>
+<span>14 Day Streak</span>
+</div>
+</div>
+</div>
+<!-- Mockup Tab Switcher Navigation -->
+            <div class="grid grid-cols-3 gap-2 mt-3 pt-1">
+              <button id="fitlyfe-tab-calorie" class="fitlyfe-tab py-2 px-2 rounded-lg bg-surface-container-high text-text-primary text-[12px] font-medium text-center hover:bg-surface-container-highest transition-colors cursor-pointer border border-border-glass" onclick="switchFitLyfeTab('calorie')">Daily Calorie</button>
+              <button id="fitlyfe-tab-food" class="fitlyfe-tab py-2 px-2 rounded-lg bg-surface-container text-text-muted text-[12px] font-medium text-center hover:bg-surface-container-high transition-colors cursor-pointer border border-border-glass" onclick="switchFitLyfeTab('food')">Food Library</button>
+              <button id="fitlyfe-tab-rank" class="fitlyfe-tab py-2 px-2 rounded-lg bg-surface-container text-text-muted text-[12px] font-medium text-center hover:bg-surface-container-high transition-colors cursor-pointer border border-border-glass" onclick="switchFitLyfeTab('rank')">Rank Roadmap</button>
+            </div>
+</div>
+</div>
+</div>
+</div>
+<!-- PRODUCT 2: HOT COCOA RUN (Unity 2D Top-Down Indie Game) -->
+<div class="relative bg-surface-deep/80 rounded-3xl p-8 lg:p-12 shadow-2xl overflow-hidden border border-border-glass">
+<!-- Backlit Violet Radial Glow -->
+<div class="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-accent-violet/15 blur-[120px] pointer-events-none"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+<!-- Game Visual Canvas -->
+<div class="lg:col-span-6 order-2 lg:order-1 flex flex-col">
+<div class="relative rounded-2xl overflow-hidden shadow-2xl aspect-[16/10] bg-surface-container-lowest group border border-border-glass">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Charming atmospheric cozy 2D pixel art game scene featuring an orange fox barista with a thermos backpack dashing through a snowy evergreen forest, steaming mugs of hot chocolate, glowing stone bonfires, and blizzard gusts with warm magical ambient lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADfRYVDHw3A2G8IlkrYB7QXGk5Up9GK9jcr4DVoH3vHpB6AGu4NjPOKaCov1qwvLL0umjQrMmlYwcj2O6996pCHhSaJXtRLQc7nD6W7U_qov1F6rbIh9hhY0ZVmeUY2MTbSSwqpesETTxdy4YF-u2n6Yxtr36E3mV3ZD7f40DyqgDiMbwpCYDWJajEL2vsJencql51x8Bj8GvEptlNOR415ZJWxtZhN76QVKyc2EY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-deep/95 via-transparent to-surface-deep/30"></div>
+<!-- In-Game HUD Simulator -->
+<div class="absolute top-4 left-4 flex items-center gap-2">
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-deep/80 backdrop-blur-md border border-border-glass">
+<span class="material-symbols-outlined text-secondary text-[16px]">coffee</span>
+<span class="font-label-badge text-[11px] text-text-primary">Cocoa Heat: 94%</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-deep/80 backdrop-blur-md border border-border-glass">
+<span class="material-symbols-outlined text-tertiary text-[16px]">timer</span>
+<span class="font-label-badge text-[11px] text-text-primary">02:45</span>
+</div>
+</div>
+<div class="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+<div>
+<span class="font-label-code text-[11px] text-secondary">BUILD 0.8.4a UNITY 2D URP</span>
+<p class="font-headline-sm text-headline-sm font-semibold text-text-primary">Level 03: The Frozen Pine Pass</p>
+</div>
+<div class="p-2 rounded-xl bg-surface-deep/80 backdrop-blur-md text-secondary border border-border-glass">
+<span class="material-symbols-outlined text-[24px]">gamepad</span>
+</div>
+</div>
+</div>
+<!-- Mini Game Mechanics Badges -->
+<div class="grid grid-cols-3 gap-3 mt-4">
+<div class="p-3 rounded-xl bg-surface-container-low text-center shadow-sm border border-border-glass">
+<span class="font-label-badge text-[10px] text-secondary block uppercase">Protagonist</span>
+<span class="font-body-sm text-[13px] font-semibold text-text-primary">Fox Barista</span>
+</div>
+<div class="p-3 rounded-xl bg-surface-container-low text-center shadow-sm border border-border-glass">
+<span class="font-label-badge text-[10px] text-secondary block uppercase">Hazard</span>
+<span class="font-body-sm text-[13px] font-semibold text-text-primary">Arctic Blizzards</span>
+</div>
+<div class="p-3 rounded-xl bg-surface-container-low text-center shadow-sm border border-border-glass">
+<span class="font-label-badge text-[10px] text-secondary block uppercase">Refuel Hubs</span>
+<span class="font-body-sm text-[13px] font-semibold text-text-primary">Campfire Bonfires</span>
+</div>
+</div>
+</div>
+<!-- Game Details & Pitch -->
+<div class="lg:col-span-6 order-1 lg:order-2 flex flex-col gap-5">
+<div class="flex items-center gap-2">
+<span class="px-3 py-1 rounded-full bg-secondary-container/30 text-secondary font-label-badge text-label-badge uppercase tracking-wider flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+                In Development · Indie Game
+              </span>
+<span class="font-label-code text-[12px] text-text-muted">Unity / C#</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg font-bold text-text-primary">
+              Hot Cocoa Run
+            </h3>
+<p class="font-body-lg text-body-lg text-text-muted leading-relaxed">
+              A cozy, high-stakes 2D top-down delivery game. Take control of a courageous fox barista navigating harsh sub-zero wilderness to deliver steaming mugs of hot cocoa to shivering forest dwellers before the warmth dissipates.
+            </p>
+<div class="flex flex-col gap-2.5 text-body-sm text-body-sm text-text-muted">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
+<span>Custom thermal decay math requiring strategic pathfinding between warmth points</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
+<span>Procedural wind bursts and slippery ice surfaces created with custom Unity shaders</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
+<span>Full controller support and dynamic low-fi acoustic audio feedback</span>
+</div>
+</div>
+<div class="flex items-center gap-4 pt-3">
+<button class="px-space-md py-2.5 rounded-lg bg-gradient-to-r from-secondary-container to-surface-container-highest text-text-primary font-button-text text-button-text shadow-md transition-all flex items-center gap-2 hover:shadow-lg hover:shadow-secondary/20" onclick="openProjectModal('cocoa')">
+<span>View Game Architecture</span>
+<span class="material-symbols-outlined text-[18px]">sports_esports</span>
+</button>
+<a class="text-on-surface-variant hover:text-secondary font-button-text text-button-text flex items-center gap-1 transition-colors" href="#order">
+<span>Commission Custom Game</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- SECTION D: OUR WORK (FILTERABLE PORTFOLIO & DETAIL MODAL)                 -->
+<!-- ========================================================================= -->
+<section class="w-full px-gutter lg:px-margin py-24 bg-surface-container-lowest/60 relative border border-border-glass" id="work">
+<div class="max-w-7xl mx-auto flex flex-col gap-12">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="flex flex-col gap-2">
+<span class="font-label-code text-label-code text-tertiary uppercase tracking-widest">OUR WORK</span>
+<h2 class="font-headline-lg text-headline-lg font-bold text-text-primary tracking-tight">
+            From Concepts To Real-World Products
+          </h2>
+</div>
+<p class="font-body-md text-body-md text-text-muted max-w-md">
+          Explore curated studio deliveries across cross-platform mobile apps, bespoke game builds, intelligent automation, and modern web architectures.
+        </p>
+</div>
+<!-- Filter Categories Bar -->
+<div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none" id="portfolio-filter-bar">
+<button class="portfolio-filter-btn px-4 py-2 rounded-lg bg-primary-container text-on-primary-container font-button-text text-button-text shadow-sm transition-all whitespace-nowrap" onclick="filterPortfolio('all', this)">All Works</button>
+<button class="portfolio-filter-btn px-4 py-2 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-text-primary font-button-text text-button-text transition-all whitespace-nowrap border border-border-glass" onclick="filterPortfolio('mobile', this)">Mobile Apps</button>
+<button class="portfolio-filter-btn px-4 py-2 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-text-primary font-button-text text-button-text transition-all whitespace-nowrap border border-border-glass" onclick="filterPortfolio('games', this)">Games</button>
+<button class="portfolio-filter-btn px-4 py-2 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-text-primary font-button-text text-button-text transition-all whitespace-nowrap border border-border-glass" onclick="filterPortfolio('ai', this)">AI Solutions</button>
+<button class="portfolio-filter-btn px-4 py-2 rounded-lg bg-surface-container-high text-on-surface-variant hover:text-text-primary font-button-text text-button-text transition-all whitespace-nowrap border border-border-glass" onclick="filterPortfolio('web', this)">Web Platforms</button>
+</div>
+<!-- Dynamic Portfolio Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="portfolio-cards-container">
+<!-- Project 1: FitLyfe -->
+<div class="portfolio-card group bg-surface-deep/80 hover:bg-surface-container-high/60 rounded-2xl p-6 shadow-md transition-all duration-300 flex flex-col justify-between border border-border-glass" data-category="mobile">
+<div class="flex flex-col gap-4">
+<div class="relative rounded-xl overflow-hidden aspect-[16/9] bg-surface-container-lowest border border-border-glass">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Smartphone mockup showcasing FitLyfe fitness mobile application with dark glass aesthetics, bright cyan activity trackers, calories consumed gauge, and high-tech typography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkwU0RE3LUT7_tPA4YEBrr_XCkRfhJbm3vJPRApy47AeiPm5zY6YgctTLmgEuQwR26-6RTZB6DOy1VbypSDmF9fvWfM4CpTMnD3pru1e2SCDvXbO4nBgPOihbpZdClzW_BXgI_wGYyu0RRtWlM7NGw2XH8i_kzLpd8Jqiph_yaVsNd2VKaOZyv6Dqqu8yqVW2NKHOpQalGe-sCd3HJs7-I4NubI-8z8GWHKOXLgok"/>
+<span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-surface-deep/90 text-tertiary font-label-badge text-[11px] backdrop-blur-md border border-border-glass">Mobile App · Flutter</span>
+</div>
+<div>
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm font-semibold text-text-primary">FitLyfe Calorie Engine</h3>
+<span class="font-label-badge text-tertiary text-[11px] uppercase">● Active Beta</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted mt-2">
+                Nutritional streak monitoring and calorie budgeting app built with high-velocity Dart code, local-first storage, and clean dashboard telemetries.
+              </p>
+</div>
+</div>
+<div class="mt-6 pt-4 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container-low text-text-muted border border-border-glass">Flutter</span>
+<span class="font-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container-low text-text-muted border border-border-glass">Dart</span>
+<span class="font-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container-low text-text-muted border border-border-glass">HealthKit</span>
+</div>
+<button class="inline-flex items-center gap-1 text-tertiary font-button-text text-button-text hover:underline" onclick="openProjectModal('fitlyfe')">
+<span>View Details</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Project 2: Hot Cocoa Run -->
+<div class="portfolio-card group bg-surface-deep/80 hover:bg-surface-container-high/60 rounded-2xl p-6 shadow-md transition-all duration-300 flex flex-col justify-between border border-border-glass" data-category="games">
+<div class="flex flex-col gap-4">
+<div class="relative rounded-xl overflow-hidden aspect-[16/9] bg-surface-container-lowest border border-border-glass">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Playable video game scene of Hot Cocoa Run in Unity engine with top down perspective, snowy forest environment, cozy campfire glows, and an agile fox barista character." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRjeuddGXkJXw0R-vWcpHzw_KrbkN2M0_tt2O2hLgnFA2wSZGlrEsG8UjK61HKfV1U4VED8aXZRwOWOD7PdDe2axZbCqm9gT-tO_M7nWEgQwnfHAAXElvrSiXMUtJydWGUlQIOkDW6lpUU6G9BQzXlpJqtH2nxr9LvJQHUhhbZztkgBTTyH5CXxzAsYZZbJtjNwPLFQ_N7X54xpdEjDNfq2dykDw6Duy3wOzF9iJs"/>
+<span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-surface-deep/90 text-secondary font-label-badge text-[11px] backdrop-blur-md border border-border-glass">Game · Unity 2D</span>
+</div>
+<div>
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm font-semibold text-text-primary">Hot Cocoa Run</h3>
+<span class="font-label-badge text-secondary text-[11px] uppercase">● In Production</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted mt-2">
+                Fast-paced environmental puzzle &amp; delivery gameplay. Features customized thermal simulation scripts, game controller haptics, and cozy stylized shaders.
+              </p>
+</div>
+</div>
+<div class="mt-6 pt-4 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container-low text-text-muted border border-border-glass">Unity 6</span>
+<span class="font-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container-low text-text-muted border border-border-glass">C# Script</span>
+<span class="font-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container-low text-text-muted border border-border-glass">Pixel URP</span>
+</div>
+<button class="inline-flex items-center gap-1 text-secondary font-button-text text-button-text hover:underline" onclick="openProjectModal('cocoa')">
+<span>View Details</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Project 3: PsyCodes Studio Web Platform -->
+<div class="portfolio-card group bg-surface-deep/80 hover:bg-surface-container-high/60 rounded-2xl p-6 shadow-md transition-all duration-300 flex flex-col justify-between border border-border-glass" data-category="web">
+<div class="flex flex-col gap-4">
+<div class="relative rounded-xl overflow-hidden aspect-[16/9] bg-surface-container-lowest border border-border-glass">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="PsyCodes Studio web platform architecture screenshot showing dark cyber minimalist layout, sleek font pairings, glassmorphism overlays, and developer terminal inspector." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6bFUrbWIRF7ghgZhG4II3vnwjuXAk0cJ8tn710VcFtBHt4CWAqqYhzJ9kN6mTkfKmLPAhDs_nHfTvUXp9o3FKGdzvoXC8EWC_bwMJcFj33Eoek5SrSuk1keQs_wTzMrngSjiwqUfXAUig4yq8houBhVnhBWYvwVcmOcG0i0KrQV1HzQMt2Ds6-hCznD0PUI_DOdDxM_iElz28DOFKrPHW4mpiSoRaAwE45Cy8JxQ"/>
+<span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-surface-deep/90 text-primary font-label-badge text-[11px] backdrop-blur-md border border-border-glass">Web Platform · Next-Gen</span>
+</div>
+<div>
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm font-semibold text-text-primary">PsyCodes Studio Digital Engine</h3>
+<span class="font-label-badge text-primary text-[11px] uppercase">● Live System</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted mt-2">
+                The high-performance web agency platform boasting fluid animations, zero cumulative layout shift, customized theme tokens, and dynamic interactive modals.
+              </p>
+</div>
+</div>
+<div class="mt-6 pt-4 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container-low text-text-muted border border-border-glass">HTML5/JS</span>
+<span class="font-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container-low text-text-muted border border-border-glass">Tailwind</span>
+<span class="font-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container-low text-text-muted border border-border-glass">Tokens</span>
+</div>
+<button class="inline-flex items-center gap-1 text-primary font-button-text text-button-text hover:underline" onclick="openProjectModal('studio-web')">
+<span>View Details</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Project 4: Studio AI Assistant & Workflow Engine -->
+<div class="portfolio-card group bg-surface-deep/80 hover:bg-surface-container-high/60 rounded-2xl p-6 shadow-md transition-all duration-300 flex flex-col justify-between border border-border-glass" data-category="ai">
+<div class="flex flex-col gap-4">
+<div class="relative rounded-xl overflow-hidden aspect-[16/9] bg-surface-container-lowest border border-border-glass">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Futuristic AI orchestration terminal user interface displaying automated document processing streams, token generation charts, and neural intent classification logs on a midnight obsidian background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnOQUzbRsCCOVOYUqrdyZhcuzSq5IbR0K8NrBbSZYlaB7PyL8YedYQLvObpuLlCxgw7xVaQhTusrH2ETuIOX8kYYVTkArHVwd6J4as9yxhhs64QUYiYOtpDJL4DC_b_V4kT1gwvqaDT7hZliDJW273Zfa31tgBiYH9FeRa8sQ18QvNGkbPwyQNKU4dakqyowB3lIYMOAXfhVycRK4Toe0Bcym647pbOfD8LNEWYUw"/>
+<span class="absolute top-3 left-3 px-2.5 py-1 rounded bg-surface-deep/90 text-tertiary font-label-badge text-[11px] backdrop-blur-md border border-border-glass">AI Solution · Neural Agent</span>
+</div>
+<div>
+<div class="flex items-center justify-between">
+<h3 class="font-headline-sm text-headline-sm font-semibold text-text-primary">Autonomous Agent Pipeline</h3>
+<span class="font-label-badge text-tertiary text-[11px] uppercase">● Production Ready</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted mt-2">
+                Bespoke LLM-powered context pipeline capable of routing inbound client requests, classifying technical tickets, and executing structured API commands.
+              </p>
+</div>
+</div>
+<div class="mt-6 pt-4 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container-low text-text-muted border border-border-glass">Python</span>
+<span class="font-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container-low text-text-muted border border-border-glass">OpenAI</span>
+<span class="font-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container-low text-text-muted border border-border-glass">Vector DB</span>
+</div>
+<button class="inline-flex items-center gap-1 text-tertiary font-button-text text-button-text hover:underline" onclick="openProjectModal('ai-agent')">
+<span>View Details</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+  <!-- SECTION E: SERVICES PREVIEW & ACCELERATOR                                 -->
+  <!-- ========================================================================= -->
+  <section class="w-full px-gutter lg:px-margin py-24 relative" id="services">
+    <div class="max-w-7xl mx-auto flex flex-col gap-16">
+      <div class="flex flex-col gap-2 max-w-2xl">
+        <span class="font-label-code text-label-code text-tertiary uppercase tracking-widest font-mono">STUDIO SERVICES</span>
+        <h2 class="font-headline-lg text-headline-lg font-bold text-text-primary tracking-tight font-display">
+          Everything You Need To Build What's Next.
+        </h2>
+        <p class="font-body-md text-body-md text-text-muted">
+          From full game lifecycle support to custom AI automation and web portals, select an engagement track and let's construct your release.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Service 1: AI & Automation -->
+        <div class="bg-surface-deep/90 rounded-2xl p-6 shadow-xl flex flex-col justify-between group hover:bg-surface-container-high/90 transition-all border border-border-glass">
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-xl bg-tertiary/10 text-tertiary flex items-center justify-center">
+              <span class="material-symbols-outlined text-[26px]">psychology</span>
+            </div>
+            <div>
+              <span class="font-label-badge text-[11px] text-tertiary uppercase tracking-wider font-mono">Autonomous Swarms</span>
+              <h3 class="font-headline-sm text-headline-sm font-bold text-text-primary mt-1 font-display">AI &amp; Automation</h3>
+            </div>
+            <p class="font-body-sm text-body-sm text-text-muted leading-relaxed">
+              Autonomous agent workflows, intelligent customer bots, document analysis pipelines, and seamless LLM API integrations tailored to enterprise scale.
+            </p>
+            <div class="flex items-center gap-1.5 flex-wrap pt-2">
+              <span class="font-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant border border-border-glass">OpenAI</span>
+              <span class="font-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant border border-border-glass">LangChain</span>
+              <span class="font-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant border border-border-glass">FastAPI</span>
+            </div>
+          </div>
+          <a class="mt-6 w-full py-2.5 rounded-lg bg-surface-container hover:bg-tertiary/20 text-tertiary hover:text-text-primary font-button-text text-button-text shadow-sm transition-all flex items-center justify-center gap-1.5 border border-border-glass" href="contact.html">
+            <span>Integrate AI Engine →</span>
+          </a>
+        </div>
+
+        <!-- Service 2: SaaS Platforms -->
+        <div class="bg-surface-deep/90 rounded-2xl p-6 shadow-xl flex flex-col justify-between group hover:bg-surface-container-high/90 transition-all border border-border-glass">
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+              <span class="material-symbols-outlined text-[26px]">cloud_sync</span>
+            </div>
+            <div>
+              <span class="font-label-badge text-[11px] text-primary uppercase tracking-wider font-mono">Cloud Infrastructure</span>
+              <h3 class="font-headline-sm text-headline-sm font-bold text-text-primary mt-1 font-display">SaaS Platforms</h3>
+            </div>
+            <p class="font-body-sm text-body-sm text-text-muted leading-relaxed">
+              Multi-tenant cloud architectures, billing systems, real-time analytics engines, and developer-first RESTful and GraphQL APIs built for high throughput.
+            </p>
+            <div class="flex items-center gap-1.5 flex-wrap pt-2">
+              <span class="font-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant border border-border-glass">Node.js</span>
+              <span class="font-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant border border-border-glass">PostgreSQL</span>
+              <span class="font-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant border border-border-glass">Docker</span>
+            </div>
+          </div>
+          <a class="mt-6 w-full py-2.5 rounded-lg bg-surface-container hover:bg-primary/20 text-primary hover:text-text-primary font-button-text text-button-text shadow-sm transition-all flex items-center justify-center gap-1.5 border border-border-glass" href="contact.html">
+            <span>Deploy SaaS Platform →</span>
+          </a>
+        </div>
+
+        <!-- Service 3: Mobile Applications -->
+        <div class="bg-surface-deep/90 rounded-2xl p-6 shadow-xl flex flex-col justify-between group hover:bg-surface-container-high/90 transition-all border border-border-glass">
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-xl bg-accent-violet/10 text-secondary flex items-center justify-center">
+              <span class="material-symbols-outlined text-[26px]">devices</span>
+            </div>
+            <div>
+              <span class="font-label-badge text-[11px] text-secondary uppercase tracking-wider font-mono">Native Cross-Platform</span>
+              <h3 class="font-headline-sm text-headline-sm font-bold text-text-primary mt-1 font-display">Mobile Applications</h3>
+            </div>
+            <p class="font-body-sm text-body-sm text-text-muted leading-relaxed">
+              Silky-smooth 60fps applications engineered with Flutter. Single codebase deployment to iOS and Android with offline-first local DB synchronization.
+            </p>
+            <div class="flex items-center gap-1.5 flex-wrap pt-2">
+              <span class="font-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant border border-border-glass">Flutter</span>
+              <span class="font-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant border border-border-glass">Dart</span>
+              <span class="font-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant border border-border-glass">Firebase</span>
+            </div>
+          </div>
+          <a class="mt-6 w-full py-2.5 rounded-lg bg-surface-container hover:bg-secondary-container/30 text-secondary hover:text-text-primary font-button-text text-button-text shadow-sm transition-all flex items-center justify-center gap-1.5 border border-border-glass" href="contact.html">
+            <span>Create Mobile App →</span>
+          </a>
+        </div>
+
+        <!-- Service 4: Web Platforms -->
+        <div class="bg-surface-deep/90 rounded-2xl p-6 shadow-xl flex flex-col justify-between group hover:bg-surface-container-high/90 transition-all border border-border-glass">
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-xl bg-tertiary/10 text-tertiary flex items-center justify-center">
+              <span class="material-symbols-outlined text-[26px]">language</span>
+            </div>
+            <div>
+              <span class="font-label-badge text-[11px] text-tertiary uppercase tracking-wider font-mono">Ultra-Responsive Web</span>
+              <h3 class="font-headline-sm text-headline-sm font-bold text-text-primary mt-1 font-display">Web Platforms</h3>
+            </div>
+            <p class="font-body-sm text-body-sm text-text-muted leading-relaxed">
+              Dynamic web experiences built with modern React, Next.js, and TypeScript. Optimized for sub-second Core Web Vitals, dynamic search SEO, and conversion.
+            </p>
+            <div class="flex items-center gap-1.5 flex-wrap pt-2">
+              <span class="font-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant border border-border-glass">React</span>
+              <span class="font-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant border border-border-glass">Next.js</span>
+              <span class="font-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant border border-border-glass">TypeScript</span>
+            </div>
+          </div>
+          <a class="mt-6 w-full py-2.5 rounded-lg bg-surface-container hover:bg-tertiary/20 text-tertiary hover:text-text-primary font-button-text text-button-text shadow-sm transition-all flex items-center justify-center gap-1.5 border border-border-glass" href="contact.html">
+            <span>Build Web App →</span>
+          </a>
+        </div>
+
+        <!-- Service 5: Unity Game Development -->
+        <div class="bg-surface-deep/90 rounded-2xl p-6 shadow-xl flex flex-col justify-between group hover:bg-surface-container-high/90 transition-all border border-border-glass">
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-xl bg-secondary-container/40 text-secondary flex items-center justify-center">
+              <span class="material-symbols-outlined text-[26px]">sports_esports</span>
+            </div>
+            <div>
+              <span class="font-label-badge text-[11px] text-secondary uppercase tracking-wider font-mono">Independent Gaming</span>
+              <h3 class="font-headline-sm text-headline-sm font-bold text-text-primary mt-1 font-display">Unity Game Development</h3>
+            </div>
+            <p class="font-body-sm text-body-sm text-text-muted leading-relaxed">
+              Complete game production from mechanics prototypes, 2D/3D level designs, asset pipelines, and audio mixing to platform publishing on Steam, itch.io, and mobile.
+            </p>
+            <div class="flex items-center gap-1.5 flex-wrap pt-2">
+              <span class="font-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant border border-border-glass">Unity 6</span>
+              <span class="font-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant border border-border-glass">C#</span>
+              <span class="font-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant border border-border-glass">URP</span>
+            </div>
+          </div>
+          <a class="mt-6 w-full py-2.5 rounded-lg bg-surface-container hover:bg-secondary-container/30 text-secondary hover:text-text-primary font-button-text text-button-text shadow-sm transition-all flex items-center justify-center gap-1.5 border border-border-glass" href="contact.html">
+            <span>Commission Game →</span>
+          </a>
+        </div>
+
+        <!-- Service 6: UI / UX Design Systems -->
+        <div class="bg-surface-deep/90 rounded-2xl p-6 shadow-xl flex flex-col justify-between group hover:bg-surface-container-high/90 transition-all border border-border-glass">
+          <div class="flex flex-col gap-4">
+            <div class="w-12 h-12 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center">
+              <span class="material-symbols-outlined text-[26px]">design_services</span>
+            </div>
+            <div>
+              <span class="font-label-badge text-[11px] text-secondary uppercase tracking-wider font-mono">Cyber-Luxe Aesthetics</span>
+              <h3 class="font-headline-sm text-headline-sm font-bold text-text-primary mt-1 font-display">UI / UX Design Systems</h3>
+            </div>
+            <p class="font-body-sm text-body-sm text-text-muted leading-relaxed">
+              High-fidelity user interface systems, micro-interactions, clickable Figma prototypes, and comprehensive brand identity tokens crafted with luxury dark-mode aesthetics.
+            </p>
+            <div class="flex items-center gap-1.5 flex-wrap pt-2">
+              <span class="font-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant border border-border-glass">Figma</span>
+              <span class="font-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant border border-border-glass">Design Tokens</span>
+              <span class="font-label-code text-[11px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant border border-border-glass">Dark Mode</span>
+            </div>
+          </div>
+          <a class="mt-6 w-full py-2.5 rounded-lg bg-surface-container hover:bg-secondary-container/30 text-secondary hover:text-text-primary font-button-text text-button-text shadow-sm transition-all flex items-center justify-center gap-1.5 border border-border-glass" href="contact.html">
+            <span>Design Experience →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- ========================================================================= -->
+<!-- SECTION F: WHY PSYCODES STUDIO? (EDITORIAL PIECE)                        -->
+<!-- ========================================================================= -->
+<section class="w-full px-gutter lg:px-margin py-24 bg-surface-container-lowest/40 relative border border-border-glass">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-5 flex flex-col gap-6">
+<span class="font-label-code text-label-code text-tertiary uppercase tracking-widest">STUDIO ETHOS</span>
+<h2 class="font-headline-lg text-headline-lg font-bold text-text-primary tracking-tight leading-tight">
+          Calculated Precision.<br/>
+<span class="bg-gradient-to-r from-tertiary to-secondary bg-clip-text text-transparent">No Bureaucracy.</span>
+</h2>
+<p class="font-body-md text-body-md text-text-muted leading-relaxed">
+          Traditional digital agencies drown projects in account managers, prolonged committee meetings, and inflated overhead. At PsyCodes Studio, you collaborate directly with the software engineers and designers who write the code and ship the pixels.
+        </p>
+<!-- Studio Founder Quote Card -->
+<div class="p-5 rounded-2xl bg-surface-deep/90 shadow-md border border-border-glass">
+<p class="font-body-sm text-body-sm italic text-on-surface-variant">
+            "We treat software engineering like modern craftsmanship. Whether it is a mathematical calorie tracker, a cozy indie game, or an autonomous AI agent, every edge is honed."
+          </p>
+<div class="mt-4 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-gradient-to-tr from-primary to-tertiary flex items-center justify-center font-bold text-on-primary">
+              BF
+            </div>
+<div>
+<div class="font-button-text text-button-text text-text-primary">Bilawal Feroze</div>
+<div class="font-label-code text-[11px] text-tertiary">Founder &amp; Principal Architect · Karachi</div>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="p-6 rounded-2xl bg-surface-deep/70 shadow-sm flex flex-col gap-3 border border-border-glass">
+<span class="material-symbols-outlined text-tertiary text-[32px]">bolt</span>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-text-primary">Innovation First</h3>
+<p class="font-body-sm text-body-sm text-text-muted leading-relaxed">
+            We don't settle for yesterday's tech stacks. We build on Flutter, Next-gen Unity, modern LLM tooling, and scalable cloud patterns for longevity.
+          </p>
+</div>
+<div class="p-6 rounded-2xl bg-surface-deep/70 shadow-sm flex flex-col gap-3 border border-border-glass">
+<span class="material-symbols-outlined text-secondary text-[32px]">touch_app</span>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-text-primary">User-Centered Craft</h3>
+<p class="font-body-sm text-body-sm text-text-muted leading-relaxed">
+            Every interaction is tuned to human intuition. We prioritize haptic responsiveness, micro-feedback, and razor-sharp typographic hierarchy.
+          </p>
+</div>
+<div class="p-6 rounded-2xl bg-surface-deep/70 shadow-sm flex flex-col gap-3 border border-border-glass">
+<span class="material-symbols-outlined text-primary text-[32px]">schema</span>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-text-primary">Scalable Architecture</h3>
+<p class="font-body-sm text-body-sm text-text-muted leading-relaxed">
+            Codebases built modularly. You own 100% of your intellectual property, repository commits, design libraries, and infrastructure configurations.
+          </p>
+</div>
+<div class="p-6 rounded-2xl bg-surface-deep/70 shadow-sm flex flex-col gap-3 border border-border-glass">
+<span class="material-symbols-outlined text-tertiary text-[32px]">support_agent</span>
+<h3 class="font-headline-sm text-headline-sm font-semibold text-text-primary">Direct Senior Access</h3>
+<p class="font-body-sm text-body-sm text-text-muted leading-relaxed">
+            Zero game of telephone. You receive direct Slack / WhatsApp channels, clear weekly staging builds, and transparent milestone reviews.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- SECTION G: OUR DEVELOPMENT PROCESS (4 CONNECTED PHASES)                   -->
+<!-- ========================================================================= -->
+<section class="w-full px-gutter lg:px-margin py-24 relative">
+<div class="max-w-7xl mx-auto flex flex-col gap-16">
+<div class="text-center flex flex-col items-center gap-2 max-w-2xl mx-auto">
+<span class="font-label-code text-label-code text-tertiary uppercase tracking-widest">RIGOROUS DELIVERY</span>
+<h2 class="font-headline-lg text-headline-lg font-bold text-text-primary tracking-tight">
+          Our Development Process
+        </h2>
+<p class="font-body-md text-body-md text-text-muted">
+          A predictable, transparent pathway from napkin sketch to global production deployment.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+<!-- Step 1 -->
+<div class="bg-surface-deep/90 rounded-2xl p-6 shadow-md flex flex-col justify-between relative group hover:bg-surface-container-high transition-all border border-border-glass">
+<div class="flex flex-col gap-3">
+<span class="font-display text-display font-extrabold text-outline-variant/30 group-hover:text-tertiary/40 transition-colors">01</span>
+<div class="flex items-center gap-2 text-tertiary font-label-badge text-label-badge uppercase tracking-wider">
+<span>Phase 1</span>
+<span>•</span>
+<span>Discover</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-text-primary">Discovery &amp; Logic</h3>
+<p class="font-body-sm text-body-sm text-text-muted leading-relaxed">
+              We define target audience user stories, business model targets, data schemas, and key milestones before touching any code.
+            </p>
+</div>
+<div class="mt-4 pt-4 text-[12px] font-label-code text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary">check_small</span>
+<span>Scope Documentation</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="bg-surface-deep/90 rounded-2xl p-6 shadow-md flex flex-col justify-between relative group hover:bg-surface-container-high transition-all border border-border-glass">
+<div class="flex flex-col gap-3">
+<span class="font-display text-display font-extrabold text-outline-variant/30 group-hover:text-primary/40 transition-colors">02</span>
+<div class="flex items-center gap-2 text-primary font-label-badge text-label-badge uppercase tracking-wider">
+<span>Phase 2</span>
+<span>•</span>
+<span>Design</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-text-primary">UI &amp; Architecture</h3>
+<p class="font-body-sm text-body-sm text-text-muted leading-relaxed">
+              Interactive Figma prototypes, design tokens, asset preparation, and serverless/cloud database architecture schematics.
+            </p>
+</div>
+<div class="mt-4 pt-4 text-[12px] font-label-code text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">check_small</span>
+<span>Figma Prototype Ready</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="bg-surface-deep/90 rounded-2xl p-6 shadow-md flex flex-col justify-between relative group hover:bg-surface-container-high transition-all border border-border-glass">
+<div class="flex flex-col gap-3">
+<span class="font-display text-display font-extrabold text-outline-variant/30 group-hover:text-secondary/40 transition-colors">03</span>
+<div class="flex items-center gap-2 text-secondary font-label-badge text-label-badge uppercase tracking-wider">
+<span>Phase 3</span>
+<span>•</span>
+<span>Develop</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-text-primary font-display">Agile Sprints</h3>
+<p class="font-body-sm text-body-sm text-text-muted leading-relaxed">
+              Milestone builds with weekly playable APK test flights, staging links, and automated CI/CD unit testing coverage.
+            </p>
+</div>
+<div class="mt-4 pt-4 text-[12px] font-label-code text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_small</span>
+<span>Weekly Live Staging</span>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="bg-surface-deep/90 rounded-2xl p-6 shadow-md flex flex-col justify-between relative group hover:bg-surface-container-high transition-all border border-border-glass">
+<div class="flex flex-col gap-3">
+<span class="font-display text-display font-extrabold text-outline-variant/30 group-hover:text-tertiary/40 transition-colors">04</span>
+<div class="flex items-center gap-2 text-tertiary font-label-badge text-label-badge uppercase tracking-wider">
+<span>Phase 4</span>
+<span>•</span>
+<span>Launch</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-text-primary">Launch &amp; Scale</h3>
+<p class="font-body-sm text-body-sm text-text-muted leading-relaxed">
+              App Store / Google Play submissions, production server hardening, domain DNS routing, analytics, and ongoing iteration.
+            </p>
+</div>
+<div class="mt-4 pt-4 text-[12px] font-label-code text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary">check_small</span>
+<span>Production Release</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- SECTION H: CALL TO ACTION & DIRECT ORDER FORM                             -->
+<!-- ========================================================================= -->
+<section class="w-full px-gutter lg:px-margin py-24 bg-surface-container-lowest/80 relative border border-border-glass" id="order">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Studio Contact Meta Details -->
+<div class="lg:col-span-5 flex flex-col justify-between">
+<div class="flex flex-col gap-4">
+<span class="font-label-code text-label-code text-tertiary uppercase tracking-widest">START YOUR PROJECT</span>
+<h2 class="font-headline-lg text-headline-lg font-bold text-text-primary tracking-tight">
+            Have An Idea?<br/>
+<span class="bg-gradient-to-r from-tertiary via-primary to-secondary bg-clip-text text-transparent">Let's Make It Real.</span>
+</h2>
+<p class="font-body-md text-body-md text-text-muted leading-relaxed">
+            Tell us about your project or game concept. We respond within 24 hours with a comprehensive breakdown, timeline estimate, and execution strategy.
+          </p>
+<div class="flex flex-col gap-4 mt-6">
+<div class="p-4 rounded-xl bg-surface-deep shadow-sm flex items-center justify-between border border-border-glass">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-tertiary/10 text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</div>
+<div>
+<div class="text-[11px] font-label-badge text-text-muted uppercase">Direct Email</div>
+<a class="font-label-code text-[14px] text-text-primary hover:text-tertiary transition-colors" href="mailto:psycodestech@gmail.com">psycodestech@gmail.com</a>
+</div>
+</div>
+<button class="p-2 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-text-primary transition-colors border border-border-glass" onclick="navigator.clipboard.writeText('psycodestech@gmail.com'); alert('Copied email to clipboard!');" title="Copy to clipboard">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+</div>
+<div class="p-4 rounded-xl bg-surface-deep shadow-sm flex items-center gap-3 border border-border-glass">
+<div class="w-10 h-10 rounded-lg bg-secondary/10 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+</div>
+<div>
+<div class="text-[11px] font-label-badge text-text-muted uppercase">Headquarters</div>
+<div class="font-body-md text-[14px] text-text-primary">Karachi, Pakistan · Serving Global Clients</div>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-deep shadow-sm flex items-center gap-3 border border-border-glass">
+<div class="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">schedule</span>
+</div>
+<div>
+<div class="text-[11px] font-label-badge text-text-muted uppercase">Response SLA</div>
+<div class="font-body-md text-[14px] text-text-primary">Within 24 Hours Guaranteed</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-6 flex items-center gap-4 text-text-muted">
+<a class="hover:text-tertiary transition-colors text-[13px] font-label-code" href="#">LinkedIn: @psycodestudios</a>
+<span>•</span>
+<a class="hover:text-tertiary transition-colors text-[13px] font-label-code" href="#">X: @PsyCodesAI</a>
+</div>
+</div>
+<!-- Interactive Inquiry Form -->
+<div class="lg:col-span-7 bg-surface-deep rounded-3xl p-8 lg:p-10 shadow-2xl border border-border-glass">
+<form class="flex flex-col gap-5" id="studio-inquiry-form" onsubmit="handleInquirySubmit(event)">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+<div class="flex flex-col gap-2">
+<label class="font-button-text text-[13px] text-text-primary" for="client-name">Your Name *</label>
+<input class="w-full px-4 py-3 rounded-lg bg-surface-container-lowest text-text-primary font-body-sm text-body-sm placeholder:text-text-muted/40 focus:outline-none focus:ring-1 focus:ring-tertiary transition-all border border-border-glass" id="client-name" placeholder="Bilawal Feroze" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-button-text text-[13px] text-text-primary" for="client-email">Email Address *</label>
+<input class="w-full px-4 py-3 rounded-lg bg-surface-container-lowest text-text-primary font-body-sm text-body-sm placeholder:text-text-muted/40 focus:outline-none focus:ring-1 focus:ring-tertiary transition-all border border-border-glass" id="client-email" placeholder="you@company.com" required="" type="email"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-button-text text-[13px] text-text-primary" for="project-type">Project Interest *</label>
+<select class="w-full px-4 py-3 rounded-lg bg-surface-container-lowest text-text-primary font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-tertiary transition-all border border-border-glass" id="project-type" required="">
+<option selected="" value="Unity Game Development">Game Development (Unity 2D/3D)</option>
+<option value="Mobile App (Flutter)">Mobile Application (Flutter iOS &amp; Android)</option>
+<option value="Web Development (React / Next.js)">Web Development (React / Next.js)</option>
+<option value="AI &amp; Intelligent Automation">AI &amp; Workflow Automation</option>
+<option value="UI/UX Design Systems">UI/UX Design Systems</option>
+<option value="SaaS Platforms">SaaS Platforms (Cloud Architecture)</option>
+</select>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+<div class="flex flex-col gap-2">
+<label class="font-button-text text-[13px] text-text-primary" for="estimated-budget">Target Budget</label>
+<select class="w-full px-4 py-3 rounded-lg bg-surface-container-lowest text-text-primary font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-tertiary transition-all border border-border-glass" id="estimated-budget">
+<option value="$1,000 - $3,000">$1,000 — $3,000 (MVP / Prototype)</option>
+<option selected="" value="$3,000 - $8,000">$3,000 — $8,000 (Full Production)</option>
+<option value="$8,000 - $20,000">$8,000 — $20,000 (Enterprise / Game Title)</option>
+<option value="Ongoing Retainer">Ongoing Studio Retainer</option>
+</select>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-button-text text-[13px] text-text-primary" for="timeline">Target Timeline</label>
+<select class="w-full px-4 py-3 rounded-lg bg-surface-container-lowest text-text-primary font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-tertiary transition-all border border-border-glass" id="timeline">
+<option value="Within 2-4 Weeks">Within 2–4 Weeks (Urgent MVP)</option>
+<option selected="" value="1-2 Months">1–2 Months (Standard Sprint)</option>
+<option value="3+ Months">3+ Months (Comprehensive Architecture)</option>
+</select>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-button-text text-[13px] text-text-primary" for="project-summary">Tell us about your product or idea *</label>
+<textarea class="w-full px-4 py-3 rounded-lg bg-surface-container-lowest text-text-primary font-body-sm text-body-sm placeholder:text-text-muted/40 focus:outline-none focus:ring-1 focus:ring-tertiary transition-all border border-border-glass" id="project-summary" placeholder="Briefly describe the vision, platform needs, target audience, and any reference designs or games..." required="" rows="4"></textarea>
+</div>
+<button class="w-full mt-2 py-3.5 rounded-lg bg-gradient-to-r from-primary-container to-secondary-container hover:from-primary hover:to-secondary text-text-primary font-button-text text-button-text shadow-lg shadow-primary-container/20 hover:shadow-xl hover:shadow-tertiary/30 transition-all flex items-center justify-center gap-2" type="submit">
+<span>Send Project Inquiry →</span>
+</button>
+<p class="font-label-code text-[11px] text-text-muted text-center">
+            Your inquiry goes directly to Bilawal Feroze at psycodestech@gmail.com
+          </p>
+</form>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- MODAL: DETAILED WORK INSPECTOR (VANILLA JS DRIVEN)                       -->
+<!-- ========================================================================= -->
+<div class="fixed inset-0 z-50 hidden bg-surface-container-lowest/80 backdrop-blur-xl items-center justify-center p-4 border border-border-glass" id="project-modal">
+<div class="relative bg-surface-deep rounded-2xl w-full max-w-2xl p-6 md:p-8 shadow-2xl flex flex-col gap-6 max-h-[90vh] overflow-y-auto border border-border-glass">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-1 rounded bg-tertiary/20 text-tertiary font-label-badge text-[11px] uppercase" id="modal-tag">PRODUCT ARCHITECTURE</span>
+<span class="font-label-code text-[12px] text-text-muted" id="modal-stack">Flutter / Dart</span>
+</div>
+<button class="p-1.5 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant hover:text-text-primary transition-colors border border-border-glass" onclick="closeProjectModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md font-bold text-text-primary" id="modal-title">FitLyfe Calorie Engine</h3>
+<p class="font-body-md text-body-md text-text-muted mt-2" id="modal-desc">
+          Technical breakdown of the system components and computational design.
+        </p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low shadow-inner flex flex-col gap-3 border border-border-glass">
+<h4 class="font-button-text text-[13px] text-text-primary uppercase tracking-wider font-semibold">The Engineering Challenge</h4>
+<p class="font-body-sm text-body-sm text-text-muted leading-relaxed" id="modal-challenge">
+          Building high-performance food tracking with sub-millisecond database queries on mobile devices while maintaining low battery consumption and offline resiliency.
+        </p>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="p-3 rounded-lg bg-surface-container-high/50 border border-border-glass">
+<div class="font-label-badge text-[10px] text-tertiary uppercase">CORE ARCHITECTURE</div>
+<div class="font-body-sm text-[13px] font-semibold text-text-primary mt-0.5" id="modal-arch">Flutter &amp; Dart Engine</div>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-high/50 border border-border-glass">
+<div class="font-label-badge text-[10px] text-secondary uppercase">DEPLOYMENT STATUS</div>
+<div class="font-body-sm text-[13px] font-semibold text-text-primary mt-0.5" id="modal-status">Alpha Testing Pending</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<a class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary-container text-on-primary-container font-button-text text-button-text hover:bg-primary-container/80 transition-colors" href="#order" onclick="closeProjectModal()">
+<span>Inquire About Similar Architecture</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+<button class="px-4 py-2.5 rounded-lg bg-surface-container text-on-surface-variant font-button-text text-button-text hover:text-text-primary border border-border-glass" onclick="closeProjectModal()">
+          Close Window
+        </button>
+</div>
+</div>
+</div>
+<!-- ========================================================================= -->
+<!-- VANILLA JAVASCRIPT FOR INTERACTIVE LOGIC & FILTERS                        -->
+<!-- ========================================================================= -->
+<script>
+    1. Portfolio Category Filtering
+    function filterPortfolio(category, clickedBtn) {
+      const cards = document.querySelectorAll('.portfolio-card');
+      const buttons = document.querySelectorAll('.portfolio-filter-btn');
+
+      Update button styling
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-primary-container', 'text-on-primary-container');
+        btn.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+      });
+      clickedBtn.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+      clickedBtn.classList.add('bg-primary-container', 'text-on-primary-container');
+
+      Filter cards
+      cards.forEach(card => {
+        const cardCat = card.getAttribute('data-category');
+        if (category === 'all' || cardCat === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    2. Project Data Store for Inspection Modal
+    const projectDetails = {
+      fitlyfe: {
+        title: 'FitLyfe Calorie Engine',
+        tag: 'MOBILE APP · FLUTTER',
+        stack: 'Flutter · Dart · SQLite · HealthKit',
+        desc: 'A smart calorie and fitness tracking application featuring daily calorie goals, streaks, food library, activity logs, and a gamified rank roadmap.',
+        challenge: 'Maintaining instant local search speeds across 10,000+ nutritional food entries on entry-level Android devices without cloud lag or cellular connectivity.',
+        arch: 'Clean Architecture with BLoC State Management',
+        status: 'Releasing Q2 2026'
+      },
+      cocoa: {
+        title: 'Hot Cocoa Run',
+        tag: 'INDIE GAME · UNITY 2D',
+        stack: 'Unity 6 · C# · Universal Render Pipeline',
+        desc: 'A cozy 2D top-down delivery game where players take the role of an agile fox barista dashing through sub-zero blizzards to deliver hot chocolate.',
+        challenge: 'Crafting responsive top-down character inertia and realistic thermodynamic temperature depletion algorithms that balance speed and difficulty.',
+        arch: 'Component Entity Controller with Custom Particle Shaders',
+        status: 'Playable Alpha Stage'
+      },
+      'studio-web': {
+        title: 'PsyCodes Studio Digital Engine',
+        tag: 'WEB PLATFORM · ARCHITECTURE',
+        stack: 'TypeScript · Modern Tailwind · Modular Grid',
+        desc: 'The official digital home and engineering showcase for PsyCodes Studio, designed around Cyber Minimalism and glassmorphic depth.',
+        challenge: 'Eliminating layout shift and delivering high-fidelity responsive dark mode typography with zero third-party framework bloat.',
+        arch: 'Lightweight DOM with Atomic Tokens',
+        status: 'Live & Operational'
+      },
+      'ai-agent': {
+        title: 'Autonomous Studio Agent & Workflow Engine',
+        tag: 'AI SOLUTION · NEURAL ORCHESTRATION',
+        stack: 'Python · FastAPI · LangChain · OpenAI API',
+        desc: 'Intelligent multi-model agent pipeline designed to parse inbound user briefs, categorize scope complexity, and generate technical task breakdowns.',
+        challenge: 'Ensuring structured output adherence and deterministic JSON data payloads from conversational generative LLM models.',
+        arch: 'RAG Pipeline with Vector Retrieval',
+        status: 'Deployed Internally'
+      }
+    };
+
+    function openProjectModal(projectId) {
+      const data = projectDetails[projectId];
+      if (!data) return;
+
+      document.getElementById('modal-title').textContent = data.title;
+      document.getElementById('modal-tag').textContent = data.tag;
+      document.getElementById('modal-stack').textContent = data.stack;
+      document.getElementById('modal-desc').textContent = data.desc;
+      document.getElementById('modal-challenge').textContent = data.challenge;
+      document.getElementById('modal-arch').textContent = data.arch;
+      document.getElementById('modal-status').textContent = data.status;
+
+      const modal = document.getElementById('project-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeProjectModal() {
+      const modal = document.getElementById('project-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    3. Pre-fill Service from Service Accelerator Tiles
+    function prefillService(serviceName) {
+      const select = document.getElementById('project-type');
+      if (select) {
+        for (let i = 0; i < select.options.length; i++) {
+          if (select.options[i].value === serviceName || select.options[i].text.includes(serviceName.split(' ')[0])) {
+            select.selectedIndex = i;
+            break;
+          }
+        }
+      }
+      const orderSection = document.getElementById('order');
+      if (orderSection) {
+        orderSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    4. Form Submit Handler that drafts instant direct mailto
+    function handleInquirySubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('client-name').value;
+      const email = document.getElementById('client-email').value;
+      const projectType = document.getElementById('project-type').value;
+      const budget = document.getElementById('estimated-budget').value;
+      const timeline = document.getElementById('timeline').value;
+      const summary = document.getElementById('project-summary').value;
+
+      const subject = encodeURIComponent(`PsyCodes Studio Inquiry: ${projectType} from ${name}`);
+      const body = encodeURIComponent(
+        `Name: ${name}\n` +
+        `Email: ${email}\n` +
+        `Service Track: ${projectType}\n` +
+        `Target Budget: ${budget}\n` +
+        `Target Timeline: ${timeline}\n\n` +
+        `Project Summary:\n${summary}\n\n` +
+        `-- Sent via PsyCodes Studio Web Terminal`
+      );
+
+      Open user default mail composer directly targeting studio inbox
+      window.location.href = `mailto:psycodestech@gmail.com?subject=${subject}&body=${body}`;
+    }
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest text-on-surface-variant shadow-[0_-1px_12px_rgba(0,0,0,0.3)] mt-margin border-t border-border-glass">
+  <div class="w-full px-gutter lg:px-margin py-margin">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl">
+      <!-- Col 1: Brand & Tagline -->
+      <div class="flex flex-col gap-space-md">
+        <div class="flex items-center gap-space-sm">
+          <img alt="PsyCodes Studio Logo" class="h-7 w-auto object-contain" src="assets/logo/Psycodes_logo_trans.png" />
+          <span class="font-headline-sm text-headline-sm font-bold text-text-primary tracking-tight">PsyCodes Studio</span>
+        </div>
+        <p class="font-body-sm text-body-sm text-text-muted leading-relaxed">
+          Architecting elite AI systems, hyper-performing web platforms, and independent interactive entertainment. Built with mathematical precision.
+        </p>
+        <div class="flex items-center gap-space-xs">
+          <span class="inline-block w-2 h-2 rounded-full bg-tertiary shadow-[0_0_8px_#18d9f6]"></span>
+          <span class="font-label-badge text-label-badge text-tertiary uppercase tracking-wider">CODE. CREATE. AUTOMATE.</span>
+        </div>
+      </div>
+
+      <!-- Col 2: Quick Nav -->
+      <div class="flex flex-col gap-space-md">
+        <span class="font-headline-sm text-headline-sm font-semibold text-text-primary">Quick Nav</span>
+        <ul class="flex flex-col gap-space-sm font-body-sm text-body-sm">
+          <li><a class="text-on-surface-variant hover:text-tertiary transition-colors" href="index.html">Home</a></li>
+          <li><a class="text-on-surface-variant hover:text-tertiary transition-colors" href="products.html">Products</a></li>
+          <li><a class="text-on-surface-variant hover:text-tertiary transition-colors" href="services.html">Services</a></li>
+          <li><a class="text-on-surface-variant hover:text-tertiary transition-colors" href="play-games.html">Play Games</a></li>
+          <li><a class="text-on-surface-variant hover:text-tertiary transition-colors" href="about.html">About</a></li>
+          <li><a class="text-on-surface-variant hover:text-tertiary transition-colors" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Studio Credentials -->
+      <div class="flex flex-col gap-space-md">
+        <span class="font-headline-sm text-headline-sm font-semibold text-text-primary">Studio Credentials</span>
+        <div class="flex flex-col gap-space-xs font-body-sm text-body-sm text-text-muted">
+          <div class="flex items-center gap-space-xs">
+            <span class="material-symbols-outlined text-[16px] text-primary">person</span>
+            <span>Founded by <strong class="text-text-primary font-medium">Bilawal Feroze</strong></span>
+          </div>
+          <div class="flex items-center gap-space-xs">
+            <span class="material-symbols-outlined text-[16px] text-primary">location_on</span>
+            <span>Karachi, Pakistan</span>
+          </div>
+          <div class="flex items-center gap-space-xs">
+            <span class="material-symbols-outlined text-[16px] text-primary">calendar_today</span>
+            <span>Est. 2026</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Col 4: Connect -->
+      <div class="flex flex-col gap-space-md">
+        <span class="font-headline-sm text-headline-sm font-semibold text-text-primary">Connect</span>
+        <div class="flex flex-col gap-space-sm font-body-sm text-body-sm">
+          <a class="flex items-center gap-space-xs text-on-surface-variant hover:text-tertiary transition-colors" href="mailto:psycodestech@gmail.com">
+            <span class="material-symbols-outlined text-[16px]">mail</span>
+            <span class="font-label-code text-label-code">psycodestech@gmail.com</span>
+          </a>
+          <a class="flex items-center gap-space-xs text-on-surface-variant hover:text-tertiary transition-colors" href="https://linkedin.com/in/bilawalferoze" target="_blank" rel="noreferrer">
+            <span class="material-symbols-outlined text-[16px]">link</span>
+            <span>LinkedIn: <span class="text-text-primary">bilawalferoze</span></span>
+          </a>
+          <a class="flex items-center gap-space-xs text-on-surface-variant hover:text-tertiary transition-colors" href="https://instagram.com/psycodestudio" target="_blank" rel="noreferrer">
+            <span class="material-symbols-outlined text-[16px]">tag</span>
+            <span>Instagram: <span class="text-text-primary">@psycodestudio</span></span>
+          </a>
+          <a class="flex items-center gap-space-xs text-on-surface-variant hover:text-tertiary transition-colors" href="https://github.com/bilawalferoze" target="_blank" rel="noreferrer">
+            <span class="material-symbols-outlined text-[16px]">code</span>
+            <span>GitHub: <span class="text-text-primary">@bilawalferoze</span></span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="mt-space-xl pt-space-lg border-t border-border-glass flex flex-col md:flex-row items-center justify-between gap-space-md font-body-sm text-body-sm text-text-muted">
+      <p>© 2026 PsyCodes Studio. All computational rights reserved.</p>
+      <p class="font-label-badge text-label-badge uppercase text-outline">Code. Create. Automate.</p>
+    </div>
+  </div>
+</footer>
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu) menu.classList.toggle('hidden');
+  }
+</script>
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu) menu.classList.toggle('hidden');
+  }
+</script>
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu) menu.classList.toggle('hidden');
+  }
+</script>
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu) menu.classList.toggle('hidden');
+  }
+</script>
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu) menu.classList.toggle('hidden');
+  }
+</script>
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu) menu.classList.toggle('hidden');
+  }
+</script>
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu) menu.classList.toggle('hidden');
+  }
+</script>
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    if (menu) menu.classList.toggle('hidden');
+  }
+</script>
+  <script>
+    function switchFitLyfeTab(tabKey) {
+      const metricLabel = document.getElementById('fitlyfe-metric-label');
+      const metricValue = document.getElementById('fitlyfe-metric-value');
+      const badgeText = document.getElementById('fitlyfe-badge-text');
+      const badgeIcon = document.getElementById('fitlyfe-badge-icon');
+      const buttons = document.querySelectorAll('.fitlyfe-tab');
+
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-surface-container-high', 'text-text-primary');
+        btn.classList.add('bg-surface-container', 'text-text-muted');
+      });
+
+      const activeBtn = document.getElementById('fitlyfe-tab-' + tabKey);
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-surface-container', 'text-text-muted');
+        activeBtn.classList.add('bg-surface-container-high', 'text-text-primary');
+      }
+
+      if (tabKey === 'calorie') {
+        if (metricLabel) metricLabel.textContent = "TODAY'S INTAKE";
+        if (metricValue) metricValue.textContent = "1,840 / 2,200 kcal";
+        if (badgeText) badgeText.textContent = "14 Day Streak";
+        if (badgeIcon) badgeIcon.textContent = "local_fire_department";
+      } else if (tabKey === 'food') {
+        if (metricLabel) metricLabel.textContent = "CURATED REGIONAL DATABASE";
+        if (metricValue) metricValue.textContent = "4,200+ Verified Foods";
+        if (badgeText) badgeText.textContent = "Barcode Scanner";
+        if (badgeIcon) badgeIcon.textContent = "qr_code_scanner";
+      } else if (tabKey === 'rank') {
+        if (metricLabel) metricLabel.textContent = "TIER PROGRESSION";
+        if (metricValue) metricValue.textContent = "Level 18 · Iron Striker";
+        if (badgeText) badgeText.textContent = "Top 5% Consistency";
+        if (badgeIcon) badgeIcon.textContent = "military_tech";
+      }
+    }
+  </script>
+
+  <script>
+    function switchFitLyfeTab(tabKey) {
+      const metricLabel = document.getElementById('fitlyfe-metric-label');
+      const metricValue = document.getElementById('fitlyfe-metric-value');
+      const badgeText = document.getElementById('fitlyfe-badge-text');
+      const badgeIcon = document.getElementById('fitlyfe-badge-icon');
+      const buttons = document.querySelectorAll('.fitlyfe-tab');
+
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-surface-container-high', 'text-text-primary');
+        btn.classList.add('bg-surface-container', 'text-text-muted');
+      });
+
+      const activeBtn = document.getElementById('fitlyfe-tab-' + tabKey);
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-surface-container', 'text-text-muted');
+        activeBtn.classList.add('bg-surface-container-high', 'text-text-primary');
+      }
+
+      if (tabKey === 'calorie') {
+        if (metricLabel) metricLabel.textContent = "TODAY'S INTAKE";
+        if (metricValue) metricValue.textContent = "1,840 / 2,200 kcal";
+        if (badgeText) badgeText.textContent = "14 Day Streak";
+        if (badgeIcon) badgeIcon.textContent = "local_fire_department";
+      } else if (tabKey === 'food') {
+        if (metricLabel) metricLabel.textContent = "CURATED REGIONAL DATABASE";
+        if (metricValue) metricValue.textContent = "4,200+ Verified Foods";
+        if (badgeText) badgeText.textContent = "Barcode Scanner";
+        if (badgeIcon) badgeIcon.textContent = "qr_code_scanner";
+      } else if (tabKey === 'rank') {
+        if (metricLabel) metricLabel.textContent = "TIER PROGRESSION";
+        if (metricValue) metricValue.textContent = "Level 18 · Iron Striker";
+        if (badgeText) badgeText.textContent = "Top 5% Consistency";
+        if (badgeIcon) badgeIcon.textContent = "military_tech";
+      }
+    }
+  </script>
+
+  <script>
+    function switchFitLyfeTab(tabKey) {
+      const metricLabel = document.getElementById('fitlyfe-metric-label');
+      const metricValue = document.getElementById('fitlyfe-metric-value');
+      const badgeText = document.getElementById('fitlyfe-badge-text');
+      const badgeIcon = document.getElementById('fitlyfe-badge-icon');
+      const buttons = document.querySelectorAll('.fitlyfe-tab');
+
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-surface-container-high', 'text-text-primary');
+        btn.classList.add('bg-surface-container', 'text-text-muted');
+      });
+
+      const activeBtn = document.getElementById('fitlyfe-tab-' + tabKey);
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-surface-container', 'text-text-muted');
+        activeBtn.classList.add('bg-surface-container-high', 'text-text-primary');
+      }
+
+      if (tabKey === 'calorie') {
+        if (metricLabel) metricLabel.textContent = "TODAY'S INTAKE";
+        if (metricValue) metricValue.textContent = "1,840 / 2,200 kcal";
+        if (badgeText) badgeText.textContent = "14 Day Streak";
+        if (badgeIcon) badgeIcon.textContent = "local_fire_department";
+      } else if (tabKey === 'food') {
+        if (metricLabel) metricLabel.textContent = "CURATED REGIONAL DATABASE";
+        if (metricValue) metricValue.textContent = "4,200+ Verified Foods";
+        if (badgeText) badgeText.textContent = "Barcode Scanner";
+        if (badgeIcon) badgeIcon.textContent = "qr_code_scanner";
+      } else if (tabKey === 'rank') {
+        if (metricLabel) metricLabel.textContent = "TIER PROGRESSION";
+        if (metricValue) metricValue.textContent = "Level 18 · Iron Striker";
+        if (badgeText) badgeText.textContent = "Top 5% Consistency";
+        if (badgeIcon) badgeIcon.textContent = "military_tech";
+      }
+    }
+  </script>
+
+  <script>
+    function switchFitLyfeTab(tabKey) {
+      const metricLabel = document.getElementById('fitlyfe-metric-label');
+      const metricValue = document.getElementById('fitlyfe-metric-value');
+      const badgeText = document.getElementById('fitlyfe-badge-text');
+      const badgeIcon = document.getElementById('fitlyfe-badge-icon');
+      const buttons = document.querySelectorAll('.fitlyfe-tab');
+
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-surface-container-high', 'text-text-primary');
+        btn.classList.add('bg-surface-container', 'text-text-muted');
+      });
+
+      const activeBtn = document.getElementById('fitlyfe-tab-' + tabKey);
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-surface-container', 'text-text-muted');
+        activeBtn.classList.add('bg-surface-container-high', 'text-text-primary');
+      }
+
+      if (tabKey === 'calorie') {
+        if (metricLabel) metricLabel.textContent = "TODAY'S INTAKE";
+        if (metricValue) metricValue.textContent = "1,840 / 2,200 kcal";
+        if (badgeText) badgeText.textContent = "14 Day Streak";
+        if (badgeIcon) badgeIcon.textContent = "local_fire_department";
+      } else if (tabKey === 'food') {
+        if (metricLabel) metricLabel.textContent = "CURATED REGIONAL DATABASE";
+        if (metricValue) metricValue.textContent = "4,200+ Verified Foods";
+        if (badgeText) badgeText.textContent = "Barcode Scanner";
+        if (badgeIcon) badgeIcon.textContent = "qr_code_scanner";
+      } else if (tabKey === 'rank') {
+        if (metricLabel) metricLabel.textContent = "TIER PROGRESSION";
+        if (metricValue) metricValue.textContent = "Level 18 · Iron Striker";
+        if (badgeText) badgeText.textContent = "Top 5% Consistency";
+        if (badgeIcon) badgeIcon.textContent = "military_tech";
+      }
+    }
+  </script>
+
+  <script>
+    function switchFitLyfeTab(tabKey) {
+      const metricLabel = document.getElementById('fitlyfe-metric-label');
+      const metricValue = document.getElementById('fitlyfe-metric-value');
+      const badgeText = document.getElementById('fitlyfe-badge-text');
+      const badgeIcon = document.getElementById('fitlyfe-badge-icon');
+      const buttons = document.querySelectorAll('.fitlyfe-tab');
+
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-surface-container-high', 'text-text-primary');
+        btn.classList.add('bg-surface-container', 'text-text-muted');
+      });
+
+      const activeBtn = document.getElementById('fitlyfe-tab-' + tabKey);
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-surface-container', 'text-text-muted');
+        activeBtn.classList.add('bg-surface-container-high', 'text-text-primary');
+      }
+
+      if (tabKey === 'calorie') {
+        if (metricLabel) metricLabel.textContent = "TODAY'S INTAKE";
+        if (metricValue) metricValue.textContent = "1,840 / 2,200 kcal";
+        if (badgeText) badgeText.textContent = "14 Day Streak";
+        if (badgeIcon) badgeIcon.textContent = "local_fire_department";
+      } else if (tabKey === 'food') {
+        if (metricLabel) metricLabel.textContent = "CURATED REGIONAL DATABASE";
+        if (metricValue) metricValue.textContent = "4,200+ Verified Foods";
+        if (badgeText) badgeText.textContent = "Barcode Scanner";
+        if (badgeIcon) badgeIcon.textContent = "qr_code_scanner";
+      } else if (tabKey === 'rank') {
+        if (metricLabel) metricLabel.textContent = "TIER PROGRESSION";
+        if (metricValue) metricValue.textContent = "Level 18 · Iron Striker";
+        if (badgeText) badgeText.textContent = "Top 5% Consistency";
+        if (badgeIcon) badgeIcon.textContent = "military_tech";
+      }
+    }
+  </script>
+
+  <script>
+    function switchFitLyfeTab(tabKey) {
+      const metricLabel = document.getElementById('fitlyfe-metric-label');
+      const metricValue = document.getElementById('fitlyfe-metric-value');
+      const badgeText = document.getElementById('fitlyfe-badge-text');
+      const badgeIcon = document.getElementById('fitlyfe-badge-icon');
+      const buttons = document.querySelectorAll('.fitlyfe-tab');
+
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-surface-container-high', 'text-text-primary');
+        btn.classList.add('bg-surface-container', 'text-text-muted');
+      });
+
+      const activeBtn = document.getElementById('fitlyfe-tab-' + tabKey);
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-surface-container', 'text-text-muted');
+        activeBtn.classList.add('bg-surface-container-high', 'text-text-primary');
+      }
+
+      if (tabKey === 'calorie') {
+        if (metricLabel) metricLabel.textContent = "TODAY'S INTAKE";
+        if (metricValue) metricValue.textContent = "1,840 / 2,200 kcal";
+        if (badgeText) badgeText.textContent = "14 Day Streak";
+        if (badgeIcon) badgeIcon.textContent = "local_fire_department";
+      } else if (tabKey === 'food') {
+        if (metricLabel) metricLabel.textContent = "CURATED REGIONAL DATABASE";
+        if (metricValue) metricValue.textContent = "4,200+ Verified Foods";
+        if (badgeText) badgeText.textContent = "Barcode Scanner";
+        if (badgeIcon) badgeIcon.textContent = "qr_code_scanner";
+      } else if (tabKey === 'rank') {
+        if (metricLabel) metricLabel.textContent = "TIER PROGRESSION";
+        if (metricValue) metricValue.textContent = "Level 18 · Iron Striker";
+        if (badgeText) badgeText.textContent = "Top 5% Consistency";
+        if (badgeIcon) badgeIcon.textContent = "military_tech";
+      }
+    }
+  </script>
+
+  <script>
+    function switchFitLyfeTab(tabKey) {
+      const metricLabel = document.getElementById('fitlyfe-metric-label');
+      const metricValue = document.getElementById('fitlyfe-metric-value');
+      const badgeText = document.getElementById('fitlyfe-badge-text');
+      const badgeIcon = document.getElementById('fitlyfe-badge-icon');
+      const buttons = document.querySelectorAll('.fitlyfe-tab');
+
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-surface-container-high', 'text-text-primary');
+        btn.classList.add('bg-surface-container', 'text-text-muted');
+      });
+
+      const activeBtn = document.getElementById('fitlyfe-tab-' + tabKey);
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-surface-container', 'text-text-muted');
+        activeBtn.classList.add('bg-surface-container-high', 'text-text-primary');
+      }
+
+      if (tabKey === 'calorie') {
+        if (metricLabel) metricLabel.textContent = "TODAY'S INTAKE";
+        if (metricValue) metricValue.textContent = "1,840 / 2,200 kcal";
+        if (badgeText) badgeText.textContent = "14 Day Streak";
+        if (badgeIcon) badgeIcon.textContent = "local_fire_department";
+      } else if (tabKey === 'food') {
+        if (metricLabel) metricLabel.textContent = "CURATED REGIONAL DATABASE";
+        if (metricValue) metricValue.textContent = "4,200+ Verified Foods";
+        if (badgeText) badgeText.textContent = "Barcode Scanner";
+        if (badgeIcon) badgeIcon.textContent = "qr_code_scanner";
+      } else if (tabKey === 'rank') {
+        if (metricLabel) metricLabel.textContent = "TIER PROGRESSION";
+        if (metricValue) metricValue.textContent = "Level 18 · Iron Striker";
+        if (badgeText) badgeText.textContent = "Top 5% Consistency";
+        if (badgeIcon) badgeIcon.textContent = "military_tech";
+      }
+    }
+  </script>
+
+  <script>
+    function switchFitLyfeTab(tabKey) {
+      const metricLabel = document.getElementById('fitlyfe-metric-label');
+      const metricValue = document.getElementById('fitlyfe-metric-value');
+      const badgeText = document.getElementById('fitlyfe-badge-text');
+      const badgeIcon = document.getElementById('fitlyfe-badge-icon');
+      const buttons = document.querySelectorAll('.fitlyfe-tab');
+
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-surface-container-high', 'text-text-primary');
+        btn.classList.add('bg-surface-container', 'text-text-muted');
+      });
+
+      const activeBtn = document.getElementById('fitlyfe-tab-' + tabKey);
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-surface-container', 'text-text-muted');
+        activeBtn.classList.add('bg-surface-container-high', 'text-text-primary');
+      }
+
+      if (tabKey === 'calorie') {
+        if (metricLabel) metricLabel.textContent = "TODAY'S INTAKE";
+        if (metricValue) metricValue.textContent = "1,840 / 2,200 kcal";
+        if (badgeText) badgeText.textContent = "14 Day Streak";
+        if (badgeIcon) badgeIcon.textContent = "local_fire_department";
+      } else if (tabKey === 'food') {
+        if (metricLabel) metricLabel.textContent = "CURATED REGIONAL DATABASE";
+        if (metricValue) metricValue.textContent = "4,200+ Verified Foods";
+        if (badgeText) badgeText.textContent = "Barcode Scanner";
+        if (badgeIcon) badgeIcon.textContent = "qr_code_scanner";
+      } else if (tabKey === 'rank') {
+        if (metricLabel) metricLabel.textContent = "TIER PROGRESSION";
+        if (metricValue) metricValue.textContent = "Level 18 · Iron Striker";
+        if (badgeText) badgeText.textContent = "Top 5% Consistency";
+        if (badgeIcon) badgeIcon.textContent = "military_tech";
+      }
+    }
+  </script>
+</body></html>
