@@ -1,8 +1,6 @@
 /**
- * Category-specific pricing and timeline configurations.
- * Ensures budget tiers and delivery timelines are realistic and context-aware:
- * - Special $49.99 starter rates strictly apply to AI Video Ads & Commercials.
- * - Mobile apps, cloud platforms, games, AI systems, and design systems each have their own tailored ranges.
+ * Category-specific timeline and scope configurations.
+ * Ensures delivery timelines are realistic and context-aware.
  */
 
 export interface PricingOption {

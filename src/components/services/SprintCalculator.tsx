@@ -4,7 +4,7 @@ import { CheckCircle2, Copy, Check, ArrowRight, ShieldCheck, Sparkles } from 'lu
 import { useSprintCalculator, CalculatorDiscipline, CalculatorTier } from '../../hooks/useSprintCalculator';
 
 const DISCIPLINES: { id: CalculatorDiscipline; title: string; sub: string; badge?: string }[] = [
-  { id: 'video', title: 'AI Videos & Ads', sub: 'TikTok, Reels & 4K', badge: 'From $49.99' },
+  { id: 'video', title: 'AI Videos & Ads', sub: 'TikTok, Reels & 4K', badge: 'Fast Delivery' },
   { id: 'mobile', title: 'Mobile App', sub: 'iOS & Android' },
   { id: 'web', title: 'Website / Web App', sub: 'Fast & Modern' },
   { id: 'ai', title: 'AI & Automation', sub: 'Smart Assistants' },
@@ -21,45 +21,45 @@ const TIERS: { id: CalculatorTier; title: string; sub: string }[] = [
 
 const TIER_BADGES: Record<CalculatorDiscipline, Record<CalculatorTier, string>> = {
   video: {
-    mvp: 'From $49.99',
-    prod: '$199 – $499',
-    enterprise: '$999+',
+    mvp: 'Fast Delivery',
+    prod: 'Campaign Suite',
+    enterprise: 'Brand Series',
   },
   mobile: {
-    mvp: 'From $149',
-    prod: '$499 – $1,299',
-    enterprise: '$2,000+',
+    mvp: 'Rapid MVP',
+    prod: 'Store Ready',
+    enterprise: 'Full Ecosystem',
   },
   web: {
-    mvp: 'From $99',
-    prod: '$299 – $799',
-    enterprise: '$2,000+',
+    mvp: 'Landing / MVP',
+    prod: 'Full Web App',
+    enterprise: 'Scale Platform',
   },
   ai: {
-    mvp: 'From $99',
-    prod: '$399 – $999',
-    enterprise: '$2,000+',
+    mvp: 'Smart Assistant',
+    prod: 'Automation Suite',
+    enterprise: 'Autonomous',
   },
   game: {
-    mvp: 'From $199',
-    prod: '$599 – $1,499',
-    enterprise: '$2,000+',
+    mvp: 'Playable Alpha',
+    prod: 'Full Indie Game',
+    enterprise: 'Commercial Title',
   },
   saas: {
-    mvp: 'From $199',
-    prod: '$599 – $1,499',
-    enterprise: '$2,000+',
+    mvp: 'Core MVP',
+    prod: 'Complete SaaS',
+    enterprise: 'Enterprise Cloud',
   },
   design: {
-    mvp: 'From $79',
-    prod: '$199 – $599',
-    enterprise: '$1,200+',
+    mvp: 'Starter Branding',
+    prod: 'Full Design System',
+    enterprise: 'Design & Motion',
   },
 };
 
 /**
  * SprintCalculator - Interactive project scope and timeline estimator.
- * Single Responsibility: Interactive parameter controls and real-time deliverables calculation with startup rates ($49.99 to $2,000+).
+ * Single Responsibility: Interactive parameter controls and real-time deliverables calculation with flexible sprint estimations.
  */
 export const SprintCalculator: React.FC = () => {
   const {
@@ -130,18 +130,18 @@ export const SprintCalculator: React.FC = () => {
           <div>
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs font-semibold mb-2">
               <Sparkles className="w-4 h-4 text-emerald-400" />
-              <span>TRANSPARENT SPRINT PRICING · VIDEO ADS FROM $49.99</span>
+              <span>FLEXIBLE SPRINT ESTIMATION · TAILORED TO YOUR BUDGET</span>
             </div>
             <h2 className="font-headline-lg text-2xl sm:text-3xl font-bold text-text-primary tracking-tight">
               Estimate Your Project in Seconds
             </h2>
             <p className="text-sm text-text-muted mt-1 max-w-xl">
-              From high-impact AI video ads starting at $49.99 to full mobile apps and enterprise systems up to $2,000+.
+              From high-impact AI video ads and rapid prototypes to full mobile apps and scalable enterprise platforms — estimated to fit your goals.
             </p>
           </div>
           <div className="flex items-center gap-2 bg-surface-deep px-3.5 py-1.5 rounded-full border border-border-glass text-xs text-text-primary self-start md:self-auto font-mono">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="text-emerald-400 font-semibold font-mono">SPECIAL INTRO RATES ACTIVE</span>
+            <span className="text-emerald-400 font-semibold font-mono">CUSTOM SPRINT ESTIMATES</span>
           </div>
         </div>
 
@@ -321,9 +321,9 @@ export const SprintCalculator: React.FC = () => {
                   </div>
 
                   <div className="p-3.5 rounded-xl bg-surface-container-high/60 border border-border-glass">
-                    <span className="text-[11px] text-emerald-400 block uppercase font-semibold font-mono">Special Rate</span>
+                    <span className="text-[11px] text-emerald-400 block uppercase font-semibold font-mono">Budget Model</span>
                     <div className="flex items-baseline gap-1 mt-1">
-                      <span className="font-display text-xl sm:text-2xl font-bold text-text-primary">{calcResults.budgetEstimate}</span>
+                      <span className="font-display text-base sm:text-lg font-bold text-text-primary">{calcResults.budgetEstimate}</span>
                     </div>
                   </div>
                 </div>

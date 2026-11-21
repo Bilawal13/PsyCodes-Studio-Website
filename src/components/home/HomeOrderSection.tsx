@@ -22,7 +22,7 @@ export const HomeOrderSection: React.FC = () => {
 
   const activePricing = useMemo(() => getCategoryPricing(inquiryType), [inquiryType]);
 
-  const [inquiryBudget, setInquiryBudget] = useState('$400 - $850');
+  const [inquiryBudget, setInquiryBudget] = useState('');
   const [inquiryTimeline, setInquiryTimeline] = useState('1-2 Months (Standard Launch)');
   const [inquirySummary, setInquirySummary] = useState('');
   const [inquirySuccess, setInquirySuccess] = useState(false);
@@ -32,7 +32,6 @@ export const HomeOrderSection: React.FC = () => {
   const handleTypeChange = (newType: string) => {
     setInquiryType(newType);
     const pricing = getCategoryPricing(newType);
-    setInquiryBudget(pricing.defaultBudget);
     setInquiryTimeline(pricing.defaultTimeline);
   };
 
@@ -53,7 +52,7 @@ export const HomeOrderSection: React.FC = () => {
         email: inquiryEmail,
         whatsapp: inquiryWhatsapp.trim() || undefined,
         project_type: inquiryType,
-        budget: inquiryBudget,
+        budget: inquiryBudget.trim() || 'Flexible / To be discussed',
         timeline: inquiryTimeline,
         preferred_contact: inquiryWhatsapp.trim() ? 'WhatsApp' : 'Email',
         description: inquirySummary,
@@ -160,6 +159,7 @@ export const HomeOrderSection: React.FC = () => {
                 setInquirySuccess(false);
                 setSubmittedReceipt(null);
                 setInquiryWhatsapp('');
+                setInquiryBudget('');
                 setInquirySummary('');
               }}
             />
@@ -249,7 +249,7 @@ export const HomeOrderSection: React.FC = () => {
                   >
                     <option value="Mobile App Development">Mobile App Development (iOS &amp; Android)</option>
                     <option value="Web & Cloud Platforms">Web &amp; Cloud Platforms (SaaS &amp; Web Apps)</option>
-                    <option value="AI Commercials & Product Video Ads">AI Commercials &amp; Product Video Ads (From $49.99)</option>
+                    <option value="AI Commercials & Product Video Ads">AI Commercials &amp; Product Video Ads</option>
                     <option value="AI Solutions & Automation">AI Solutions &amp; Automation</option>
                     <option value="Game Development & Interactive">Game Development &amp; Interactive Builds</option>
                     <option value="UI/UX Design Systems">UI / UX Design Systems &amp; Prototypes</option>
@@ -262,22 +262,18 @@ export const HomeOrderSection: React.FC = () => {
                 <div className="flex flex-col gap-2">
                   <div className="flex items-center justify-between">
                     <label className="font-button-text text-[13px] text-text-primary" htmlFor="estimated-budget">
-                      Target Budget ({activePricing.shortName})
+                      Estimated Budget
                     </label>
-                    <span className="text-[10px] font-mono text-tertiary font-semibold">Custom Tiers</span>
+                    <span className="text-[11px] font-mono text-emerald-400">Optional</span>
                   </div>
-                  <select
+                  <input
                     id="estimated-budget"
+                    type="text"
                     value={inquiryBudget}
                     onChange={(e) => setInquiryBudget(e.target.value)}
-                    className="w-full px-4 py-3 rounded-lg bg-surface-container-lowest text-text-primary font-body-sm text-body-sm border border-border-glass focus:outline-none focus:border-tertiary focus:ring-1 focus:ring-tertiary transition-all"
-                  >
-                    {activePricing.budgets.map((b) => (
-                      <option key={b.value} value={b.value}>
-                        {b.label}
-                      </option>
-                    ))}
-                  </select>
+                    placeholder="e.g. $300, or Flexible / Open to discussion"
+                    className="w-full px-4 py-3 rounded-lg bg-surface-container-lowest text-text-primary font-body-sm text-body-sm placeholder:text-text-muted/40 border border-border-glass focus:outline-none focus:border-tertiary focus:ring-1 focus:ring-tertiary transition-all"
+                  />
                 </div>
                 <div className="flex flex-col gap-2">
                   <label className="font-button-text text-[13px] text-text-primary" htmlFor="timeline">

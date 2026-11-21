@@ -14,8 +14,8 @@ export interface CalculatorResult {
 }
 
 /**
- * useSprintCalculator - Encapsulates sprint duration, budget tier, and deliverable artifact estimation.
- * Features startup-friendly rates starting from $49.99 up to $2,000+ for enterprise platforms.
+ * useSprintCalculator - Encapsulates sprint duration, scope tier, and deliverable artifact estimation.
+ * Tailored to match client needs and flexible budgets without rigid pricing locks.
  */
 export function useSprintCalculator() {
   const [calcDiscipline, setCalcDiscipline] = useState<CalculatorDiscipline>('video');
@@ -26,10 +26,10 @@ export function useSprintCalculator() {
 
   const calcResults: CalculatorResult = useMemo(() => {
     let timeline = '1–2 Days';
-    let budgetEstimate = '$49.99 – $149';
+    let budgetEstimate = 'Flexible / Single Reel';
     let refId = 'PSC-VID-099';
     let disciplineLabel = 'AI Video Ads & Commercials';
-    let tierLabel = 'Starter Package (Special Startup Rate)';
+    let tierLabel = 'Single Viral Ad Reel';
     
     let artifacts: string[] = [];
 
@@ -40,8 +40,8 @@ export function useSprintCalculator() {
         disciplineLabel = 'AI Commercials & Product Video Ads';
         if (calcTier === 'mvp') {
           timeline = '1–2 Days';
-          budgetEstimate = '$49.99 – $149';
-          tierLabel = 'Single Viral Ad Reel (Starter Rate)';
+          budgetEstimate = 'Flexible / Single Reel';
+          tierLabel = 'Single Viral Ad Reel';
           artifacts = [
             '1 High-converting AI product video ad (vertical 9:16 for TikTok/Reels/Shorts)',
             'Photorealistic AI product animation, dynamic motion & dramatic lighting',
@@ -49,7 +49,7 @@ export function useSprintCalculator() {
           ];
         } else if (calcTier === 'prod') {
           timeline = '3–5 Days';
-          budgetEstimate = '$199 – $499';
+          budgetEstimate = 'Flexible / Campaign Suite';
           tierLabel = 'Complete Video Ad Campaign';
           artifacts = [
             '3 to 5 multi-format video ads (9:16 vertical, 16:9 widescreen, 1:1 square)',
@@ -58,7 +58,7 @@ export function useSprintCalculator() {
           ];
         } else {
           timeline = '1–2 Weeks';
-          budgetEstimate = '$999 – $2,000+';
+          budgetEstimate = 'Flexible / Brand Suite';
           tierLabel = 'Enterprise Commercial Brand Suite';
           artifacts = [
             'Full suite of 10+ cinematic commercial ads and product showcase videos',
@@ -73,7 +73,7 @@ export function useSprintCalculator() {
         disciplineLabel = 'Mobile App Development (iOS & Android)';
         if (calcTier === 'mvp') {
           timeline = '1–2 Weeks';
-          budgetEstimate = '$149 – $399';
+          budgetEstimate = 'Flexible / MVP';
           tierLabel = 'Rapid MVP App Prototype';
           artifacts = [
             'Functional mobile prototype with core user flows running on Android / iOS',
@@ -82,7 +82,7 @@ export function useSprintCalculator() {
           ];
         } else if (calcTier === 'prod') {
           timeline = '3–5 Weeks';
-          budgetEstimate = '$499 – $1,299';
+          budgetEstimate = 'Flexible / Full App';
           tierLabel = 'Full Production Mobile App';
           artifacts = [
             'Complete iOS and Android app ready for Apple App Store & Google Play',
@@ -91,7 +91,7 @@ export function useSprintCalculator() {
           ];
         } else {
           timeline = '6–8 Weeks';
-          budgetEstimate = '$2,000+';
+          budgetEstimate = 'Flexible / Enterprise';
           tierLabel = 'Enterprise Mobile App Ecosystem';
           artifacts = [
             'Multi-platform mobile ecosystem with cloud backend and admin panel',
@@ -106,7 +106,7 @@ export function useSprintCalculator() {
         disciplineLabel = 'Website & Web Application';
         if (calcTier === 'mvp') {
           timeline = '3–5 Days';
-          budgetEstimate = '$99 – $249';
+          budgetEstimate = 'Flexible / Landing Page';
           tierLabel = 'Starter Landing Page / Portfolio';
           artifacts = [
             'Modern, responsive landing page that looks stunning on mobile and desktop',
@@ -115,7 +115,7 @@ export function useSprintCalculator() {
           ];
         } else if (calcTier === 'prod') {
           timeline = '2–3 Weeks';
-          budgetEstimate = '$299 – $799';
+          budgetEstimate = 'Flexible / Full Web App';
           tierLabel = 'Complete Business Website / Web App';
           artifacts = [
             'Full multi-page website or interactive web application (React / Next.js)',
@@ -124,7 +124,7 @@ export function useSprintCalculator() {
           ];
         } else {
           timeline = '4–6 Weeks';
-          budgetEstimate = '$2,000+';
+          budgetEstimate = 'Flexible / Cloud Platform';
           tierLabel = 'Enterprise Web Platform & E-Commerce';
           artifacts = [
             'High-concurrency web platform with custom backend and payment gateways',
@@ -139,7 +139,7 @@ export function useSprintCalculator() {
         disciplineLabel = 'AI Solutions & Smart Automation';
         if (calcTier === 'mvp') {
           timeline = '3–5 Days';
-          budgetEstimate = '$99 – $299';
+          budgetEstimate = 'Flexible / Smart Assistant';
           tierLabel = 'Starter AI Assistant';
           artifacts = [
             'Custom AI assistant integrated into your website or Discord/Slack',
@@ -148,7 +148,7 @@ export function useSprintCalculator() {
           ];
         } else if (calcTier === 'prod') {
           timeline = '2–3 Weeks';
-          budgetEstimate = '$399 – $999';
+          budgetEstimate = 'Flexible / Smart Workflow';
           tierLabel = 'Smart Automation & Knowledge Pipeline';
           artifacts = [
             'Full AI workflow that answers questions and handles user inquiries',
@@ -157,7 +157,7 @@ export function useSprintCalculator() {
           ];
         } else {
           timeline = '4–6 Weeks';
-          budgetEstimate = '$2,000+';
+          budgetEstimate = 'Flexible / Autonomous Suite';
           tierLabel = 'Enterprise Autonomous AI Pipeline';
           artifacts = [
             'Autonomous multi-agent system executing multi-step business actions',
@@ -172,7 +172,7 @@ export function useSprintCalculator() {
         disciplineLabel = 'Game Development & Interactive Media';
         if (calcTier === 'mvp') {
           timeline = '1–2 Weeks';
-          budgetEstimate = '$199 – $499';
+          budgetEstimate = 'Flexible / Playable Prototype';
           tierLabel = 'Playable Game Prototype';
           artifacts = [
             'Playable 2D game prototype with core mechanics and controls (Unity / WebGL)',
@@ -181,7 +181,7 @@ export function useSprintCalculator() {
           ];
         } else if (calcTier === 'prod') {
           timeline = '3–5 Weeks';
-          budgetEstimate = '$599 – $1,499';
+          budgetEstimate = 'Flexible / Complete Game';
           tierLabel = 'Complete Indie Game';
           artifacts = [
             'Full 2D or 3D indie game with multiple levels, audio, and polished visuals',
@@ -190,7 +190,7 @@ export function useSprintCalculator() {
           ];
         } else {
           timeline = '6–10 Weeks';
-          budgetEstimate = '$2,000+';
+          budgetEstimate = 'Flexible / Commercial Title';
           tierLabel = 'Commercial Game Title';
           artifacts = [
             'Commercial-grade game with advanced particle effects, shaders, and physics',
@@ -205,7 +205,7 @@ export function useSprintCalculator() {
         disciplineLabel = 'Cloud Platform & Online Business (SaaS)';
         if (calcTier === 'mvp') {
           timeline = '1–2 Weeks';
-          budgetEstimate = '$199 – $499';
+          budgetEstimate = 'Flexible / Core MVP';
           tierLabel = 'Core SaaS MVP';
           artifacts = [
             'Secure database setup with user login and sign-up flows',
@@ -214,7 +214,7 @@ export function useSprintCalculator() {
           ];
         } else if (calcTier === 'prod') {
           timeline = '3–4 Weeks';
-          budgetEstimate = '$599 – $1,499';
+          budgetEstimate = 'Flexible / Production SaaS';
           tierLabel = 'Production SaaS Platform';
           artifacts = [
             'Complete SaaS application with automated Stripe subscription billing',
@@ -223,7 +223,7 @@ export function useSprintCalculator() {
           ];
         } else {
           timeline = '6–8 Weeks';
-          budgetEstimate = '$2,000+';
+          budgetEstimate = 'Flexible / Cloud Enterprise';
           tierLabel = 'Enterprise SaaS Suite';
           artifacts = [
             'High-availability cloud architecture designed for thousands of users',
@@ -238,7 +238,7 @@ export function useSprintCalculator() {
         disciplineLabel = 'UI/UX Design Systems & Branding';
         if (calcTier === 'mvp') {
           timeline = '2–4 Days';
-          budgetEstimate = '$79 – $199';
+          budgetEstimate = 'Flexible / Starter Mockup';
           tierLabel = 'Starter Branding & UI Mockup';
           artifacts = [
             'Custom modern logo, visual brand identity, and color palette',
@@ -247,7 +247,7 @@ export function useSprintCalculator() {
           ];
         } else if (calcTier === 'prod') {
           timeline = '1–2 Weeks';
-          budgetEstimate = '$199 – $599';
+          budgetEstimate = 'Flexible / Full Design Kit';
           tierLabel = 'Full UI/UX Design System';
           artifacts = [
             'Complete clickable Figma prototype with all screen interactions',
@@ -256,7 +256,7 @@ export function useSprintCalculator() {
           ];
         } else {
           timeline = '3–4 Weeks';
-          budgetEstimate = '$1,200 – $2,000+';
+          budgetEstimate = 'Flexible / Design Ecosystem';
           tierLabel = 'Enterprise Design & Motion System';
           artifacts = [
             'Multi-platform design language for Web, iOS, Android, and marketing',

@@ -16,10 +16,10 @@ export interface UnifiedServiceCard {
 export const UNIFIED_SERVICES: UnifiedServiceCard[] = [
   {
     title: 'AI Commercials & Product Ads',
-    tag: 'From $49.99 · Video & Motion',
+    tag: 'Video & Motion',
     description: 'Eye-catching AI video ads and product commercials tailored for TikTok, Instagram Reels, YouTube Shorts, and websites. Photorealistic visuals, lifelike voiceovers, and dynamic motion delivered in 24–48 hours.',
     tech: ['Runway Gen-3 & Sora', 'Midjourney v6', 'AI Voiceovers', '4K Up rendu & Premiere'],
-    cta: 'Create Video Ad (From $49.99) →',
+    cta: 'Create Video Ad →',
     color: 'text-cyan-400',
     bg: 'bg-cyan-400/10',
   },
@@ -81,7 +81,7 @@ export const HomeServicesSection: React.FC = () => {
         <SectionHeading
           eyebrow="STUDIO SERVICES"
           title="Everything You Need To Build What's Next."
-          description="From viral AI video ads starting at $49.99 to full mobile apps, websites, games, and custom AI tools — explore our services and let's bring your project to life."
+          description="From high-impact AI video ads to full mobile apps, websites, games, and custom AI tools — explore our services and let's bring your project to life."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

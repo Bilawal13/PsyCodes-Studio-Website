@@ -34,7 +34,7 @@ export const contactSchema = z.object({
     'UI/UX Design Systems & Micro-Interactions',
     'Custom Technical Architecture & Engineering',
   ]),
-  budget_range: z.string().min(1, { message: 'Please select an estimated budget range.' }),
+  budget_range: z.string().optional().default('Flexible / Open to discussion'),
   timeline: z.string().min(1, { message: 'Please select your target launch timeline.' }),
   project_summary: z.string().min(15, { message: 'Please share at least a short sentence about your project.' }),
   nda_requested: z.boolean().default(false),
@@ -65,7 +65,7 @@ export const ProjectInquiryForm: React.FC = () => {
     defaultValues: {
       whatsapp: '',
       project_type: 'AI Commercials & Product Video Ads',
-      budget_range: '$49.99 - $250 (Starter / Video Ad)',
+      budget_range: '',
       timeline: '1-3 Days (Quick Turnaround)',
       nda_requested: false,
     },
@@ -81,7 +81,6 @@ export const ProjectInquiryForm: React.FC = () => {
   const handleSelectProjectType = (type: ContactFormData['project_type']) => {
     setValue('project_type', type);
     const pricing = getCategoryPricing(type);
-    setValue('budget_range', pricing.defaultBudget);
     setValue('timeline', pricing.defaultTimeline);
   };
 
@@ -165,7 +164,7 @@ export const ProjectInquiryForm: React.FC = () => {
       `• WhatsApp: ${data.whatsapp || 'Not specified'}\n` +
       `• Company / Venture: ${data.company || 'Not specified'}\n` +
       `• Project Type: ${data.project_type}\n` +
-      `• Estimated Budget: ${data.budget_range}\n` +
+      `• Estimated Budget: ${data.budget_range?.trim() || 'Flexible / Open to discussion'}\n` +
       `• Target Timeline: ${data.timeline}\n` +
       `• NDA Requested: ${data.nda_requested ? 'Yes, please provide an NDA' : 'No'}\n\n` +
       `Project Description:\n` +
@@ -183,7 +182,7 @@ export const ProjectInquiryForm: React.FC = () => {
         whatsapp: data.whatsapp?.trim() || undefined,
         company: data.company,
         project_type: data.project_type,
-        budget: data.budget_range,
+        budget: data.budget_range?.trim() || 'Flexible / Open to discussion',
         timeline: data.timeline,
         preferred_contact: data.whatsapp?.trim() ? 'WhatsApp' : 'Email',
         description: data.project_summary,
@@ -447,36 +446,43 @@ export const ProjectInquiryForm: React.FC = () => {
               </div>
             </div>
 
-            {/* Budget Range */}
+            {/* Budget Range (Optional) */}
             <div>
               <div className="flex items-center justify-between mb-2">
-                <label className="block text-xs font-bold text-text-primary">
-                  What is your estimated budget? ({currentCategoryPricing.shortName}) *
+                <label className="block text-xs font-bold text-text-primary" htmlFor="inquiry-budget">
+                  Estimated Budget
                 </label>
-                <span className="text-[10px] font-mono text-tertiary font-semibold">Context-Specific Tiers</span>
+                <span className="text-[11px] font-mono text-emerald-400 font-medium">Optional</span>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                {currentCategoryPricing.budgets.map((tier) => (
+              <input
+                id="inquiry-budget"
+                type="text"
+                {...register('budget_range')}
+                placeholder="e.g. $300, or Flexible / Open to discussion"
+                className="w-full px-4 py-3 rounded-xl bg-surface-deep text-text-primary text-xs placeholder:text-text-muted/40 border border-border-glass focus:outline-none focus:border-tertiary focus:ring-1 focus:ring-tertiary transition-all"
+              />
+              <div className="flex flex-wrap gap-1.5 mt-2.5">
+                {[
+                  'Flexible / Open to discussion',
+                  'Under $300',
+                  '$300 - $800',
+                  '$1,000+',
+                  "Let's Discuss Scope",
+                ].map((preset) => (
                   <button
                     type="button"
-                    key={tier.value}
-                    onClick={() => setValue('budget_range', tier.value)}
-                    className={`p-3 rounded-xl text-left text-xs transition-all border ${
-                      selectedBudget === tier.value
-                        ? 'bg-primary/10 border-primary text-text-primary font-bold shadow-sm'
-                        : 'bg-surface-deep border-border-glass text-text-muted hover:border-primary/40 hover:text-white'
+                    key={preset}
+                    onClick={() => setValue('budget_range', preset)}
+                    className={`px-2.5 py-1 rounded-lg text-[11px] font-mono transition-all border ${
+                      selectedBudget === preset
+                        ? 'bg-tertiary/20 text-tertiary border-tertiary font-bold'
+                        : 'bg-surface-lowest text-text-muted border-border-glass hover:text-white hover:border-tertiary/40'
                     }`}
                   >
-                    <div className="font-semibold text-text-primary text-[13px]">{tier.value}</div>
-                    <div className="text-[11px] text-text-muted mt-0.5">{tier.label.replace(/^[^(]+\(([^)]+)\)$/, '$1')}</div>
+                    {preset}
                   </button>
                 ))}
               </div>
-              {errors.budget_range && (
-                <span className="text-xs text-red-400 mt-1 block">
-                  {errors.budget_range.message}
-                </span>
-              )}
             </div>
 
             {/* Timeline */}
