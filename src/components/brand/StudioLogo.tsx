@@ -16,9 +16,13 @@ const SIZE_MAP = {
   xl: { icon: 96, text: 'text-3xl sm:text-4xl', sub: 'text-sm sm:text-base' },
 };
 
+// The authoritative geometric 2D line-art architectural Psi mark path
+const PSI_MARK_PATH = "M 143 161 L 157 179 L 191 227 L 207 404 L 210 424 L 215 445 L 223 467 L 231 483 L 239 496 L 251 512 L 275 536 L 303 556 L 325 567 L 351 576 L 374 581 L 408 585 L 424 585 L 442 587 L 442 786 L 369 864 L 654 865 L 581 785 L 582 586 L 615 585 L 655 580 L 676 575 L 701 566 L 722 555 L 746 538 L 768 517 L 781 501 L 793 482 L 801 466 L 809 443 L 813 426 L 817 397 L 832 227 L 880 161 L 820 173 L 783 182 L 773 187 L 751 203 L 744 210 L 732 225 L 725 236 L 716 258 L 712 274 L 708 302 L 707 321 L 703 348 L 701 376 L 693 446 L 687 460 L 680 471 L 668 483 L 658 488 L 653 488 L 631 475 L 584 450 L 581 447 L 581 235 L 654 162 L 369 162 L 442 234 L 442 448 L 440 450 L 429 455 L 382 481 L 373 487 L 367 488 L 362 487 L 354 482 L 345 473 L 337 461 L 330 444 L 327 408 L 324 390 L 321 351 L 318 333 L 317 315 L 313 283 L 310 268 L 305 251 L 296 232 L 281 212 L 270 201 L 255 190 L 240 182 L 194 171 Z M 516 861 L 578 825 L 583 826 L 636 855 L 645 861 Z M 507 861 L 378 861 L 443 825 L 449 827 Z M 581 790 L 645 858 L 643 859 L 639 856 L 630 852 L 610 840 L 583 826 L 580 823 Z M 444 791 L 444 823 L 428 833 L 384 856 L 380 857 L 438 794 Z M 510 862 L 447 826 L 445 824 L 465 812 L 479 805 L 493 796 L 500 793 L 507 788 L 511 788 Z M 513 786 L 518 790 L 525 793 L 578 824 L 573 828 L 513 862 Z M 516 785 L 577 785 L 579 787 L 578 823 L 544 803 L 516 788 Z M 444 822 L 444 787 L 446 785 L 509 786 L 497 794 L 448 821 Z M 538 712 L 540 714 L 550 737 L 562 760 L 562 762 L 572 785 L 513 784 L 536 715 Z M 485 712 L 487 714 L 504 767 L 511 784 L 451 784 L 451 782 Z M 510 659 L 510 780 L 486 712 L 486 709 Z M 513 658 L 537 708 L 537 712 L 513 780 Z M 575 600 L 579 602 L 578 629 L 579 783 L 577 785 L 575 785 L 573 783 L 538 710 Z M 446 594 L 485 709 L 485 711 L 465 751 L 450 784 L 446 785 L 444 783 Z M 448 592 L 453 596 L 511 655 L 486 708 L 484 706 L 480 692 L 472 671 L 471 665 L 469 662 L 468 656 L 452 611 L 452 608 L 447 595 Z M 576 591 L 576 597 L 554 660 L 548 681 L 538 708 L 536 706 L 529 689 L 514 659 L 513 654 Z M 761 520 L 743 537 L 728 548 L 715 556 L 689 568 L 658 577 L 640 580 L 606 583 L 589 582 L 594 579 L 621 569 L 678 545 L 718 533 L 743 524 Z M 677 542 L 677 545 L 597 577 L 592 580 L 587 580 L 649 519 Z M 345 544 L 374 519 L 376 519 L 437 580 L 434 581 L 399 567 L 382 559 L 372 556 Z M 262 520 L 265 519 L 293 529 L 312 534 L 346 545 L 368 555 L 424 577 L 434 582 L 415 583 L 384 580 L 357 575 L 337 569 L 320 562 L 303 553 L 278 535 Z M 689 513 L 683 534 L 679 543 L 651 520 L 651 517 L 677 513 L 683 513 L 684 512 Z M 343 542 L 335 515 L 336 512 L 347 513 L 374 518 L 363 528 L 350 538 Z M 589 457 L 591 456 L 593 458 L 642 484 L 684 508 L 687 511 L 679 513 L 649 517 Z M 435 457 L 422 469 L 375 517 L 345 513 L 338 509 L 387 481 L 427 460 L 429 458 Z M 693 453 L 694 459 L 692 472 L 690 507 L 689 509 L 687 510 L 657 491 L 671 484 L 681 474 L 686 467 Z M 330 452 L 337 466 L 344 476 L 354 485 L 366 491 L 363 494 L 338 509 L 334 509 L 333 505 L 332 481 L 329 457 Z M 754 440 L 754 447 L 762 503 L 764 510 L 764 516 L 762 518 L 719 532 L 697 538 L 684 543 L 681 542 L 689 513 L 692 510 L 698 507 L 712 497 L 722 488 L 737 470 L 743 460 L 751 442 Z M 271 438 L 275 449 L 282 463 L 295 481 L 314 499 L 333 511 L 336 518 L 337 525 L 343 542 L 340 543 L 336 541 L 333 541 L 261 518 L 259 516 L 269 448 L 269 442 Z M 752 437 L 748 448 L 741 462 L 729 479 L 712 496 L 704 502 L 690 509 L 694 454 L 696 447 L 734 439 L 744 438 L 745 437 Z M 273 436 L 324 446 L 328 448 L 330 464 L 331 487 L 332 488 L 332 499 L 333 500 L 332 510 L 322 504 L 309 494 L 292 476 L 278 454 L 272 439 Z M 512 383 L 645 518 L 512 652 L 510 651 L 435 574 L 379 519 L 379 517 L 509 385 Z M 537 325 L 540 325 L 542 331 L 542 334 L 561 390 L 575 437 L 578 443 L 576 444 L 513 380 L 513 378 L 518 369 Z M 485 323 L 492 337 L 504 366 L 510 377 L 510 381 L 448 443 L 447 440 L 449 436 L 449 433 L 470 370 L 476 348 L 480 339 L 482 329 Z M 510 244 L 510 375 L 503 362 L 486 324 L 486 319 L 489 307 Z M 513 243 L 538 319 L 537 325 L 513 377 Z M 579 239 L 579 267 L 578 269 L 579 412 L 577 438 L 547 348 L 539 320 L 562 272 L 575 243 L 576 239 Z M 576 239 L 539 319 L 537 316 L 524 276 L 520 260 L 513 241 L 514 238 Z M 449 238 L 510 239 L 510 242 L 502 264 L 487 314 L 483 317 L 452 247 L 448 240 Z M 446 237 L 450 244 L 454 255 L 460 266 L 472 295 L 484 320 L 484 324 L 476 346 L 470 368 L 446 440 Z M 196 237 L 209 270 L 216 292 L 227 319 L 234 341 L 244 365 L 250 384 L 256 397 L 259 408 L 268 432 L 270 435 L 260 500 L 260 507 L 256 514 L 245 500 L 228 472 L 219 450 L 213 427 L 209 399 L 208 377 L 195 248 Z M 828 235 L 829 239 L 822 304 L 820 338 L 815 381 L 815 392 L 810 428 L 803 454 L 789 484 L 779 499 L 766 515 L 764 512 L 762 492 L 755 450 L 754 434 L 826 241 L 826 238 Z M 774 234 L 775 239 L 774 248 L 773 249 L 772 267 L 755 418 L 753 427 L 753 434 L 751 436 L 736 438 L 701 446 L 697 443 L 699 435 L 720 381 L 729 354 L 740 327 L 746 308 L 754 289 L 770 242 Z M 249 234 L 256 250 L 270 291 L 328 445 L 323 446 L 302 441 L 273 436 L 270 433 L 264 373 L 259 338 L 249 242 L 248 241 Z M 772 231 L 773 234 L 761 265 L 757 279 L 746 306 L 739 328 L 735 336 L 710 406 L 703 422 L 699 436 L 697 438 L 696 435 L 697 426 L 698 425 L 700 398 L 706 353 L 707 334 L 713 286 Z M 251 230 L 295 272 L 308 283 L 311 287 L 314 311 L 314 320 L 316 329 L 318 357 L 327 432 L 326 438 L 267 281 L 260 259 L 252 240 L 249 231 Z M 830 227 L 818 258 L 815 269 L 791 331 L 788 342 L 758 423 L 755 428 L 754 425 L 756 416 L 762 363 L 763 345 L 769 300 L 774 246 L 776 236 L 776 228 L 778 226 Z M 195 226 L 246 227 L 247 229 L 247 237 L 254 290 L 257 326 L 266 396 L 267 413 L 268 414 L 269 423 L 268 427 L 259 406 L 230 328 L 224 309 L 213 282 L 210 271 L 203 255 L 194 230 Z M 580 203 L 580 232 L 576 237 L 515 236 L 555 214 L 570 207 L 572 205 Z M 445 202 L 506 234 L 508 236 L 446 236 L 444 233 Z M 783 188 L 776 226 L 725 274 L 713 282 L 716 267 L 721 251 L 727 238 L 734 227 L 745 213 L 759 200 L 775 189 Z M 243 186 L 267 202 L 280 215 L 290 228 L 301 248 L 305 259 L 310 280 L 308 283 L 247 226 L 241 192 Z M 642 170 L 641 172 L 581 231 L 580 202 L 587 197 L 621 180 L 634 172 Z M 380 169 L 382 168 L 384 170 L 440 199 L 443 202 L 442 230 Z M 153 170 L 155 168 L 166 176 L 243 224 L 194 226 Z M 870 167 L 871 169 L 830 225 L 780 224 L 829 194 Z M 869 167 L 778 225 L 777 222 L 784 185 L 788 183 L 860 167 L 866 166 Z M 154 167 L 158 166 L 159 167 L 168 168 L 238 184 L 240 186 L 241 197 L 243 203 L 243 209 L 245 215 L 244 224 Z M 512 235 L 514 165 L 549 185 L 569 195 L 578 201 L 563 210 L 516 234 Z M 511 166 L 510 236 L 445 201 L 498 171 Z M 516 165 L 643 167 L 610 184 L 595 193 L 581 200 L 578 200 L 518 167 Z M 380 164 L 506 167 L 493 173 L 445 200 L 442 200 L 406 181 L 393 173 L 380 167 Z";
+const STAR_POINTS = "512,436 496,499 432,517 496,535 511,598 527,536 591,518 527,498";
+
 /**
  * StudioLogoMark - The official 2D geometric wireframe Psi (Ψ) line-art mark.
- * Supports both dark (default) and light (white BG) colorways.
+ * Exact 1:1 vector correspondence with the approved brand identity.
  */
 export const StudioLogoMark: React.FC<{
   size?: number;
@@ -32,34 +36,31 @@ export const StudioLogoMark: React.FC<{
   className = '',
 }) => {
   const isLight = theme === 'light';
-  const strokeColor = isLight ? '#090D16' : '#FFFFFF';
-  const innerCrossColor = isLight ? 'rgba(9,13,22,0.4)' : 'rgba(255,255,255,0.5)';
-  const starFill = isLight ? '#0284C7' : '#00F2FE';
-  const starCenterFill = isLight ? '#090D16' : '#FFFFFF';
+  const fillColor = isLight ? '#080C14' : '#FFFFFF';
 
   return (
     <div
       className={`relative flex items-center justify-center shrink-0 ${className}`}
       style={{ width: size, height: size }}
     >
-      {/* Ambient Glow (Dark Mode only) */}
+      {/* Ambient Cyan Bloom (Dark Mode) */}
       {glow && !isLight && (
         <div
-          className="absolute inset-0 rounded-full bg-cyan-400/20 blur-md pointer-events-none transform scale-110"
+          className="absolute inset-0 rounded-full bg-cyan-400/25 blur-md pointer-events-none transform scale-110"
           aria-hidden="true"
         />
       )}
 
       <svg
-        viewBox="0 0 120 120"
+        viewBox="112 112 800 800"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className="w-full h-full relative z-10"
       >
         <defs>
-          <filter id={`star-glow-${theme}`} x="-60%" y="-60%" width="220%" height="220%">
-            <feGaussianBlur stdDeviation={isLight ? 1.8 : 3} result="blur" />
-            <feFlood floodColor="#00F2FE" floodOpacity={isLight ? "0.45" : "0.9"} result="glowColor" />
+          <filter id={`star-glow-${theme}`} x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation={isLight ? 6 : 9} result="blur" />
+            <feFlood floodColor="#00F2FE" floodOpacity={isLight ? '0.6' : '0.9'} result="glowColor" />
             <feComposite in="glowColor" in2="blur" operator="in" result="coloredBlur" />
             <feMerge>
               <feMergeNode in="coloredBlur" />
@@ -68,62 +69,16 @@ export const StudioLogoMark: React.FC<{
           </filter>
         </defs>
 
-        {/* 2D Geometric Wireframe Psi Line-Art */}
-        <g stroke={strokeColor} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-          {/* Top Cap */}
-          <polygon points="46,24 74,24 68,30 52,30" fill={isLight ? 'rgba(9,13,22,0.04)' : 'rgba(255,255,255,0.06)'} />
-          <line x1="60" y1="24" x2="60" y2="30" />
+        {/* Precision Line-Art Architectural Psi Structure */}
+        <path d={PSI_MARK_PATH} fill={fillColor} fillRule="evenodd" />
 
-          {/* Upper Stem Column */}
-          <polygon points="52,30 68,30 64,44 56,44" fill={isLight ? 'rgba(9,13,22,0.02)' : 'rgba(255,255,255,0.04)'} />
-          <line x1="60" y1="30" x2="60" y2="44" />
-
-          {/* Central Diamond Nexus Cell */}
-          <polygon
-            points="60,44 74,58 60,72 46,58"
-            fill={isLight ? 'transparent' : 'rgba(0,242,254,0.06)'}
-            stroke={strokeColor}
-            strokeWidth="2"
-          />
-          <line x1="46" y1="58" x2="74" y2="58" strokeWidth="1" stroke={innerCrossColor} />
-          <line x1="60" y1="44" x2="60" y2="72" strokeWidth="1" stroke={innerCrossColor} />
-
-          {/* Lower Stem Column */}
-          <polygon points="56,72 64,72 68,88 52,88" fill={isLight ? 'rgba(9,13,22,0.02)' : 'rgba(255,255,255,0.04)'} />
-          <line x1="60" y1="72" x2="60" y2="88" />
-
-          {/* Base Pedestal / Foot */}
-          <polygon points="52,88 68,88 74,94 46,94" fill={isLight ? 'rgba(9,13,22,0.04)' : 'rgba(255,255,255,0.06)'} />
-          <line x1="60" y1="88" x2="60" y2="94" />
-
-          {/* Left Wing Outer Contour */}
-          <path
-            d="M46,94 C34,88 22,74 20,56 C18,40 22,28 24,24 C24,23 20,23 18,25 C14,35 14,58 24,78 C30,88 42,92 46,94 Z"
-            fill={isLight ? 'rgba(9,13,22,0.02)' : 'rgba(255,255,255,0.03)'}
-          />
-          <line x1="24" y1="24" x2="46" y2="58" />
-          <line x1="20" y1="56" x2="46" y2="58" />
-          <line x1="24" y1="78" x2="46" y2="58" />
-          <line x1="46" y1="58" x2="46" y2="94" />
-
-          {/* Right Wing Outer Contour */}
-          <path
-            d="M74,94 C86,88 98,74 100,56 C102,40 98,28 96,24 C96,23 100,23 102,25 C106,35 106,58 96,78 C90,88 78,92 74,94 Z"
-            fill={isLight ? 'rgba(9,13,22,0.02)' : 'rgba(255,255,255,0.03)'}
-          />
-          <line x1="96" y1="24" x2="74" y2="58" />
-          <line x1="100" y1="56" x2="74" y2="58" />
-          <line x1="96" y1="78" x2="74" y2="58" />
-          <line x1="74" y1="58" x2="74" y2="94" />
-        </g>
-
-        {/* Central 4-Point Star Node */}
+        {/* Central Radiant Laser-Cyan Star Node */}
         <polygon
-          points="60,49 63,58 72,58 64.5,61.5 60,67 55.5,61.5 48,58 57,58"
+          points={STAR_POINTS}
           fill="#00F2FE"
           filter={`url(#star-glow-${theme})`}
         />
-        <circle cx="60" cy="58" r="1.8" fill="#FFFFFF" />
+        <circle cx="512" cy="517" r="4.5" fill="#FFFFFF" />
       </svg>
     </div>
   );
