@@ -79,7 +79,7 @@ export const StudioLogoMark: React.FC<{
           {/* Central Diamond Nexus Cell */}
           <polygon
             points="60,44 74,58 60,72 46,58"
-            fill={isLight ? 'rgba(0,180,216,0.08)' : 'rgba(0,242,254,0.06)'}
+            fill={isLight ? 'transparent' : 'rgba(0,242,254,0.06)'}
             stroke={strokeColor}
             strokeWidth="2"
           />

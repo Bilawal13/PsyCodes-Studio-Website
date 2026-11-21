@@ -10,7 +10,7 @@
     <line x1="60" y1="30" x2="60" y2="44" />
 
     <!-- Central Diamond Nexus Cell -->
-    <polygon points="60,44 74,58 60,72 46,58" fill="rgba(0,180,216,0.08)" stroke="#090D16" stroke-width="2" />
+    <polygon points="60,44 74,58 60,72 46,58" fill="none" stroke="#090D16" stroke-width="2" />
     <line x1="46" y1="58" x2="74" y2="58" stroke-width="1" stroke="rgba(9,13,22,0.4)" />
     <line x1="60" y1="44" x2="60" y2="72" stroke-width="1" stroke="rgba(9,13,22,0.4)" />
 
