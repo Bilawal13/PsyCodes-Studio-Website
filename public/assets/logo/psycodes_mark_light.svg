@@ -1,4 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <defs>
+    <!-- Luminous Cyan Star Glow Filter (Light Mode) -->
+    <filter id="star-glow-light" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="2.5" result="blur" />
+      <feFlood floodColor="#00F2FE" floodOpacity="0.65" result="glowColor" />
+      <feComposite in="glowColor" in2="blur" operator="in" result="coloredBlur" />
+      <feMerge>
+        <feMergeNode in="coloredBlur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
   <!-- 2D Line-Art Wireframe Geometric Psi Structure (Light Mode / White BG) -->
   <g stroke="#090D16" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
     <!-- Top Pediment / Cap -->
@@ -41,7 +54,7 @@
     <line x1="74" y1="58" x2="74" y2="94" />
   </g>
 
-  <!-- Central 4-Point Star Node (Crisp Dark/Cyan) -->
-  <polygon points="60,49 63,58 72,58 64.5,61.5 60,67 55.5,61.5 48,58 57,58" fill="#0284C7" />
-  <circle cx="60" cy="58" r="1.8" fill="#090D16" />
+  <!-- Central 4-Point Star Node with Radiant Cyan Light -->
+  <polygon points="60,49 63,58 72,58 64.5,61.5 60,67 55.5,61.5 48,58 57,58" fill="#00F2FE" filter="url(#star-glow-light)" />
+  <circle cx="60" cy="58" r="1.8" fill="#FFFFFF" />
 </svg>

@@ -57,10 +57,12 @@ export const StudioLogoMark: React.FC<{
         className="w-full h-full relative z-10"
       >
         <defs>
-          <filter id={`star-glow-${theme}`} x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation={isLight ? 1.5 : 3} result="blur" />
+          <filter id={`star-glow-${theme}`} x="-60%" y="-60%" width="220%" height="220%">
+            <feGaussianBlur stdDeviation={isLight ? 2.5 : 3} result="blur" />
+            <feFlood floodColor="#00F2FE" floodOpacity={isLight ? "0.65" : "0.9"} result="glowColor" />
+            <feComposite in="glowColor" in2="blur" operator="in" result="coloredBlur" />
             <feMerge>
-              <feMergeNode in="blur" />
+              <feMergeNode in="coloredBlur" />
               <feMergeNode in="SourceGraphic" />
             </feMerge>
           </filter>
@@ -118,10 +120,10 @@ export const StudioLogoMark: React.FC<{
         {/* Central 4-Point Star Node */}
         <polygon
           points="60,49 63,58 72,58 64.5,61.5 60,67 55.5,61.5 48,58 57,58"
-          fill={starFill}
-          filter={isLight ? undefined : `url(#star-glow-${theme})`}
+          fill="#00F2FE"
+          filter={`url(#star-glow-${theme})`}
         />
-        <circle cx="60" cy="58" r="1.8" fill={starCenterFill} />
+        <circle cx="60" cy="58" r="1.8" fill="#FFFFFF" />
       </svg>
     </div>
   );
