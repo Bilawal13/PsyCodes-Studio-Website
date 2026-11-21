@@ -58,8 +58,8 @@ export const StudioLogoMark: React.FC<{
       >
         <defs>
           <filter id={`star-glow-${theme}`} x="-60%" y="-60%" width="220%" height="220%">
-            <feGaussianBlur stdDeviation={isLight ? 2.5 : 3} result="blur" />
-            <feFlood floodColor="#00F2FE" floodOpacity={isLight ? "0.65" : "0.9"} result="glowColor" />
+            <feGaussianBlur stdDeviation={isLight ? 1.8 : 3} result="blur" />
+            <feFlood floodColor="#00F2FE" floodOpacity={isLight ? "0.45" : "0.9"} result="glowColor" />
             <feComposite in="glowColor" in2="blur" operator="in" result="coloredBlur" />
             <feMerge>
               <feMergeNode in="coloredBlur" />

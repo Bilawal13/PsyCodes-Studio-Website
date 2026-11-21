@@ -2,8 +2,8 @@
   <defs>
     <!-- Luminous Cyan Star Glow Filter (Light Mode) -->
     <filter id="star-glow-light" x="-60%" y="-60%" width="220%" height="220%">
-      <feGaussianBlur stdDeviation="2.5" result="blur" />
-      <feFlood floodColor="#00F2FE" floodOpacity="0.65" result="glowColor" />
+      <feGaussianBlur stdDeviation="1.8" result="blur" />
+      <feFlood floodColor="#00F2FE" floodOpacity="0.45" result="glowColor" />
       <feComposite in="glowColor" in2="blur" operator="in" result="coloredBlur" />
       <feMerge>
         <feMergeNode in="coloredBlur" />
