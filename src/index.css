@@ -3,7 +3,12 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
+  :root,
+  :root.light,
+  html.light,
+  html[data-theme='light'],
+  body.light,
+  body[data-theme='light'] {
     color-scheme: light;
 
     /* Bright Architectural White Theme (from Banner 2) */
@@ -49,7 +54,10 @@
   }
 
   :root.dark,
-  html.dark {
+  html.dark,
+  html[data-theme='dark'],
+  body.dark,
+  body[data-theme='dark'] {
     color-scheme: dark;
 
     /* Pitch Black + Pure Neon Laser-Cyan (from Banner 1) */
@@ -132,6 +140,176 @@
   main > :last-child {
     margin-bottom: 0 !important;
   }
+}
+
+/* =========================================================================
+   Direct, High-Specificity Theme Engine (Zero-Delay Repaint Across All Browsers)
+   ========================================================================= */
+
+/* Light Theme Overrides */
+html.light,
+html[data-theme='light'] {
+  background-color: #FFFFFF !important;
+  color: #05070A !important;
+}
+
+html.light body,
+html[data-theme='light'] body {
+  background-color: #FFFFFF !important;
+  color: #05070A !important;
+  background-image: 
+    linear-gradient(rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.04) 1px, transparent 1px) !important;
+}
+
+html.light .bg-surface,
+html[data-theme='light'] .bg-surface,
+html.light main,
+html[data-theme='light'] main {
+  background-color: #FFFFFF !important;
+}
+
+html.light .bg-surface-deep,
+html[data-theme='light'] .bg-surface-deep,
+html.light [class*="bg-surface-deep"],
+html[data-theme='light'] [class*="bg-surface-deep"] {
+  background-color: rgba(248, 250, 252, 0.95) !important;
+}
+
+html.light .bg-surface-container-lowest,
+html[data-theme='light'] .bg-surface-container-lowest {
+  background-color: #FFFFFF !important;
+}
+
+html.light .bg-surface-container-low,
+html[data-theme='light'] .bg-surface-container-low,
+html.light [class*="bg-surface-container-low"],
+html[data-theme='light'] [class*="bg-surface-container-low"] {
+  background-color: rgba(248, 250, 252, 0.95) !important;
+}
+
+html.light .bg-surface-container,
+html[data-theme='light'] .bg-surface-container {
+  background-color: #F1F5F9 !important;
+}
+
+html.light .bg-surface-container-high,
+html[data-theme='light'] .bg-surface-container-high,
+html.light [class*="bg-surface-container-high"],
+html[data-theme='light'] [class*="bg-surface-container-high"] {
+  background-color: rgba(226, 232, 240, 0.9) !important;
+}
+
+html.light .bg-surface-container-highest,
+html[data-theme='light'] .bg-surface-container-highest {
+  background-color: #CBD5E1 !important;
+}
+
+html.light .bg-surface-glass,
+html[data-theme='light'] .bg-surface-glass {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+}
+
+html.light .text-text-primary,
+html[data-theme='light'] .text-text-primary,
+html.light .text-on-surface,
+html[data-theme='light'] .text-on-surface {
+  color: #05070A !important;
+}
+
+html.light .text-text-muted,
+html[data-theme='light'] .text-text-muted,
+html.light .text-on-surface-variant,
+html[data-theme='light'] .text-on-surface-variant {
+  color: #475569 !important;
+}
+
+html.light .border-border-glass,
+html[data-theme='light'] .border-border-glass {
+  border-color: rgba(15, 23, 42, 0.12) !important;
+}
+
+/* Dark Theme Overrides */
+html.dark,
+html[data-theme='dark'] {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+html.dark body,
+html[data-theme='dark'] body {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+  background-image: 
+    linear-gradient(rgba(0, 242, 254, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 242, 254, 0.045) 1px, transparent 1px) !important;
+}
+
+html.dark .bg-surface,
+html[data-theme='dark'] .bg-surface,
+html.dark main,
+html[data-theme='dark'] main {
+  background-color: #000000 !important;
+}
+
+html.dark .bg-surface-deep,
+html[data-theme='dark'] .bg-surface-deep,
+html.dark [class*="bg-surface-deep"],
+html[data-theme='dark'] [class*="bg-surface-deep"] {
+  background-color: rgba(3, 5, 8, 0.95) !important;
+}
+
+html.dark .bg-surface-container-lowest,
+html[data-theme='dark'] .bg-surface-container-lowest {
+  background-color: #000000 !important;
+}
+
+html.dark .bg-surface-container-low,
+html[data-theme='dark'] .bg-surface-container-low,
+html.dark [class*="bg-surface-container-low"],
+html[data-theme='dark'] [class*="bg-surface-container-low"] {
+  background-color: rgba(4, 7, 12, 0.95) !important;
+}
+
+html.dark .bg-surface-container,
+html[data-theme='dark'] .bg-surface-container {
+  background-color: #070B12 !important;
+}
+
+html.dark .bg-surface-container-high,
+html[data-theme='dark'] .bg-surface-container-high,
+html.dark [class*="bg-surface-container-high"],
+html[data-theme='dark'] [class*="bg-surface-container-high"] {
+  background-color: rgba(12, 17, 26, 0.9) !important;
+}
+
+html.dark .bg-surface-container-highest,
+html[data-theme='dark'] .bg-surface-container-highest {
+  background-color: #121824 !important;
+}
+
+html.dark .bg-surface-glass,
+html[data-theme='dark'] .bg-surface-glass {
+  background-color: rgba(0, 0, 0, 0.92) !important;
+}
+
+html.dark .text-text-primary,
+html[data-theme='dark'] .text-text-primary,
+html.dark .text-on-surface,
+html[data-theme='dark'] .text-on-surface {
+  color: #FFFFFF !important;
+}
+
+html.dark .text-text-muted,
+html[data-theme='dark'] .text-text-muted,
+html.dark .text-on-surface-variant,
+html[data-theme='dark'] .text-on-surface-variant {
+  color: #94A3B8 !important;
+}
+
+html.dark .border-border-glass,
+html[data-theme='dark'] .border-border-glass {
+  border-color: rgba(0, 242, 254, 0.18) !important;
 }
 
 /* Custom subtle scrollbar */

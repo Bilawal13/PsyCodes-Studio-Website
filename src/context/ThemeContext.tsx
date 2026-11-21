@@ -31,6 +31,13 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const root = document.documentElement;
     root.classList.remove('dark', 'light');
     root.classList.add(newTheme);
+    root.setAttribute('data-theme', newTheme);
+
+    if (typeof document !== 'undefined' && document.body) {
+      document.body.classList.remove('dark', 'light');
+      document.body.classList.add(newTheme);
+      document.body.setAttribute('data-theme', newTheme);
+    }
 
     // Sync with meta color-scheme
     const meta = document.getElementById('meta-color-scheme') as HTMLMetaElement | null;
