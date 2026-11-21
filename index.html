@@ -4,8 +4,31 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" id="meta-color-scheme" />
   <title>PsyCodes Studio — Code. Create. Automate.</title>
   <meta name="description" content="PsyCodes Studio — High-velocity cyber-luxe software engineering, AI agents, mobile applications, and Unity 6 game systems founded by Bilawal Feroze." />
+  
+  <script>
+    (function() {
+      try {
+        var saved = localStorage.getItem('psycodes-theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = (saved === 'light' || saved === 'dark') ? saved : (prefersDark ? 'dark' : 'light');
+        var root = document.documentElement;
+        if (theme === 'dark') {
+          root.classList.add('dark');
+          root.classList.remove('light');
+          var meta = document.getElementById('meta-color-scheme');
+          if (meta) meta.content = 'dark';
+        } else {
+          root.classList.remove('dark');
+          root.classList.add('light');
+          var meta = document.getElementById('meta-color-scheme');
+          if (meta) meta.content = 'light';
+        }
+      } catch (e) {}
+    })();
+  </script>
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />

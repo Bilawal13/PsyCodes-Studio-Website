@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTheme } from '../../context/ThemeContext';
 
 export interface StudioLogoProps {
   variant?: 'icon' | 'horizontal' | 'stacked';
@@ -32,10 +33,12 @@ export const StudioLogoMark: React.FC<{
 }> = ({
   size = 36,
   glow = true,
-  theme = 'dark',
+  theme,
   className = '',
 }) => {
-  const isLight = theme === 'light';
+  const contextTheme = useTheme()?.theme ?? 'dark';
+  const effectiveTheme = theme ?? contextTheme;
+  const isLight = effectiveTheme === 'light';
   const fillColor = isLight ? '#080C14' : '#FFFFFF';
 
   return (
@@ -58,7 +61,7 @@ export const StudioLogoMark: React.FC<{
         className="w-full h-full relative z-10"
       >
         <defs>
-          <filter id={`star-glow-${theme}`} x="-50%" y="-50%" width="200%" height="200%">
+          <filter id={`star-glow-${effectiveTheme}`} x="-50%" y="-50%" width="200%" height="200%">
             <feGaussianBlur stdDeviation={isLight ? 6 : 9} result="blur" />
             <feFlood floodColor="#00F2FE" floodOpacity={isLight ? '0.6' : '0.9'} result="glowColor" />
             <feComposite in="glowColor" in2="blur" operator="in" result="coloredBlur" />
@@ -76,7 +79,7 @@ export const StudioLogoMark: React.FC<{
         <polygon
           points={STAR_POINTS}
           fill="#00F2FE"
-          filter={`url(#star-glow-${theme})`}
+          filter={`url(#star-glow-${effectiveTheme})`}
         />
         <circle cx="512" cy="517" r="4.5" fill="#FFFFFF" />
       </svg>
@@ -87,21 +90,23 @@ export const StudioLogoMark: React.FC<{
 export const StudioLogo: React.FC<StudioLogoProps> = ({
   variant = 'horizontal',
   size = 'sm',
-  theme = 'dark',
+  theme,
   className = '',
   glow = true,
 }) => {
+  const contextTheme = useTheme()?.theme ?? 'dark';
+  const effectiveTheme = theme ?? contextTheme;
   const cfg = SIZE_MAP[size] || SIZE_MAP.sm;
-  const isLight = theme === 'light';
+  const isLight = effectiveTheme === 'light';
 
   if (variant === 'icon') {
-    return <StudioLogoMark size={cfg.icon} glow={glow} theme={theme} className={className} />;
+    return <StudioLogoMark size={cfg.icon} glow={glow} theme={effectiveTheme} className={className} />;
   }
 
   if (variant === 'stacked') {
     return (
       <div className={`flex flex-col items-center gap-2 text-center ${className}`}>
-        <StudioLogoMark size={cfg.icon * 1.4} glow={glow} theme={theme} />
+        <StudioLogoMark size={cfg.icon * 1.4} glow={glow} theme={effectiveTheme} />
         <div className="flex flex-col items-center">
           <span className={`font-headline-sm font-bold tracking-tight ${isLight ? 'text-slate-900' : 'text-white'} ${cfg.text}`}>
             PsyCodes
@@ -117,7 +122,7 @@ export const StudioLogo: React.FC<StudioLogoProps> = ({
   // Horizontal Lockup
   return (
     <div className={`flex items-center gap-2.5 sm:gap-3 group focus:outline-none min-w-0 ${className}`}>
-      <StudioLogoMark size={cfg.icon} glow={glow} theme={theme} />
+      <StudioLogoMark size={cfg.icon} glow={glow} theme={effectiveTheme} />
       <div className="flex flex-col min-w-0 text-left">
         <span className={`font-headline-sm font-bold tracking-tight ${isLight ? 'text-slate-900 group-hover:text-cyan-700' : 'text-text-primary group-hover:text-cyan-300'} transition-colors truncate ${cfg.text}`}>
           PsyCodes

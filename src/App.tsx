@@ -2,6 +2,7 @@ import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Layout } from './components/layout/Layout';
+import { ThemeProvider } from './context/ThemeContext';
 
 // Dynamic route code splitting for optimized sub-second load times
 const HomePage = React.lazy(() =>
@@ -64,24 +65,26 @@ const ADMIN_ROUTE = import.meta.env.VITE_ADMIN_PATH || '/admin-vault';
 export const App: React.FC = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <Router>
-        <Layout>
-          <Suspense fallback={<RouteLoadingFallback />}>
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/projects" element={<ProjectsPage />} />
-              <Route path="/projects/:slug" element={<ProjectDetailsPage />} />
-              <Route path="/services" element={<ServicesPage />} />
-              <Route path="/arcade" element={<ArcadePage />} />
-              <Route path="/arcade/:slug" element={<GameDetailsPage />} />
-              <Route path="/about" element={<AboutPage />} />
-              <Route path="/contact" element={<ContactPage />} />
-              <Route path={ADMIN_ROUTE} element={<AdminPage />} />
-              <Route path="*" element={<NotFoundPage />} />
-            </Routes>
-          </Suspense>
-        </Layout>
-      </Router>
+      <ThemeProvider>
+        <Router>
+          <Layout>
+            <Suspense fallback={<RouteLoadingFallback />}>
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/projects" element={<ProjectsPage />} />
+                <Route path="/projects/:slug" element={<ProjectDetailsPage />} />
+                <Route path="/services" element={<ServicesPage />} />
+                <Route path="/arcade" element={<ArcadePage />} />
+                <Route path="/arcade/:slug" element={<GameDetailsPage />} />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/contact" element={<ContactPage />} />
+                <Route path={ADMIN_ROUTE} element={<AdminPage />} />
+                <Route path="*" element={<NotFoundPage />} />
+              </Routes>
+            </Suspense>
+          </Layout>
+        </Router>
+      </ThemeProvider>
     </QueryClientProvider>
   );
 };

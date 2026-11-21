@@ -3,6 +3,7 @@ import { NavLink, Link, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { StudioLogo } from '../brand/StudioLogo';
+import { ThemeToggle } from '../common/ThemeToggle';
 
 export const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -103,8 +104,10 @@ export const Navbar: React.FC = () => {
           ))}
         </nav>
 
-        {/* Right Action CTA & Mobile Toggle */}
+        {/* Right Action CTA, Theme Toggle & Mobile Toggle */}
         <div className="flex items-center gap-2 sm:gap-space-md shrink-0">
+          <ThemeToggle />
+
           <Link
             to="/contact"
             className="hidden md:inline-flex items-center justify-center gap-1.5 px-3.5 sm:px-space-lg py-2 rounded-lg bg-gradient-to-r from-primary-container to-secondary-container font-button-text text-button-text text-text-primary shadow-[0_0_20px_rgba(37,139,255,0.35)] hover:shadow-[0_0_28px_rgba(18,216,245,0.45)] hover:-translate-y-0.5 transition-all text-xs shrink-0"
@@ -120,7 +123,7 @@ export const Navbar: React.FC = () => {
             className="xl:hidden p-2 sm:p-2.5 rounded-xl bg-surface-container-high/90 text-on-surface hover:text-tertiary transition-colors flex items-center justify-center border border-border-glass cursor-pointer shrink-0"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            {mobileMenuOpen ? <X className="w-5 h-5 text-cyan-400" /> : <Menu className="w-5 h-5 text-white" />}
+            {mobileMenuOpen ? <X className="w-5 h-5 text-cyan-400" /> : <Menu className="w-5 h-5 text-text-primary" />}
           </button>
         </div>
       </div>
@@ -145,7 +148,11 @@ export const Navbar: React.FC = () => {
               </NavLink>
             ))}
           </nav>
-          <div className="pt-space-sm border-t border-border-glass">
+          <div className="pt-space-sm border-t border-border-glass flex flex-col gap-3">
+            <div className="flex items-center justify-between px-1">
+              <span className="text-xs font-mono uppercase tracking-widest text-text-muted">Theme Mode</span>
+              <ThemeToggle showLabel />
+            </div>
             <Link
               to="/contact"
               className="w-full flex items-center justify-center gap-2 px-space-md py-space-sm rounded-lg bg-gradient-to-r from-primary-container to-secondary-container font-button-text text-button-text text-text-primary shadow-[0_0_20px_rgba(37,139,255,0.35)] text-xs"

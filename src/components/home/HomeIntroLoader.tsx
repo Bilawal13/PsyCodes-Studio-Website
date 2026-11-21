@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { StudioLogoMark } from '../brand/StudioLogo';
+import { useTheme } from '../../context/ThemeContext';
 
 interface HomeIntroLoaderProps {
   onComplete?: () => void;
@@ -12,6 +13,8 @@ interface HomeIntroLoaderProps {
  */
 export const HomeIntroLoader: React.FC<HomeIntroLoaderProps> = ({ onComplete }) => {
   const [isDismissed, setIsDismissed] = useState(false);
+  const { theme } = useTheme();
+  const isLight = theme === 'light';
 
   // Failsafe timer: under any circumstance, dismiss after 1.8s max
   useEffect(() => {
@@ -38,14 +41,16 @@ export const HomeIntroLoader: React.FC<HomeIntroLoaderProps> = ({ onComplete }) 
         setIsDismissed(true);
         if (onComplete) onComplete();
       }}
-      className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#080C14] select-none overflow-hidden touch-none pointer-events-auto"
+      className={`fixed inset-0 z-[100] flex flex-col items-center justify-center select-none overflow-hidden touch-none pointer-events-auto transition-colors duration-200 ${
+        isLight ? 'bg-white' : 'bg-[#080C14]'
+      }`}
       style={{ willChange: 'transform' }}
     >
       {/* Subtle Ambient Blueprint Grid Lines */}
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
-          backgroundImage: `linear-gradient(#FFFFFF 1px, transparent 1px), linear-gradient(90deg, #FFFFFF 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(${isLight ? '#000000' : '#FFFFFF'} 1px, transparent 1px), linear-gradient(90deg, ${isLight ? '#000000' : '#FFFFFF'} 1px, transparent 1px)`,
           backgroundSize: '48px 48px',
         }}
       />
@@ -69,15 +74,15 @@ export const HomeIntroLoader: React.FC<HomeIntroLoaderProps> = ({ onComplete }) 
       >
         {/* The 2D Geometric Psi Monolith Mark */}
         <div className="relative flex items-center justify-center">
-          <StudioLogoMark size={84} glow={true} />
+          <StudioLogoMark size={84} glow={true} theme={theme} />
         </div>
 
         {/* Typography */}
         <div className="flex flex-col items-center gap-1">
-          <span className="font-headline-sm font-bold text-2xl tracking-tight text-white">
+          <span className={`font-headline-sm font-bold text-2xl tracking-tight ${isLight ? 'text-slate-900' : 'text-white'}`}>
             PsyCodes
           </span>
-          <span className="font-mono text-[10px] tracking-[0.3em] uppercase text-cyan-400 font-medium">
+          <span className="font-mono text-[10px] tracking-[0.3em] uppercase text-cyan-500 font-semibold">
             STUDIO
           </span>
         </div>

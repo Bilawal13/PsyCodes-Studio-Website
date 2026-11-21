@@ -3,14 +3,110 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    color-scheme: light dark;
+
+    /* Bright Architectural White Theme (from Banner 2) */
+    --surface-rgb: 255, 255, 255;
+    --surface-dim-rgb: 248, 250, 252;
+    --surface-bright-rgb: 255, 255, 255;
+    --surface-container-lowest-rgb: 255, 255, 255;
+    --surface-container-low-rgb: 248, 250, 252;
+    --surface-container-rgb: 241, 245, 249;
+    --surface-container-high-rgb: 226, 232, 240;
+    --surface-container-highest-rgb: 203, 213, 225;
+    --surface-deep-rgb: 248, 250, 252;
+    --surface-glass: rgba(255, 255, 255, 0.85);
+    --border-glass-rgb: 15, 23, 42;
+    --on-surface-rgb: 15, 23, 42;
+    --on-surface-variant-rgb: 71, 85, 105;
+    --inverse-surface-rgb: 15, 23, 42;
+    --inverse-on-surface-rgb: 241, 245, 249;
+    --outline-rgb: 148, 163, 184;
+    --outline-variant-rgb: 203, 213, 225;
+    --surface-tint-rgb: 2, 132, 199;
+    --primary-rgb: 2, 132, 199;
+    --on-primary-rgb: 255, 255, 255;
+    --primary-container-rgb: 2, 132, 199;
+    --on-primary-container-rgb: 255, 255, 255;
+    --inverse-primary-rgb: 0, 93, 181;
+    --secondary-rgb: 99, 102, 241;
+    --on-secondary-rgb: 255, 255, 255;
+    --secondary-container-rgb: 238, 242, 255;
+    --on-secondary-container-rgb: 49, 46, 129;
+    --tertiary-rgb: 2, 132, 199;
+    --on-tertiary-rgb: 255, 255, 255;
+    --tertiary-container-rgb: 224, 242, 254;
+    --on-tertiary-container-rgb: 3, 105, 161;
+    --accent-violet-rgb: 147, 51, 234;
+    --text-primary-rgb: 9, 13, 22;
+    --text-muted-rgb: 71, 85, 105;
+    --glow-cyan: rgba(2, 132, 199, 0.16);
+    --glow-purple: rgba(99, 102, 241, 0.12);
+    --scrollbar-track: #F1F5F9;
+    --scrollbar-thumb: #CBD5E1;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  }
+
+  :root.dark,
+  html.dark {
+    color-scheme: dark;
+
+    /* Dark Cyber Obsidian Theme (Black + Neon Glowing Orb from Banner 1) */
+    --surface-rgb: 7, 10, 18;
+    --surface-dim-rgb: 7, 10, 18;
+    --surface-bright-rgb: 30, 41, 59;
+    --surface-container-lowest-rgb: 5, 7, 13;
+    --surface-container-low-rgb: 11, 16, 29;
+    --surface-container-rgb: 16, 23, 40;
+    --surface-container-high-rgb: 23, 32, 54;
+    --surface-container-highest-rgb: 30, 41, 69;
+    --surface-deep-rgb: 11, 16, 29;
+    --surface-glass: rgba(7, 10, 18, 0.85);
+    --border-glass-rgb: 0, 242, 254;
+    --on-surface-rgb: 241, 245, 249;
+    --on-surface-variant-rgb: 148, 163, 184;
+    --inverse-surface-rgb: 241, 245, 249;
+    --inverse-on-surface-rgb: 15, 23, 42;
+    --outline-rgb: 100, 116, 139;
+    --outline-variant-rgb: 51, 65, 85;
+    --surface-tint-rgb: 0, 242, 254;
+    --primary-rgb: 56, 232, 255;
+    --on-primary-rgb: 2, 20, 34;
+    --primary-container-rgb: 0, 180, 216;
+    --on-primary-container-rgb: 255, 255, 255;
+    --inverse-primary-rgb: 0, 93, 181;
+    --secondary-rgb: 129, 140, 248;
+    --on-secondary-rgb: 255, 255, 255;
+    --secondary-container-rgb: 79, 70, 229;
+    --on-secondary-container-rgb: 224, 231, 255;
+    --tertiary-rgb: 0, 242, 254;
+    --on-tertiary-rgb: 2, 20, 34;
+    --tertiary-container-rgb: 0, 242, 254;
+    --on-tertiary-container-rgb: 2, 20, 34;
+    --accent-violet-rgb: 168, 85, 247;
+    --text-primary-rgb: 255, 255, 255;
+    --text-muted-rgb: 148, 163, 184;
+    --glow-cyan: rgba(0, 242, 254, 0.35);
+    --glow-purple: rgba(129, 140, 248, 0.25);
+    --scrollbar-track: #05070D;
+    --scrollbar-thumb: #172036;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  }
+
+  html {
+    scroll-behavior: auto !important;
+    overflow-y: auto !important;
+    scrollbar-gutter: stable;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
   html, body {
     margin: 0;
     padding: 0;
-    background-color: #0d1225;
-    color: #dde1fc;
+    background-color: rgb(var(--surface-rgb));
+    color: rgb(var(--on-surface-rgb));
     font-family: 'Manrope', sans-serif;
-    overflow-y: auto !important;
-    scrollbar-gutter: stable;
   }
 
   /* Guarantee Lenis never clips or hides the scrollbar */
@@ -44,56 +140,60 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #080d20;
+  background: var(--scrollbar-track);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1a1f32;
+  background: var(--scrollbar-thumb);
   border-radius: 4px;
-  border: 1px solid rgba(37, 139, 255, 0.18);
+  border: 1px solid rgba(var(--border-glass-rgb), 0.2);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #24293d;
-  border-color: rgba(24, 217, 246, 0.4);
+  filter: brightness(1.2);
 }
 
 /* Glassmorphism primitives */
 .bg-glass {
-  background: rgba(11, 21, 48, 0.65);
+  background: var(--surface-glass);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(37, 139, 255, 0.18);
+  border: 1px solid rgba(var(--border-glass-rgb), 0.16);
 }
 
 .bg-glass-card {
-  background: linear-gradient(135deg, rgba(11, 21, 48, 0.85) 0%, rgba(20, 32, 68, 0.65) 100%);
+  background: linear-gradient(135deg, rgba(var(--surface-container-high-rgb), 0.85) 0%, rgba(var(--surface-container-rgb), 0.65) 100%);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(37, 139, 255, 0.2);
+  border: 1px solid rgba(var(--border-glass-rgb), 0.2);
 }
 
 .bg-glass-overlay {
-  background: rgba(8, 13, 32, 0.85);
+  background: rgba(var(--surface-container-lowest-rgb), 0.85);
   backdrop-filter: blur(32px);
   -webkit-backdrop-filter: blur(32px);
 }
 
+/* Light mode specific card subtle elevation */
+html.light .bg-glass-card {
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 0 1px rgba(15, 23, 42, 0.1);
+}
+
 /* Neon glow utilities */
 .glow-cyan-sm {
-  box-shadow: 0 0 12px rgba(18, 216, 245, 0.25);
+  box-shadow: 0 0 12px var(--glow-cyan);
 }
 
 .glow-cyan-md {
-  box-shadow: 0 0 24px rgba(18, 216, 245, 0.35);
+  box-shadow: 0 0 24px var(--glow-cyan);
 }
 
 .glow-purple-sm {
-  box-shadow: 0 0 12px rgba(135, 59, 218, 0.25);
+  box-shadow: 0 0 12px var(--glow-purple);
 }
 
 .glow-purple-md {
-  box-shadow: 0 0 24px rgba(135, 59, 218, 0.35);
+  box-shadow: 0 0 24px var(--glow-purple);
 }
 
 .glow-blue-sm {
@@ -111,7 +211,7 @@
 
 .interactive-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 45px -12px rgba(24, 217, 246, 0.2), 0 0 0 1px rgba(24, 217, 246, 0.35);
+  box-shadow: 0 20px 45px -12px var(--glow-cyan), 0 0 0 1px rgba(var(--border-glass-rgb), 0.35);
 }
 
 /* Continuous 360-degree rotating perimeter beam */
@@ -165,8 +265,8 @@
 /* Scanline effect for arcade screens */
 .scanline-grid {
   background-image: 
-    linear-gradient(rgba(18, 216, 245, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(18, 216, 245, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(var(--tertiary-rgb), 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--tertiary-rgb), 0.03) 1px, transparent 1px);
   background-size: 28px 28px;
 }
 
@@ -242,5 +342,3 @@
     border-color: #e2e8f0 !important;
   }
 }
-
-
