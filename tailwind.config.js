@@ -112,6 +112,15 @@ export default {
         "label-badge": ["11px", { lineHeight: "14px", letterSpacing: "0.08em", fontWeight: "600" }],
         "button-text": ["14px", { lineHeight: "20px", letterSpacing: "0.02em", fontWeight: "600" }],
       },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+      },
+      animation: {
+        marquee: 'marquee 28s linear infinite',
+      },
     },
   },
   plugins: [],

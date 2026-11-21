@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { HomeHero } from '../../components/home/HomeHero';
+import { KineticMarquee } from '../../components/home/KineticMarquee';
 import { FitLyfeShowcase } from '../../components/home/FitLyfeShowcase';
 import { HotCocoaRunShowcase } from '../../components/home/HotCocoaRunShowcase';
 import { HomeServicesSection } from '../../components/home/HomeServicesSection';
@@ -56,6 +57,9 @@ export const HomePage: React.FC = () => {
 
       {/* SECTION A: HERO */}
       <HomeHero />
+
+      {/* INFINITE KINETIC MARQUEE BANNER (FarTechDev inspired) */}
+      <KineticMarquee />
 
       {/* SECTION B: PROPRIETARY IP (FITLYFE & HOT COCOA RUN) */}
       <section className="w-full px-gutter lg:px-margin py-24 relative" id="products">
