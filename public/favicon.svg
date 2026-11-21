@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="fav-titanium" x1="32" y1="8" x2="32" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#CBD5E1" />
+    </linearGradient>
+    <radialGradient id="fav-glow" cx="32" cy="30" r="12" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#00F2FE" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#00F2FE" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Dark container squircle for universal tab contrast -->
+  <rect width="64" height="64" rx="16" fill="#080C14" />
+  <rect width="64" height="64" rx="16" stroke="#1E293B" stroke-width="1.5" />
+
+  <!-- Core Neural Glow -->
+  <circle cx="32" cy="30" r="10" fill="url(#fav-glow)" />
+
+  <!-- Psi Monolith Glyph (Optimized for 16px-64px scale) -->
+  <g fill="url(#fav-titanium)">
+    <!-- Center Stem -->
+    <rect x="29" y="12" width="6" height="38" rx="3" />
+    <!-- Left Wing -->
+    <path d="M14 18 C14 15 19 15 19 18 L19 29 C19 36 24 41 28 41 C29.5 41 29.5 46 27.5 46 C21 46 14 40 14 29 Z" />
+    <!-- Right Wing -->
+    <path d="M50 18 C50 15 45 15 45 18 L45 29 C45 36 40 41 36 41 C34.5 41 34.5 46 36.5 46 C43 46 50 40 50 29 Z" />
+    <!-- Base Anchor -->
+    <rect x="27" y="49" width="10" height="3.5" rx="1.75" />
+  </g>
+
+  <!-- Center Laser Cyan Node -->
+  <circle cx="32" cy="30" r="3" fill="#00F2FE" />
+  <circle cx="32" cy="30" r="1.2" fill="#FFFFFF" />
+</svg>

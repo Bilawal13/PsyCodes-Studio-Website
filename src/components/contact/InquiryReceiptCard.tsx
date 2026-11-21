@@ -14,6 +14,7 @@ import {
 import { ReceiptDetails, generateTextReceipt, printReceipt } from '../../utils/receiptGenerator';
 import { SITE_SETTINGS } from '../../data/mockData';
 import { DirectDispatchModal } from '../modals/DirectDispatchModal';
+import { StudioLogoMark } from '../brand/StudioLogo';
 
 export interface InquiryReceiptCardProps {
   receipt: ReceiptDetails;
@@ -105,11 +106,7 @@ export const InquiryReceiptCard: React.FC<InquiryReceiptCardProps> = ({
         <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-border-glass/80 gap-4">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl overflow-hidden bg-surface-container-high border border-border-glass p-1 flex items-center justify-center shrink-0">
-              <img
-                src="/assets/logo/Psycodes_logo_trans.png"
-                alt="PsyCodes Studio"
-                className="w-full h-full object-contain"
-              />
+              <StudioLogoMark size={28} />
             </div>
             <div>
               <span className="font-label-badge text-[10px] text-tertiary font-mono uppercase tracking-widest block">

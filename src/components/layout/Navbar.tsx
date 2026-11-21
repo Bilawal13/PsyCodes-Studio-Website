@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
+import { StudioLogo } from '../brand/StudioLogo';
 
 export const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -78,24 +79,8 @@ export const Navbar: React.FC = () => {
       <div className="h-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand Logo & Name */}
         <div className="flex items-center gap-2 sm:gap-space-md min-w-0">
-          <Link to="/" className="flex items-center gap-2.5 sm:gap-3 group focus:outline-none min-w-0">
-            <img
-              src="/assets/logo/Psycodes_logo_trans.png"
-              alt="PsyCodes Studio Logo"
-              className="h-7 sm:h-8 w-auto object-contain transition-transform group-hover:scale-105 shrink-0"
-              onError={(e) => {
-                // Fallback to text or alternate path if needed
-                (e.target as HTMLElement).style.display = 'none';
-              }}
-            />
-            <div className="flex flex-col min-w-0">
-              <span className="font-headline-sm text-sm sm:text-headline-sm font-bold tracking-tight text-text-primary group-hover:text-tertiary transition-colors truncate">
-                PsyCodes Studio
-              </span>
-              <span className="font-label-badge text-[8px] sm:text-label-badge text-tertiary tracking-widest uppercase truncate">
-                CODE. CREATE. AUTOMATE.
-              </span>
-            </div>
+          <Link to="/" className="flex items-center group focus:outline-none min-w-0">
+            <StudioLogo variant="horizontal" size="sm" />
           </Link>
         </div>
 

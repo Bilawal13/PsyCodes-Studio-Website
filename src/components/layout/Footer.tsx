@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Mail, MapPin, Calendar, User, ExternalLink, Hash, AtSign, Copy, Check } from 'lucide-react';
 import { SITE_SETTINGS } from '../../data/mockData';
 import { DirectDispatchModal } from '../modals/DirectDispatchModal';
+import { StudioLogoMark } from '../brand/StudioLogo';
 
 export const Footer: React.FC = () => {
   const [isDispatchModalOpen, setIsDispatchModalOpen] = useState(false);
@@ -13,14 +14,7 @@ export const Footer: React.FC = () => {
           {/* Column 1: Brand & Tagline */}
           <div className="flex flex-col gap-space-md">
             <div className="flex items-center gap-space-sm">
-              <img
-                src="/assets/logo/Psycodes_logo_trans.png"
-                alt="PsyCodes Studio"
-                className="h-7 w-auto object-contain"
-                onError={(e) => {
-                  (e.target as HTMLElement).style.display = 'none';
-                }}
-              />
+              <StudioLogoMark size={28} />
               <span className="font-headline-sm text-headline-sm font-bold text-text-primary tracking-tight">
                 PsyCodes Studio
               </span>
