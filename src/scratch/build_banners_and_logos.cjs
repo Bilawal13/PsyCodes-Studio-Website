@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const { execSync } = require('child_process');
 
 const rootDir = path.resolve(__dirname, '../../');
 const bannerDir = path.resolve(rootDir, 'public/assets/banner');
@@ -12,74 +11,52 @@ const scratchDir = __dirname;
   if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
 });
 
-// Paths from mathematical grid (1000x1000 coordinate system)
-const PSI_OUTER_PATH = 'M 60 160 C 90 280 120 420 180 540 C 230 640 280 690 380 720 L 380 790 L 320 850 L 680 850 L 620 790 L 620 720 C 720 690 770 640 820 540 C 880 420 910 280 940 160 C 890 190 840 250 800 340 C 760 430 720 500 650 540 C 630 460 630 310 630 160 L 370 160 C 370 310 370 460 350 540 C 280 500 240 430 200 340 C 160 250 110 190 60 160 Z';
-const DIAMOND_PATH = 'M 500 370 L 630 500 L 500 630 L 370 500 Z';
-const STAR_PATH = 'M 500 420 Q 500 475 525 475 Q 525 500 580 500 Q 525 500 525 525 Q 500 525 500 580 Q 500 525 475 525 Q 475 500 420 500 Q 475 500 475 475 Q 500 475 500 420 Z';
-
-const FACET_LINES = [
-  'M 370 160 L 500 230 L 630 160',
-  'M 500 230 L 500 370',
-  'M 370 160 L 500 370 L 630 160',
-  'M 500 630 L 500 790',
-  'M 380 720 L 500 630 L 620 720',
-  'M 380 790 L 500 850 L 620 790',
-  'M 60 160 L 200 340',
-  'M 940 160 L 800 340',
-  'M 200 340 L 350 540',
-  'M 800 340 L 650 540',
-  'M 180 540 L 370 500',
-  'M 820 540 L 630 500',
-  'M 280 690 L 500 630',
-  'M 720 690 L 500 630'
-];
-
-// Helper to generate the emblem SVG snippet
-function generateEmblemSvg(isDark, size = 600, strokeWidth = 18, facetWidth = 8) {
-  const outerStroke = isDark ? '#FFFFFF' : '#080C18';
-  const facetStroke = isDark ? '#FFFFFF' : '#080C18';
-  const facetOpacity = isDark ? '0.45' : '0.40';
-  const glowFilter = isDark ? 'filter="url(#dark-core-glow)"' : '';
+// Helper to generate the EXACT emblem SVG from psycodes_emblem_minimal_dark.svg
+function generateExactEmblemSvg(isDark, size = 600) {
+  const strokeColor = isDark ? '#FFFFFF' : '#080C18';
+  const diamondFill = isDark ? '#080C18' : '#FFFFFF';
+  const spireFill = isDark ? 'rgba(255,255,255,0.03)' : 'rgba(0,0,0,0.02)';
+  const starFill = '#00DDEB';
+  const pipFill = isDark ? '#FFFFFF' : '#080C18';
+  const glowFilter = isDark ? 'filter="url(#emblem-star-glow)"' : '';
 
   return `
     <g transform="scale(${size / 1000})">
       <defs>
         ${isDark ? `
-        <filter id="dark-core-glow" x="-40%" y="-40%" width="180%" height="180%">
-          <feGaussianBlur stdDeviation="35" result="blur1" />
-          <feGaussianBlur stdDeviation="70" result="blur2" />
+        <filter id="emblem-star-glow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="24" result="blur1" />
+          <feGaussianBlur stdDeviation="48" result="blur2" />
           <feMerge>
             <feMergeNode in="blur2" />
             <feMergeNode in="blur1" />
             <feMergeNode in="SourceGraphic" />
           </feMerge>
         </filter>
-        <radialGradient id="star-radial-core" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#00F2FE" stop-opacity="1" />
-          <stop offset="70%" stop-color="#00DDEB" stop-opacity="0.9" />
-          <stop offset="100%" stop-color="#00B8D9" stop-opacity="0.75" />
-        </radialGradient>
-        ` : `
-        <radialGradient id="star-radial-core" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#00DDEB" stop-opacity="1" />
-          <stop offset="100%" stop-color="#00B8D9" stop-opacity="0.85" />
-        </radialGradient>
-        `}
+        ` : ''}
       </defs>
 
-      <!-- Outer Psi Architectural Contour -->
-      <path d="${PSI_OUTER_PATH}" fill="none" stroke="${outerStroke}" stroke-width="${strokeWidth}" stroke-linejoin="round" stroke-linecap="round" />
+      <g stroke="${strokeColor}" stroke-width="32" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Top Central Spire -->
+        <path d="M 430 160 L 570 160 L 570 240 L 500 320 L 430 240 Z" fill="${spireFill}" />
 
-      <!-- Internal Engineering Facets -->
-      <g stroke="${facetStroke}" stroke-width="${facetWidth}" stroke-linecap="round" stroke-linejoin="round" opacity="${facetOpacity}">
-        ${FACET_LINES.map(line => `<path d="${line}" fill="none" />`).join('\n        ')}
+        <!-- Central Rhombus Diamond -->
+        <path d="M 500 320 L 680 500 L 500 680 L 320 500 Z" fill="${diamondFill}" stroke-width="36" />
+
+        <!-- Left Wing Sweep -->
+        <path d="M 320 500 C 230 550 170 480 155 390 L 135 160 L 220 160 C 250 260 295 365 375 445" />
+
+        <!-- Right Wing Sweep -->
+        <path d="M 680 500 C 770 550 830 480 845 390 L 865 160 L 780 160 C 750 260 705 365 625 445" />
+
+        <!-- Lower Pediment Base -->
+        <path d="M 460 680 L 460 760 L 360 840 L 640 840 L 540 760 L 540 680" />
+        <line x1="360" y1="840" x2="640" y2="840" stroke-width="38" />
       </g>
 
-      <!-- Central Diamond Structure -->
-      <path d="${DIAMOND_PATH}" fill="none" stroke="${outerStroke}" stroke-width="${strokeWidth}" stroke-linejoin="round" />
-
-      <!-- Glowing Radiant Cyan Star -->
-      <path d="${STAR_PATH}" fill="url(#star-radial-core)" stroke="#00DDEB" stroke-width="3" ${glowFilter} />
+      <!-- Refined High-Contrast Core Star -->
+      <polygon points="500,385 516,484 615,500 516,516 500,615 484,516 385,500 484,484" fill="${starFill}" ${glowFilter} />
+      <circle cx="500" cy="500" r="6" fill="${pipFill}" />
     </g>
   `;
 }
@@ -98,8 +75,8 @@ function buildBannerDarkSvg() {
 
     <!-- Star Radiant Ambient Aura -->
     <radialGradient id="orb-ambient" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#00F2FE" stop-opacity="0.38" />
-      <stop offset="35%" stop-color="#00DDEB" stop-opacity="0.18" />
+      <stop offset="0%" stop-color="#00F2FE" stop-opacity="0.42" />
+      <stop offset="35%" stop-color="#00DDEB" stop-opacity="0.20" />
       <stop offset="70%" stop-color="#4263EB" stop-opacity="0.06" />
       <stop offset="100%" stop-color="#080C18" stop-opacity="0" />
     </radialGradient>
@@ -120,18 +97,15 @@ function buildBannerDarkSvg() {
   <!-- Blueprint CAD Overlay -->
   <rect width="1920" height="1080" fill="url(#cad-grid-major)" />
 
-  <!-- Technical Dimension / Construction Schematic Overlay -->
+  <!-- Technical Construction Guides -->
   <g stroke="#00DDEB" stroke-opacity="0.22" stroke-width="1" stroke-dasharray="4,4">
-    <!-- Top & Bottom bounds for emblem -->
     <line x1="80" y1="200" x2="840" y2="200" />
     <line x1="80" y1="880" x2="840" y2="880" />
-    <!-- Vertical center line -->
     <line x1="450" y1="120" x2="450" y2="960" />
-    <!-- Dimension arrows / tick marks -->
     <path d="M 100 180 L 100 220 M 800 180 L 800 220" stroke="#00DDEB" stroke-opacity="0.35" stroke-width="1.5" />
   </g>
 
-  <!-- Subtle CAD Technical Labels -->
+  <!-- Technical Dimension Labels -->
   <g fill="#00DDEB" fill-opacity="0.45" font-family="'Space Grotesk', 'JetBrains Mono', monospace" font-size="11" letter-spacing="2">
     <text x="110" y="195">SYS.COORD // LAT-450:540</text>
     <text x="110" y="875">SCALE: 1:1 METRIC SPEC</text>
@@ -141,9 +115,9 @@ function buildBannerDarkSvg() {
   <!-- Orb Glow behind Star -->
   <circle cx="450" cy="540" r="320" fill="url(#orb-ambient)" />
 
-  <!-- Emblem Placement (Left Center at 450, 540) -->
+  <!-- EXACT Emblem Placement (Left Center at 450, 540) -->
   <g transform="translate(110, 200)">
-    ${generateEmblemSvg(true, 680, 16, 7)}
+    ${generateExactEmblemSvg(true, 680)}
   </g>
 
   <!-- Brand Typography Lockup (Right Side) -->
@@ -195,16 +169,16 @@ function buildBannerLightSvg() {
     <path d="M 100 180 L 100 220 M 800 180 L 800 220" stroke="#00B8D9" stroke-opacity="0.4" stroke-width="1.5" />
   </g>
 
-  <!-- Subtle CAD Technical Labels -->
+  <!-- Technical Dimension Labels -->
   <g fill="#00838F" fill-opacity="0.55" font-family="'Space Grotesk', 'JetBrains Mono', monospace" font-size="11" letter-spacing="2">
     <text x="110" y="195">SYS.COORD // LAT-450:540</text>
     <text x="110" y="875">SCALE: 1:1 METRIC SPEC</text>
     <text x="460" y="150">AXIS: BILATERAL 500px</text>
   </g>
 
-  <!-- Emblem Placement (Left Center at 450, 540) -->
+  <!-- EXACT Emblem Placement (Left Center at 450, 540) -->
   <g transform="translate(110, 200)">
-    ${generateEmblemSvg(false, 680, 16, 7)}
+    ${generateExactEmblemSvg(false, 680)}
   </g>
 
   <!-- Brand Typography Lockup (Right Side) -->
@@ -271,7 +245,7 @@ function buildAvatarSvg(isDark) {
   <rect width="1024" height="1024" fill="${bg}" />
   ${isDark ? `
     <radialGradient id="av-glow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#00F2FE" stop-opacity="0.3" />
+      <stop offset="0%" stop-color="#00F2FE" stop-opacity="0.35" />
       <stop offset="50%" stop-color="#00DDEB" stop-opacity="0.12" />
       <stop offset="100%" stop-color="#080C18" stop-opacity="0" />
     </radialGradient>
@@ -279,7 +253,7 @@ function buildAvatarSvg(isDark) {
   ` : ''}
   <rect x="32" y="32" width="960" height="960" rx="200" fill="none" stroke="${border}" stroke-width="4" />
   <g transform="translate(162, 162)">
-    ${generateEmblemSvg(isDark, 700, 18, 8)}
+    ${generateExactEmblemSvg(isDark, 700)}
   </g>
 </svg>`;
 }
@@ -312,15 +286,15 @@ fs.writeFileSync(
   createRenderHtml('Avatar Light', '#FFFFFF', buildAvatarSvg(false), 1024, 1024)
 );
 
-// Transparent Logo PNG render HTML
+// Transparent Logo PNG render HTML with EXACT SVG
 const transparentLogoDarkSvg = `
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="900" height="900">
-  ${generateEmblemSvg(true, 900, 18, 8)}
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="900" height="900" fill="none">
+  ${generateExactEmblemSvg(true, 900)}
 </svg>`;
 
 const transparentLogoLightSvg = `
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="900" height="900">
-  ${generateEmblemSvg(false, 900, 18, 8)}
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="900" height="900" fill="none">
+  ${generateExactEmblemSvg(false, 900)}
 </svg>`;
 
 fs.writeFileSync(
@@ -333,4 +307,4 @@ fs.writeFileSync(
   createRenderHtml('Transparent Logo Light', 'transparent', transparentLogoLightSvg, 1024, 1024)
 );
 
-console.log('SVG and Render HTML pages successfully created!');
+console.log('SVG and Render HTML pages successfully created with exact SVG emblem!');

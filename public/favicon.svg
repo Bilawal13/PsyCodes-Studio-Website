@@ -1,43 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
   <defs>
-    <filter id="fav-glow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="16" result="blur" />
-      <feFlood floodColor="#00DDEB" floodOpacity="0.9" result="glowColor" />
-      <feComposite in="glowColor" in2="blur" operator="in" result="coloredBlur" />
-      <feMerge>
-        <feMergeNode in="coloredBlur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
+    <radialGradient id="fav-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00F2FE" stop-opacity="0.35" />
+      <stop offset="60%" stop-color="#00DDEB" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#080C18" stop-opacity="0" />
+    </radialGradient>
   </defs>
 
-  <!-- Dark Obsidian Container Squircle -->
-  <rect x="40" y="40" width="920" height="920" rx="220" fill="#05070D" />
-  <rect x="40" y="40" width="920" height="920" rx="220" stroke="#101426" stroke-width="24" />
+  <!-- Dark Rounded Squircle Background -->
+  <rect width="512" height="512" rx="128" fill="#080C18" />
+  <circle cx="256" cy="256" r="180" fill="url(#fav-glow)" />
+  <rect x="16" y="16" width="480" height="480" rx="116" fill="none" stroke="rgba(0, 221, 235, 0.25)" stroke-width="3" />
 
-  <!-- Core Ambient Glow -->
-  <circle cx="500" cy="500" r="200" fill="#00DDEB" opacity="0.25" filter="blur(40px)" />
+  <!-- Scaled Emblem (Scale 0.44 to fit 512 with padding) -->
+  <g transform="translate(36, 36) scale(0.44)">
+    <g stroke="#FFFFFF" stroke-width="34" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Top Central Spire -->
+      <path d="M 430 160 L 570 160 L 570 240 L 500 320 L 430 240 Z" fill="rgba(255,255,255,0.03)" />
 
-  <!-- Precision Minimal Architectural Psi Silhouette (34px stroke for micro-scalability) -->
-  <g stroke="#FFFFFF" stroke-width="36" stroke-linecap="round" stroke-linejoin="round">
-    <!-- Top Central Spire -->
-    <path d="M 430 160 L 570 160 L 570 240 L 500 320 L 430 240 Z" />
+      <!-- Central Rhombus Diamond -->
+      <path d="M 500 320 L 680 500 L 500 680 L 320 500 Z" fill="#080C18" stroke-width="38" />
 
-    <!-- Central Diamond Housing -->
-    <path d="M 500 320 L 680 500 L 500 680 L 320 500 Z" stroke-width="40" fill="#080C18" />
+      <!-- Left Wing Sweep -->
+      <path d="M 320 500 C 230 550 170 480 155 390 L 135 160 L 220 160 C 250 260 295 365 375 445" />
 
-    <!-- Left Wing Sweep -->
-    <path d="M 320 500 C 230 550 170 480 155 390 L 135 160 L 220 160 C 250 260 295 365 375 445" />
+      <!-- Right Wing Sweep -->
+      <path d="M 680 500 C 770 550 830 480 845 390 L 865 160 L 780 160 C 750 260 705 365 625 445" />
 
-    <!-- Right Wing Sweep -->
-    <path d="M 680 500 C 770 550 830 480 845 390 L 865 160 L 780 160 C 750 260 705 365 625 445" />
+      <!-- Lower Pediment Base -->
+      <path d="M 460 680 L 460 760 L 360 840 L 640 840 L 540 760 L 540 680" />
+      <line x1="360" y1="840" x2="640" y2="840" stroke-width="40" />
+    </g>
 
-    <!-- Lower Pediment Foundation -->
-    <path d="M 460 680 L 460 760 L 360 840 L 640 840 L 540 760 L 540 680" />
-    <line x1="360" y1="840" x2="640" y2="840" stroke-width="42" />
+    <!-- Refined High-Contrast Core Star -->
+    <polygon points="500,385 516,484 615,500 516,516 500,615 484,516 385,500 484,484" fill="#00DDEB" />
+    <circle cx="500" cy="500" r="7" fill="#FFFFFF" />
   </g>
-
-  <!-- Luminous 4-Pointed Star Node -->
-  <polygon points="500,385 516,484 615,500 516,516 500,615 484,516 385,500 484,484" fill="#00DDEB" filter="url(#fav-glow)" />
-  <circle cx="500" cy="500" r="10" fill="#FFFFFF" />
 </svg>
