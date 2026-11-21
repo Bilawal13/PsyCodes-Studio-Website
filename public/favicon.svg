@@ -1,35 +1,43 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-  <defs>
-    <linearGradient id="fav-titanium" x1="32" y1="8" x2="32" y2="56" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#FFFFFF" />
-      <stop offset="100%" stop-color="#CBD5E1" />
-    </linearGradient>
-    <radialGradient id="fav-glow" cx="32" cy="30" r="12" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#00F2FE" stop-opacity="0.9" />
-      <stop offset="100%" stop-color="#00F2FE" stop-opacity="0" />
-    </radialGradient>
-  </defs>
+  <!-- Dark Obsidian Container Squircle -->
+  <rect width="64" height="64" rx="14" fill="#080C14" />
+  <rect width="64" height="64" rx="14" stroke="#1E293B" stroke-width="1.2" />
 
-  <!-- Dark container squircle for universal tab contrast -->
-  <rect width="64" height="64" rx="16" fill="#080C14" />
-  <rect width="64" height="64" rx="16" stroke="#1E293B" stroke-width="1.5" />
+  <!-- 2D Line-Art Wireframe Psi Structure -->
+  <g stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Top Cap -->
+    <line x1="25" y1="14" x2="39" y2="14" />
+    <polygon points="25,14 39,14 36,18 28,18" fill="rgba(255,255,255,0.1)" />
 
-  <!-- Core Neural Glow -->
-  <circle cx="32" cy="30" r="10" fill="url(#fav-glow)" />
+    <!-- Upper Stem -->
+    <polygon points="28,18 36,18 34,26 30,26" />
+    <line x1="32" y1="18" x2="32" y2="26" />
 
-  <!-- Psi Monolith Glyph (Optimized for 16px-64px scale) -->
-  <g fill="url(#fav-titanium)">
-    <!-- Center Stem -->
-    <rect x="29" y="12" width="6" height="38" rx="3" />
+    <!-- Diamond Nexus -->
+    <polygon points="32,26 39,33 32,40 25,33" fill="rgba(0,242,254,0.12)" stroke="#FFFFFF" stroke-width="1.8" />
+    <line x1="25" y1="33" x2="39" y2="33" stroke-width="0.8" stroke="rgba(255,255,255,0.6)" />
+    <line x1="32" y1="26" x2="32" y2="40" stroke-width="0.8" stroke="rgba(255,255,255,0.6)" />
+
+    <!-- Lower Stem -->
+    <polygon points="30,40 34,40 36,48 28,48" />
+
+    <!-- Base Pedestal -->
+    <polygon points="28,48 36,48 39,52 25,52" fill="rgba(255,255,255,0.1)" />
+
     <!-- Left Wing -->
-    <path d="M14 18 C14 15 19 15 19 18 L19 29 C19 36 24 41 28 41 C29.5 41 29.5 46 27.5 46 C21 46 14 40 14 29 Z" />
+    <path d="M25,52 C18,48 12,41 11,32 C10,23 12,16 13,14 C13,13 11,13 10,14 C8,19 8,33 13,44 C17,50 23,51 25,52 Z" />
+    <line x1="13" y1="14" x2="25" y2="33" />
+    <line x1="11" y1="32" x2="25" y2="33" />
+    <line x1="13" y1="44" x2="25" y2="33" />
+
     <!-- Right Wing -->
-    <path d="M50 18 C50 15 45 15 45 18 L45 29 C45 36 40 41 36 41 C34.5 41 34.5 46 36.5 46 C43 46 50 40 50 29 Z" />
-    <!-- Base Anchor -->
-    <rect x="27" y="49" width="10" height="3.5" rx="1.75" />
+    <path d="M39,52 C46,48 52,41 53,32 C54,23 52,16 51,14 C51,13 53,13 54,14 C56,19 56,33 51,44 C47,50 41,51 39,52 Z" />
+    <line x1="51" y1="14" x2="39" y2="33" />
+    <line x1="53" y1="32" x2="39" y2="33" />
+    <line x1="51" y1="44" x2="39" y2="33" />
   </g>
 
-  <!-- Center Laser Cyan Node -->
-  <circle cx="32" cy="30" r="3" fill="#00F2FE" />
-  <circle cx="32" cy="30" r="1.2" fill="#FFFFFF" />
+  <!-- Glowing Laser-Cyan Star Node -->
+  <polygon points="32,29 33.5,33 37.5,33 34,35 32,38 30,35 26.5,33 30.5,33" fill="#00F2FE" />
+  <circle cx="32" cy="33" r="1.2" fill="#FFFFFF" />
 </svg>
