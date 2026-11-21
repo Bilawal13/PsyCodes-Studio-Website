@@ -124,9 +124,9 @@ export const Footer: React.FC = () => {
                 href={SITE_SETTINGS.instagram_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-space-xs text-on-surface-variant hover:text-accent-violet transition-colors"
+                className="flex items-center gap-space-xs text-on-surface-variant hover:text-cyan-400 transition-colors"
               >
-                <Hash className="w-4 h-4 text-accent-violet shrink-0" />
+                <Hash className="w-4 h-4 text-cyan-400 shrink-0" />
                 <span>
                   Instagram: <span className="text-text-primary">@psycodestudios</span>
                 </span>

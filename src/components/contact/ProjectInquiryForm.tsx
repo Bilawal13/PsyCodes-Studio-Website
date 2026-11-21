@@ -551,7 +551,7 @@ export const ProjectInquiryForm: React.FC = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full py-4 rounded-xl bg-gradient-to-r from-primary-container via-tertiary to-accent-violet text-white font-bold font-button-text text-sm flex items-center justify-center gap-2 shadow-lg hover:opacity-95 transition-all cursor-pointer"
+              className="w-full py-4 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 text-slate-950 font-bold font-button-text text-sm flex items-center justify-center gap-2 shadow-lg shadow-cyan-400/25 hover:shadow-cyan-400/40 hover:opacity-95 transition-all cursor-pointer"
             >
               <Send className="w-4 h-4" />
               <span>{isSubmitting ? 'Sending Your Message...' : 'Send Project Inquiry →'}</span>

@@ -26,7 +26,7 @@ export const AdminProjectsTab: React.FC<AdminProjectsTabProps> = ({
         <button
           type="button"
           onClick={onCreateProject}
-          className="px-4 py-2 rounded-xl bg-gradient-to-r from-electric-blue to-purple-600 text-white font-mono text-xs font-bold flex items-center gap-2 shadow-md cursor-pointer hover:shadow-cyan-400/20 transition-all"
+          className="px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-500 text-slate-950 font-mono text-xs font-bold flex items-center gap-2 shadow-md cursor-pointer hover:shadow-cyan-400/30 transition-all"
         >
           <Plus className="w-3.5 h-3.5" />
           <span>NEW PROJECT</span>

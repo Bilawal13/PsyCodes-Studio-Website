@@ -130,7 +130,7 @@ export const EarlyAccessModal: React.FC<EarlyAccessModalProps> = ({
           <Link
             to={`/contact?service=Game+Development&ref=${encodeURIComponent(game.title)}+Early+Playtest`}
             onClick={onClose}
-            className="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-primary-container to-secondary text-white font-bold text-xs flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/30 transition-all cursor-pointer"
+            className="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 text-slate-950 font-bold text-xs flex items-center justify-center gap-2 shadow-lg shadow-cyan-400/25 hover:shadow-cyan-400/40 transition-all cursor-pointer"
           >
             <Sparkles className="w-4 h-4" />
             <span>Join Early Playtest / Commission Custom Game</span>

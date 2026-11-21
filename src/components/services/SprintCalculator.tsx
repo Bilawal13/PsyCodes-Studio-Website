@@ -370,7 +370,7 @@ export const SprintCalculator: React.FC = () => {
 
                 <Link
                   to={calcResults.inquiryUrl}
-                  className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-primary-container to-accent-violet text-white text-xs font-bold text-center shadow-[0_0_16px_rgba(37,139,255,0.35)] hover:shadow-[0_0_24px_rgba(24,217,246,0.5)] transition-all flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 text-slate-950 text-xs font-bold text-center shadow-[0_0_20px_rgba(0,242,254,0.35)] hover:shadow-[0_0_28px_rgba(0,242,254,0.5)] transition-all flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <span>Discuss This Package With Us</span>
                   <ArrowRight className="w-4 h-4" />

@@ -37,8 +37,8 @@ export const ArcadePage: React.FC = () => {
     <div className="flex flex-col w-full relative">
       {/* Ambient Prismatic Backdrop Glows */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[720px] h-[360px] bg-gradient-to-r from-primary-container/20 via-tertiary/15 to-secondary-container/20 blur-[130px] rounded-full" />
-        <div className="absolute -top-12 right-10 w-96 h-96 bg-glow-cyan blur-[110px]" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[720px] h-[360px] bg-cyan-400/15 blur-[130px] rounded-full" />
+        <div className="absolute -top-12 right-10 w-96 h-96 bg-cyan-400/10 blur-[110px]" />
       </div>
 
       {/* Section A: Arcade Portal Hero */}

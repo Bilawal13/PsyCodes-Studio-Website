@@ -42,7 +42,7 @@ export const HomeIntroLoader: React.FC<HomeIntroLoaderProps> = ({ onComplete }) 
         if (onComplete) onComplete();
       }}
       className={`fixed inset-0 z-[100] flex flex-col items-center justify-center select-none overflow-hidden touch-none pointer-events-auto transition-colors duration-200 ${
-        isLight ? 'bg-white' : 'bg-[#080C14]'
+        isLight ? 'bg-white' : 'bg-black'
       }`}
       style={{ willChange: 'transform' }}
     >

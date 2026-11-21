@@ -42,7 +42,7 @@ export const TECH_DISCIPLINES: TechDiscipline[] = [
     desc: 'Engaging 2D/3D games and interactive WebGL experiences with responsive physics, custom shaders, and cross-platform deployment.',
     icon: Gamepad2,
     tags: ['Unity', 'Unreal Engine', 'C# / C++', 'Universal RP', 'WebGL 2.0'],
-    color: 'text-purple-400',
+    color: 'text-cyan-400',
   },
 ];
 

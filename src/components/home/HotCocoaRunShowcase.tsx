@@ -13,7 +13,7 @@ export interface HotCocoaRunShowcaseProps {
 export const HotCocoaRunShowcase: React.FC<HotCocoaRunShowcaseProps> = ({ onOpenModal }) => {
   return (
     <div className="relative bg-surface-deep/80 rounded-3xl p-8 lg:p-12 shadow-2xl overflow-hidden border border-border-glass">
-      <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-accent-violet/15 blur-[120px] pointer-events-none" />
+      <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-cyan-400/15 blur-[120px] pointer-events-none" />
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
         {/* Game Visual Canvas */}
         <div className="lg:col-span-6 order-2 lg:order-1 flex flex-col">

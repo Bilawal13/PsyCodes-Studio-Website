@@ -25,7 +25,7 @@ export const STUDIO_PILLARS: StudioPillar[] = [
   {
     title: 'Game Dev',
     subtitle: '2D & 3D Interactive WebGL',
-    colorClass: 'text-accent-violet',
+    colorClass: 'text-cyan-400',
   },
 ];
 

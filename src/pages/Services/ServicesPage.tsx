@@ -38,9 +38,9 @@ export const ServicesPage: React.FC = () => {
     <div className="flex flex-col w-full relative">
       {/* Ambient background glows */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
-        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-gradient-to-br from-primary-container/15 via-tertiary/10 to-transparent blur-[140px]" />
-        <div className="absolute top-[35%] right-10 w-[500px] h-[500px] bg-gradient-to-bl from-accent-violet/15 via-primary/10 to-transparent blur-[130px]" />
-        <div className="absolute bottom-[20%] left-10 w-[600px] h-[600px] bg-gradient-to-tr from-tertiary/10 via-secondary-container/20 to-transparent blur-[160px]" />
+        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-cyan-400/10 blur-[140px]" />
+        <div className="absolute top-[35%] right-10 w-[500px] h-[500px] bg-cyan-400/10 blur-[130px]" />
+        <div className="absolute bottom-[20%] left-10 w-[600px] h-[600px] bg-cyan-400/10 blur-[160px]" />
       </div>
 
       {/* HERO SECTION */}
@@ -95,7 +95,7 @@ export const ServicesPage: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setIsExpanded(!isExpanded)}
-                className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-xl bg-gradient-to-r from-primary-container via-tertiary-container to-secondary-container text-white font-button-text font-bold text-sm shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/30 hover:-translate-y-0.5 transition-all cursor-pointer group"
+                className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 text-slate-950 font-button-text font-bold text-sm shadow-lg shadow-cyan-400/25 hover:shadow-cyan-400/40 hover:-translate-y-0.5 transition-all cursor-pointer group"
               >
                 <span>
                   {isExpanded

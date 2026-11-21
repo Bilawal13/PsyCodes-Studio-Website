@@ -46,7 +46,7 @@ export const CallToActionStrip: React.FC<CallToActionStripProps> = ({
             {primaryButtonLink && (
               <Link
                 to={primaryButtonLink}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-lg py-space-sm rounded-lg bg-primary-container text-on-primary-container font-button-text text-button-text shadow-sm hover:opacity-90 transition-opacity"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-lg py-space-sm rounded-lg bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 text-slate-950 font-bold font-button-text text-button-text shadow-[0_0_20px_rgba(0,242,254,0.35)] hover:shadow-[0_0_28px_rgba(0,242,254,0.5)] hover:-translate-y-0.5 transition-all"
               >
                 <span>{primaryButtonText}</span>
                 <ArrowRight className="w-4 h-4" />

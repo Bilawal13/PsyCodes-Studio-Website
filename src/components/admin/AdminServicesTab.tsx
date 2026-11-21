@@ -26,7 +26,7 @@ export const AdminServicesTab: React.FC<AdminServicesTabProps> = ({
         <button
           type="button"
           onClick={onCreateService}
-          className="px-4 py-2 rounded-xl bg-gradient-to-r from-electric-blue to-purple-600 text-white font-mono text-xs font-bold flex items-center gap-2 shadow-md cursor-pointer hover:shadow-cyan-400/20 transition-all"
+          className="px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-500 text-slate-950 font-mono text-xs font-bold flex items-center gap-2 shadow-md cursor-pointer hover:shadow-cyan-400/30 transition-all"
         >
           <Plus className="w-3.5 h-3.5" />
           <span>NEW SERVICE</span>
@@ -42,7 +42,7 @@ export const AdminServicesTab: React.FC<AdminServicesTabProps> = ({
             <div>
               <div className="flex items-center gap-2">
                 <span className="text-base font-bold text-white">{s.title}</span>
-                <span className="text-xs font-mono text-purple-400">{s.discipline_tag}</span>
+                <span className="text-xs font-mono text-cyan-400">{s.discipline_tag}</span>
               </div>
               <span className="text-xs font-mono text-text-muted block mt-0.5">
                 {s.description}

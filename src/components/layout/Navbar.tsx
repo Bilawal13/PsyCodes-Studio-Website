@@ -110,7 +110,7 @@ export const Navbar: React.FC = () => {
 
           <Link
             to="/contact"
-            className="hidden md:inline-flex items-center justify-center gap-1.5 px-3.5 sm:px-space-lg py-2 rounded-lg bg-gradient-to-r from-primary-container to-secondary-container font-button-text text-button-text text-text-primary shadow-[0_0_20px_rgba(37,139,255,0.35)] hover:shadow-[0_0_28px_rgba(18,216,245,0.45)] hover:-translate-y-0.5 transition-all text-xs shrink-0"
+            className="hidden md:inline-flex items-center justify-center gap-1.5 px-3.5 sm:px-space-lg py-2 rounded-lg bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 font-button-text text-button-text text-slate-950 font-bold shadow-[0_0_20px_rgba(0,242,254,0.35)] hover:shadow-[0_0_28px_rgba(0,242,254,0.5)] hover:-translate-y-0.5 transition-all text-xs shrink-0"
           >
             <span>Let's Build Something</span>
             <ArrowRight className="w-4 h-4 ml-0.5" />
@@ -155,7 +155,7 @@ export const Navbar: React.FC = () => {
             </div>
             <Link
               to="/contact"
-              className="w-full flex items-center justify-center gap-2 px-space-md py-space-sm rounded-lg bg-gradient-to-r from-primary-container to-secondary-container font-button-text text-button-text text-text-primary shadow-[0_0_20px_rgba(37,139,255,0.35)] text-xs"
+              className="w-full flex items-center justify-center gap-2 px-space-md py-space-sm rounded-lg bg-gradient-to-r from-cyan-400 to-cyan-500 font-button-text text-button-text text-slate-950 font-bold shadow-[0_0_20px_rgba(0,242,254,0.35)] text-xs"
             >
               <span>Let's Build Something</span>
               <ArrowRight className="w-4 h-4" />

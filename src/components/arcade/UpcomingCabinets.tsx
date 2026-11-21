@@ -116,7 +116,7 @@ export const UpcomingCabinets: React.FC<UpcomingCabinetsProps> = ({ onOpenSpec }
           <div className="relative rounded-2xl bg-gradient-to-br from-surface-deep via-surface-container/70 to-surface-deep border border-border-glass hover:border-cyan-400/30 p-space-lg sm:p-8 flex flex-col justify-between overflow-hidden shadow-2xl transition-all group">
             {/* Ambient Background Glows */}
             <div className="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-cyan-400/10 blur-[60px] pointer-events-none" />
-            <div className="absolute -bottom-12 -left-12 w-48 h-48 rounded-full bg-purple-500/10 blur-[60px] pointer-events-none" />
+            <div className="absolute -bottom-12 -left-12 w-48 h-48 rounded-full bg-cyan-400/10 blur-[60px] pointer-events-none" />
 
             {/* Cyber Grid Pattern Overlay */}
             <div
@@ -165,7 +165,7 @@ export const UpcomingCabinets: React.FC<UpcomingCabinetsProps> = ({ onOpenSpec }
                   <span>60 FPS WebGL 2.0 Engine</span>
                 </div>
                 <div className="flex items-center gap-2 p-2 rounded-lg bg-surface-deep/80 border border-border-glass text-[11px] font-mono text-text-muted">
-                  <Gamepad2 className="w-3.5 h-3.5 text-purple-400 shrink-0" />
+                  <Gamepad2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
                   <span>Gamepad &amp; Touch Input</span>
                 </div>
                 <div className="flex items-center gap-2 p-2 rounded-lg bg-surface-deep/80 border border-border-glass text-[11px] font-mono text-text-muted">
@@ -187,7 +187,7 @@ export const UpcomingCabinets: React.FC<UpcomingCabinetsProps> = ({ onOpenSpec }
 
               <Link
                 to="/contact?service=Game+Development&ref=Custom+Arcade+Title"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-primary-container to-secondary-container text-white font-button-text font-bold text-xs shadow-md shadow-cyan-500/20 hover:shadow-cyan-500/30 hover:-translate-y-0.5 transition-all group/btn"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 text-slate-950 font-button-text font-bold text-xs shadow-md shadow-cyan-400/25 hover:shadow-cyan-400/40 hover:-translate-y-0.5 transition-all group/btn"
               >
                 <span>Commission A Custom Game</span>
                 <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />

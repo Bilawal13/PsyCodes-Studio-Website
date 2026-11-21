@@ -82,7 +82,7 @@ export const HomeOrderSection: React.FC = () => {
               title={
                 <>
                   Have An Idea?<br />
-                  <span className="bg-gradient-to-r from-tertiary via-primary to-secondary bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-cyan-400 via-primary to-cyan-200 dark:from-cyan-300 dark:via-cyan-400 dark:to-white bg-clip-text text-transparent">
                     Let's Make It Real.
                   </span>
                 </>
@@ -312,7 +312,7 @@ export const HomeOrderSection: React.FC = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-3.5 rounded-lg bg-gradient-to-r from-primary-container via-tertiary-container to-secondary-container text-text-primary font-button-text text-button-text shadow-lg shadow-primary-container/20 hover:shadow-xl hover:shadow-tertiary/30 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60"
+                className="w-full py-3.5 rounded-lg bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 text-slate-950 font-bold font-button-text text-button-text shadow-lg shadow-cyan-400/25 hover:shadow-cyan-400/40 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60"
               >
                 <Send className="w-4 h-4" />
                 <span>{isSubmitting ? 'Sending Your Inquiry...' : 'Submit Project Inquiry →'}</span>

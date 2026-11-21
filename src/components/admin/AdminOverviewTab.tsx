@@ -44,7 +44,7 @@ export const AdminOverviewTab: React.FC<AdminOverviewTabProps> = ({
         </div>
 
         <div className="p-6 rounded-2xl bg-surface-container/70 border border-border-glass">
-          <span className="text-[10px] font-mono text-purple-400 block mb-1">ENGINEERING DISCIPLINES</span>
+          <span className="text-[10px] font-mono text-cyan-400 block mb-1">ENGINEERING DISCIPLINES</span>
           <div className="text-3xl font-black font-display text-white">{services.length}</div>
           <span className="text-xs text-text-muted font-mono mt-1 block">Active Offerings</span>
         </div>

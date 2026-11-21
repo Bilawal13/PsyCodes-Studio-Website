@@ -50,7 +50,7 @@ export const AboutHero: React.FC = () => {
       {/* Main Headline */}
       <h1 className="font-display text-headline-lg lg:text-display text-text-primary tracking-tight font-bold max-w-5xl leading-tight">
         Crafting High-Performance Software, Mobile Apps &amp; Games With{' '}
-        <span className="bg-gradient-to-r from-tertiary via-primary to-accent-violet bg-clip-text text-transparent">
+        <span className="bg-gradient-to-r from-cyan-400 via-primary to-cyan-200 dark:from-cyan-300 dark:via-cyan-400 dark:to-white bg-clip-text text-transparent">
           Calculated Precision.
         </span>
       </h1>

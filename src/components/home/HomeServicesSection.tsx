@@ -56,8 +56,8 @@ export const UNIFIED_SERVICES: UnifiedServiceCard[] = [
     description: 'Fun, engaging games and interactive 3D simulations playable directly in web browsers or on mobile and desktop. Smooth controls, physics, and custom visual art.',
     tech: ['Unity Engine', 'C# Scripting', 'Web Browser Play', 'Custom Game Audio'],
     cta: 'Build Game Experience →',
-    color: 'text-accent-violet',
-    bg: 'bg-accent-violet/10',
+    color: 'text-cyan-400',
+    bg: 'bg-cyan-400/10',
   },
   {
     title: 'UI / UX Design & Prototypes',
@@ -132,7 +132,7 @@ export const HomeServicesSection: React.FC = () => {
         <div className="flex items-center justify-center pt-2">
           <Link
             to="/services"
-            className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-xl bg-gradient-to-r from-primary-container via-tertiary-container to-secondary-container text-white font-button-text font-bold text-sm shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/30 hover:-translate-y-0.5 transition-all group"
+            className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 text-slate-950 font-button-text font-bold text-sm shadow-lg shadow-cyan-400/25 hover:shadow-cyan-400/40 hover:-translate-y-0.5 transition-all group"
           >
             <span>View All Services</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

@@ -24,7 +24,7 @@ export const ContactHero: React.FC = () => {
         {/* Display Headline */}
         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black font-display text-white tracking-tight leading-tight max-w-4xl">
           Let’s Build Something{' '}
-          <span className="bg-gradient-to-r from-tertiary via-primary to-accent-violet bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-cyan-400 via-primary to-cyan-200 dark:from-cyan-300 dark:via-cyan-400 dark:to-white bg-clip-text text-transparent">
             Great Together.
           </span>
         </h1>
@@ -53,7 +53,7 @@ export const ContactHero: React.FC = () => {
           </div>
 
           <div className="p-4 rounded-xl bg-surface-deep/60 border border-border-glass flex items-center gap-3">
-            <Users className="w-5 h-5 text-accent-violet shrink-0" />
+            <Users className="w-5 h-5 text-cyan-400 shrink-0" />
             <div>
               <span className="text-[11px] text-text-muted block uppercase font-mono">No Middlemen</span>
               <span className="text-xs font-bold text-white">Direct Lead Developer Access</span>

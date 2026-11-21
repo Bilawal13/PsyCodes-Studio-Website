@@ -18,7 +18,7 @@ export const SERVICE_GUARANTEES = [
     title: '100% Code Ownership',
     description: 'You own every line of code, design asset, and commercial right from day one with zero lock-in.',
     icon: CheckCircle2,
-    colorClass: 'text-accent-violet',
+    colorClass: 'text-cyan-400',
   },
   {
     title: 'Weekly Demos & Progress',
@@ -46,7 +46,7 @@ export const ServicesHero: React.FC = () => {
       {/* Main Headline */}
       <h1 className="font-display text-headline-lg lg:text-display text-text-primary tracking-tight font-bold max-w-5xl leading-tight text-left">
         High-Quality Software, Mobile Apps &amp;{' '}
-        <span className="bg-gradient-to-r from-tertiary via-primary to-accent-violet bg-clip-text text-transparent">
+        <span className="bg-gradient-to-r from-cyan-400 via-primary to-cyan-200 dark:from-cyan-300 dark:via-cyan-400 dark:to-white bg-clip-text text-transparent">
           AI Built to Grow Your Business.
         </span>
       </h1>

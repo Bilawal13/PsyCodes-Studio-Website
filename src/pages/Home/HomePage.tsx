@@ -57,9 +57,9 @@ export const HomePage: React.FC = () => {
       <div className="flex flex-col w-full relative">
       {/* Ambient Backdrop Glows - Contained strictly within an inset wrapper so they never cause document scroll */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-r from-primary-container/20 via-tertiary/15 to-secondary-container/20 blur-[140px] rounded-full" />
-        <div className="absolute top-[800px] -left-20 w-96 h-96 bg-glow-cyan blur-[120px]" />
-        <div className="absolute top-[1600px] -right-20 w-96 h-96 bg-glow-purple blur-[120px]" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-cyan-400/15 blur-[140px] rounded-full" />
+        <div className="absolute top-[800px] -left-20 w-96 h-96 bg-cyan-400/10 blur-[120px]" />
+        <div className="absolute top-[1600px] -right-20 w-96 h-96 bg-cyan-400/10 blur-[120px]" />
       </div>
 
       {/* SECTION A: HERO */}
@@ -94,7 +94,7 @@ export const HomePage: React.FC = () => {
             <div className="flex items-center justify-center pt-2">
               <Link
                 to="/projects"
-                className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-xl bg-gradient-to-r from-primary-container via-tertiary-container to-secondary-container text-white font-button-text font-bold text-sm shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/30 hover:-translate-y-0.5 transition-all group"
+                className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 text-slate-950 font-button-text font-bold text-sm shadow-lg shadow-cyan-400/25 hover:shadow-cyan-400/40 hover:-translate-y-0.5 transition-all group"
               >
                 <span>View All Products</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

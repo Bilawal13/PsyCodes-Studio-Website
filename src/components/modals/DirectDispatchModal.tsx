@@ -191,14 +191,14 @@ export const DirectDispatchModal: React.FC<DirectDispatchModalProps> = ({
           <a
             href={mailtoUrl}
             onClick={onClose}
-            className="w-full p-4 rounded-xl bg-surface-deep hover:bg-surface-container-high border border-border-glass hover:border-purple-400/50 flex items-center justify-between text-left transition-all group cursor-pointer"
+            className="w-full p-4 rounded-xl bg-surface-deep hover:bg-surface-container-high border border-border-glass hover:border-cyan-400/50 flex items-center justify-between text-left transition-all group cursor-pointer"
           >
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center shrink-0">
+              <div className="w-10 h-10 rounded-xl bg-cyan-400/10 border border-cyan-400/20 text-cyan-400 flex items-center justify-center shrink-0">
                 <Mail className="w-5 h-5" />
               </div>
               <div>
-                <div className="text-sm font-bold text-white group-hover:text-purple-400 transition-colors">
+                <div className="text-sm font-bold text-text-primary group-hover:text-cyan-400 transition-colors">
                   Open Default Mail App
                 </div>
                 <span className="text-xs text-text-muted">
@@ -206,7 +206,7 @@ export const DirectDispatchModal: React.FC<DirectDispatchModalProps> = ({
                 </span>
               </div>
             </div>
-            <ExternalLink className="w-4 h-4 text-text-muted group-hover:text-purple-400 transition-colors shrink-0" />
+            <ExternalLink className="w-4 h-4 text-text-muted group-hover:text-cyan-400 transition-colors shrink-0" />
           </a>
         </div>
 

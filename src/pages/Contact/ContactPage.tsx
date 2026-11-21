@@ -18,7 +18,7 @@ export const ContactPage: React.FC = () => {
       {/* Ambient background glows */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
         <div className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-cyan-400/10 blur-[150px] rounded-full" />
-        <div className="absolute top-[800px] right-10 w-[500px] h-[500px] bg-purple-500/10 blur-[150px] rounded-full" />
+        <div className="absolute top-[800px] right-10 w-[500px] h-[500px] bg-cyan-400/10 blur-[150px] rounded-full" />
       </div>
 
       {/* 1. HERO SECTION & LIVE PKT CLOCK */}

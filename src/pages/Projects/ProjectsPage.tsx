@@ -59,7 +59,7 @@ export const ProjectsPage: React.FC = () => {
       <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
         <div className="absolute top-12 left-1/2 -translate-x-1/2 w-[720px] h-[340px] bg-primary-container/15 rounded-full blur-[140px]" />
         <div className="absolute top-[880px] left-10 w-[480px] h-[380px] bg-tertiary/10 rounded-full blur-[130px]" />
-        <div className="absolute top-[1650px] right-8 w-[540px] h-[400px] bg-accent-violet/10 rounded-full blur-[160px]" />
+        <div className="absolute top-[1650px] right-8 w-[540px] h-[400px] bg-cyan-400/10 rounded-full blur-[160px]" />
       </div>
 
       {/* SECTION A: ECOSYSTEM HERO */}

@@ -141,7 +141,7 @@ export const FitLyfeShowcase: React.FC<FitLyfeShowcaseProps> = ({ onOpenModal })
             <div className="relative z-10 flex flex-col items-center justify-center pt-8 pb-20 sm:pt-10 sm:pb-24 px-4 text-center">
               <div className="relative group/logo cursor-pointer" onClick={() => onOpenModal('fitlyfe')}>
                 {/* Glowing back-layer */}
-                <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-cyan-400/25 via-primary/20 to-purple-500/25 blur-xl opacity-75 group-hover/logo:opacity-100 transition-opacity duration-500 animate-pulse" />
+                <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-cyan-400/25 via-primary/20 to-cyan-300/25 blur-xl opacity-75 group-hover/logo:opacity-100 transition-opacity duration-500 animate-pulse" />
                 <img
                   src="/assets/projects/fitlyfe/fitlyfe_logo.jpg"
                   alt="Fit Lyfe Official Logo"

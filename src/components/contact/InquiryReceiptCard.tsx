@@ -210,7 +210,7 @@ export const InquiryReceiptCard: React.FC<InquiryReceiptCardProps> = ({
               <span className="text-[10px] font-mono text-text-muted uppercase block">Mutual NDA Status</span>
               <span className="text-text-muted">
                 {receipt.nda_requested ? (
-                  <span className="text-purple-400 font-semibold">Mutual NDA Requested (Will execute prior to sprint)</span>
+                  <span className="text-cyan-400 font-semibold">Mutual NDA Requested (Will execute prior to sprint)</span>
                 ) : (
                   <span>Standard Studio Confidentiality &amp; IP Protection</span>
                 )}
@@ -246,7 +246,7 @@ export const InquiryReceiptCard: React.FC<InquiryReceiptCardProps> = ({
         <button
           type="button"
           onClick={handlePrint}
-          className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-primary-container to-tertiary text-white font-bold text-xs flex items-center gap-2 shadow-md hover:opacity-90 transition-all cursor-pointer"
+          className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 text-slate-950 font-bold text-xs flex items-center gap-2 shadow-md shadow-cyan-400/25 hover:shadow-cyan-400/40 transition-all cursor-pointer"
           title="Print or Save Official Receipt as PDF"
         >
           <Printer className="w-4 h-4" />

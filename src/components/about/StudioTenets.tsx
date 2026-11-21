@@ -37,7 +37,7 @@ export const STUDIO_TENETS: StudioTenet[] = [
     desc: 'Software should feel alive. We borrow responsiveness, physics springs, micro-vibrations, and crisp typographic hierarchy from gaming into utility software.',
     badge: 'Micro-Interaction Polish',
     icon: Sparkles,
-    color: 'text-purple-400',
+    color: 'text-cyan-400',
     glow: 'rgba(168, 85, 247, 0.2)',
   },
   {

@@ -164,7 +164,7 @@ export const InquiryDetailModal: React.FC<InquiryDetailModalProps> = ({
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-4 border-t border-border-glass">
                 <div className="flex items-center gap-2 text-xs font-mono text-text-muted">
                   {inquiry.nda_requested ? (
-                    <span className="inline-flex items-center gap-1.5 text-purple-400 font-semibold">
+                    <span className="inline-flex items-center gap-1.5 text-cyan-400 font-semibold">
                       <ShieldCheck className="w-4 h-4" />
                       <span>Mutual NDA Requested</span>
                     </span>

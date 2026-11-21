@@ -57,9 +57,9 @@ export const NotFoundPage: React.FC = () => {
 
               <Link
                 to="/services"
-                className="p-3 rounded-xl bg-surface-deep border border-border-glass hover:border-purple-400 text-xs font-mono text-text-muted hover:text-white flex flex-col items-center gap-1.5 transition-all"
+                className="p-3 rounded-xl bg-surface-deep border border-border-glass hover:border-cyan-400 text-xs font-mono text-text-muted hover:text-text-primary flex flex-col items-center gap-1.5 transition-all"
               >
-                <Layers className="w-4 h-4 text-purple-400" />
+                <Layers className="w-4 h-4 text-cyan-400" />
                 <span>SERVICES</span>
               </Link>
 

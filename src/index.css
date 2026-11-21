@@ -4,46 +4,46 @@
 
 @layer base {
   :root {
-    color-scheme: light dark;
+    color-scheme: light;
 
     /* Bright Architectural White Theme (from Banner 2) */
     --surface-rgb: 255, 255, 255;
-    --surface-dim-rgb: 248, 250, 252;
+    --surface-dim-rgb: 250, 250, 252;
     --surface-bright-rgb: 255, 255, 255;
     --surface-container-lowest-rgb: 255, 255, 255;
     --surface-container-low-rgb: 248, 250, 252;
     --surface-container-rgb: 241, 245, 249;
     --surface-container-high-rgb: 226, 232, 240;
     --surface-container-highest-rgb: 203, 213, 225;
-    --surface-deep-rgb: 248, 250, 252;
-    --surface-glass: rgba(255, 255, 255, 0.85);
+    --surface-deep-rgb: 255, 255, 255;
+    --surface-glass: rgba(255, 255, 255, 0.92);
     --border-glass-rgb: 15, 23, 42;
-    --on-surface-rgb: 15, 23, 42;
+    --on-surface-rgb: 5, 7, 10;
     --on-surface-variant-rgb: 71, 85, 105;
-    --inverse-surface-rgb: 15, 23, 42;
-    --inverse-on-surface-rgb: 241, 245, 249;
+    --inverse-surface-rgb: 5, 7, 10;
+    --inverse-on-surface-rgb: 255, 255, 255;
     --outline-rgb: 148, 163, 184;
     --outline-variant-rgb: 203, 213, 225;
-    --surface-tint-rgb: 2, 132, 199;
-    --primary-rgb: 2, 132, 199;
+    --surface-tint-rgb: 0, 180, 216;
+    --primary-rgb: 0, 180, 216;
     --on-primary-rgb: 255, 255, 255;
-    --primary-container-rgb: 2, 132, 199;
+    --primary-container-rgb: 0, 180, 216;
     --on-primary-container-rgb: 255, 255, 255;
-    --inverse-primary-rgb: 0, 93, 181;
-    --secondary-rgb: 99, 102, 241;
+    --inverse-primary-rgb: 0, 119, 182;
+    --secondary-rgb: 0, 150, 199;
     --on-secondary-rgb: 255, 255, 255;
-    --secondary-container-rgb: 238, 242, 255;
-    --on-secondary-container-rgb: 49, 46, 129;
-    --tertiary-rgb: 2, 132, 199;
+    --secondary-container-rgb: 224, 242, 254;
+    --on-secondary-container-rgb: 2, 40, 60;
+    --tertiary-rgb: 0, 180, 216;
     --on-tertiary-rgb: 255, 255, 255;
     --tertiary-container-rgb: 224, 242, 254;
-    --on-tertiary-container-rgb: 3, 105, 161;
-    --accent-violet-rgb: 147, 51, 234;
-    --text-primary-rgb: 9, 13, 22;
+    --on-tertiary-container-rgb: 2, 40, 60;
+    --accent-violet-rgb: 0, 180, 216;
+    --text-primary-rgb: 5, 7, 10;
     --text-muted-rgb: 71, 85, 105;
-    --glow-cyan: rgba(2, 132, 199, 0.16);
-    --glow-purple: rgba(99, 102, 241, 0.12);
-    --scrollbar-track: #F1F5F9;
+    --glow-cyan: rgba(0, 180, 216, 0.22);
+    --glow-purple: rgba(0, 180, 216, 0.12);
+    --scrollbar-track: #F8FAFC;
     --scrollbar-thumb: #CBD5E1;
     scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
   }
@@ -52,46 +52,56 @@
   html.dark {
     color-scheme: dark;
 
-    /* Dark Cyber Obsidian Theme (Black + Neon Glowing Orb from Banner 1) */
-    --surface-rgb: 7, 10, 18;
-    --surface-dim-rgb: 7, 10, 18;
-    --surface-bright-rgb: 30, 41, 59;
-    --surface-container-lowest-rgb: 5, 7, 13;
-    --surface-container-low-rgb: 11, 16, 29;
-    --surface-container-rgb: 16, 23, 40;
-    --surface-container-high-rgb: 23, 32, 54;
-    --surface-container-highest-rgb: 30, 41, 69;
-    --surface-deep-rgb: 11, 16, 29;
-    --surface-glass: rgba(7, 10, 18, 0.85);
-    --border-glass-rgb: 0, 242, 254;
-    --on-surface-rgb: 241, 245, 249;
+    /* Pitch Black + Pure Neon Laser-Cyan (from Banner 1) */
+    --surface-rgb: 0, 0, 0;                    /* Pure Pitch Black #000000 */
+    --surface-dim-rgb: 2, 3, 6;
+    --surface-bright-rgb: 15, 20, 30;
+    --surface-container-lowest-rgb: 0, 0, 0;    /* Pure Black #000000 */
+    --surface-container-low-rgb: 4, 7, 12;      /* Deep obsidian #04070C */
+    --surface-container-rgb: 7, 11, 18;         /* High-contrast dark card #070B12 */
+    --surface-container-high-rgb: 12, 17, 26;   /* Elevated card #0C111A */
+    --surface-container-highest-rgb: 18, 24, 36;
+    --surface-deep-rgb: 3, 5, 8;               /* Deep obsidian background #030508 */
+    --surface-glass: rgba(0, 0, 0, 0.92);
+    --border-glass-rgb: 0, 242, 254;           /* Pure Neon Laser-Cyan edge */
+    --on-surface-rgb: 255, 255, 255;
     --on-surface-variant-rgb: 148, 163, 184;
-    --inverse-surface-rgb: 241, 245, 249;
-    --inverse-on-surface-rgb: 15, 23, 42;
-    --outline-rgb: 100, 116, 139;
-    --outline-variant-rgb: 51, 65, 85;
+    --inverse-surface-rgb: 255, 255, 255;
+    --inverse-on-surface-rgb: 0, 0, 0;
+    --outline-rgb: 0, 242, 254;
+    --outline-variant-rgb: 20, 28, 42;
     --surface-tint-rgb: 0, 242, 254;
-    --primary-rgb: 56, 232, 255;
-    --on-primary-rgb: 2, 20, 34;
-    --primary-container-rgb: 0, 180, 216;
-    --on-primary-container-rgb: 255, 255, 255;
-    --inverse-primary-rgb: 0, 93, 181;
-    --secondary-rgb: 129, 140, 248;
-    --on-secondary-rgb: 255, 255, 255;
-    --secondary-container-rgb: 79, 70, 229;
-    --on-secondary-container-rgb: 224, 231, 255;
-    --tertiary-rgb: 0, 242, 254;
-    --on-tertiary-rgb: 2, 20, 34;
+    --primary-rgb: 0, 242, 254;                /* Laser-Cyan #00F2FE from star orb */
+    --on-primary-rgb: 0, 0, 0;
+    --primary-container-rgb: 0, 242, 254;
+    --on-primary-container-rgb: 0, 0, 0;
+    --inverse-primary-rgb: 0, 242, 254;
+    --secondary-rgb: 24, 217, 246;             /* Electric Cyan #18D9F6 */
+    --on-secondary-rgb: 0, 0, 0;
+    --secondary-container-rgb: 0, 180, 216;    /* Vivid Cyan #00B4D8 */
+    --on-secondary-container-rgb: 0, 0, 0;
+    --tertiary-rgb: 0, 242, 254;               /* Pure Neon Cyan #00F2FE */
+    --on-tertiary-rgb: 0, 0, 0;
     --tertiary-container-rgb: 0, 242, 254;
-    --on-tertiary-container-rgb: 2, 20, 34;
-    --accent-violet-rgb: 168, 85, 247;
-    --text-primary-rgb: 255, 255, 255;
+    --on-tertiary-container-rgb: 0, 0, 0;
+    --accent-violet-rgb: 0, 242, 254;          /* All accents united to Neon Cyan */
+    --text-primary-rgb: 255, 255, 255;         /* Pure crisp white #FFFFFF */
     --text-muted-rgb: 148, 163, 184;
-    --glow-cyan: rgba(0, 242, 254, 0.35);
-    --glow-purple: rgba(129, 140, 248, 0.25);
-    --scrollbar-track: #05070D;
-    --scrollbar-thumb: #172036;
+    --glow-cyan: rgba(0, 242, 254, 0.45);
+    --glow-purple: rgba(0, 242, 254, 0.25);
+    --scrollbar-track: #000000;
+    --scrollbar-thumb: #111827;
     scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  }
+
+  /* Architectural Blueprint Grid Pattern matching Banner 1 & Banner 2 */
+  body {
+    background-color: rgb(var(--surface-rgb));
+    background-image: 
+      linear-gradient(rgba(var(--border-glass-rgb), 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(var(--border-glass-rgb), 0.045) 1px, transparent 1px);
+    background-size: 48px 48px;
+    background-position: center top;
   }
 
   html {

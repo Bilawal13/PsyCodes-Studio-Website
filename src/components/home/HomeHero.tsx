@@ -24,7 +24,7 @@ export const HomeHero: React.FC = () => {
           {/* Primary High-Impact Headline */}
           <h1 className="font-display text-headline-lg lg:text-display text-text-primary tracking-tight font-bold leading-tight">
             We Build Software, Games &amp; AI Systems That{' '}
-            <span className="bg-gradient-to-r from-accent-violet via-primary to-tertiary bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-cyan-400 via-primary to-cyan-200 dark:from-cyan-300 dark:via-cyan-400 dark:to-white bg-clip-text text-transparent">
               Move You Forward.
             </span>
           </h1>
@@ -38,7 +38,7 @@ export const HomeHero: React.FC = () => {
           <div className="flex flex-wrap items-center gap-space-md pt-space-xs">
             <a
               href="#products"
-              className="inline-flex items-center justify-center gap-2 px-space-lg py-3 rounded-lg bg-gradient-to-r from-primary-container to-secondary-container font-button-text text-button-text text-text-primary shadow-lg shadow-primary-container/20 hover:shadow-xl hover:shadow-tertiary/25 hover:-translate-y-0.5 transition-all"
+              className="inline-flex items-center justify-center gap-2 px-space-lg py-3 rounded-lg bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 font-button-text text-button-text text-slate-950 font-bold shadow-[0_0_24px_rgba(0,242,254,0.35)] hover:shadow-[0_0_32px_rgba(0,242,254,0.5)] hover:-translate-y-0.5 transition-all"
             >
               <span>Explore Our Work</span>
               <ArrowDown className="w-4 h-4" />
@@ -74,18 +74,18 @@ export const HomeHero: React.FC = () => {
             <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-tertiary/20 via-primary/30 to-secondary-container/40 blur-xl opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200" />
             <div className="relative bg-surface-deep/90 rounded-2xl p-4 sm:p-5 shadow-2xl backdrop-blur-xl border border-border-glass w-full">
               {/* Studio Showcase Graphic Canvas */}
-              <div className="relative rounded-2xl overflow-hidden shadow-inner min-h-[300px] sm:min-h-[350px] md:min-h-[380px] w-full bg-gradient-to-br from-[#060a19] via-[#0b132b] to-[#121c3b] border border-border-glass/60 flex items-center justify-center">
+              <div className="relative rounded-2xl overflow-hidden shadow-inner min-h-[300px] sm:min-h-[350px] md:min-h-[380px] w-full bg-surface-container-low border border-border-glass flex items-center justify-center">
                 {/* Background Ambient Glow Orbs */}
-                <div className="absolute w-72 h-72 rounded-full bg-cyan-500/15 blur-[65px] -top-12 -left-12 pointer-events-none" />
-                <div className="absolute w-72 h-72 rounded-full bg-purple-600/15 blur-[75px] -bottom-12 -right-12 pointer-events-none" />
-                <div className="absolute w-44 h-44 rounded-full bg-primary/25 blur-[55px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+                <div className="absolute w-72 h-72 rounded-full bg-cyan-400/15 blur-[65px] -top-12 -left-12 pointer-events-none" />
+                <div className="absolute w-72 h-72 rounded-full bg-cyan-400/10 blur-[75px] -bottom-12 -right-12 pointer-events-none" />
+                <div className="absolute w-44 h-44 rounded-full bg-tertiary/20 blur-[55px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
 
-                {/* Cybernetic Tech Grid Pattern */}
+                {/* Cybernetic Architectural Tech Grid Pattern */}
                 <div 
                   className="absolute inset-0 opacity-[0.14] pointer-events-none" 
                   style={{
-                    backgroundImage: `radial-gradient(circle, rgba(24,217,246,0.3) 1px, transparent 1px), linear-gradient(to right, rgba(37,139,255,0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(37,139,255,0.08) 1px, transparent 1px)`,
-                    backgroundSize: '24px 24px, 24px 24px, 24px 24px'
+                    backgroundImage: `linear-gradient(rgba(var(--border-glass-rgb), 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(var(--border-glass-rgb), 0.3) 1px, transparent 1px)`,
+                    backgroundSize: '28px 28px'
                   }}
                 />
 

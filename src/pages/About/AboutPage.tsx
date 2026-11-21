@@ -24,7 +24,7 @@ export const AboutPage: React.FC = () => {
     <div className="flex flex-col w-full relative">
       {/* Ambient background glows */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[720px] h-[360px] bg-gradient-to-r from-cyan-400/10 via-primary-container/15 to-purple-500/10 blur-[140px] rounded-full" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[720px] h-[360px] bg-cyan-400/10 blur-[140px] rounded-full" />
         <div className="absolute top-[900px] left-10 w-96 h-96 bg-cyan-400/5 blur-[120px]" />
       </div>
 
@@ -93,7 +93,7 @@ export const AboutPage: React.FC = () => {
               <div className="flex flex-wrap items-center justify-center gap-4">
                 <Link
                   to="/contact"
-                  className="px-6 py-3 rounded-xl bg-gradient-to-r from-primary-container via-tertiary-container to-secondary-container text-white font-button-text font-bold shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/30 transition-all flex items-center gap-2"
+                  className="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 text-slate-950 font-button-text font-bold shadow-lg shadow-cyan-400/25 hover:shadow-cyan-400/40 transition-all flex items-center gap-2"
                 >
                   <span>Initiate Technical Transmission</span>
                   <ArrowRight className="w-4 h-4" />

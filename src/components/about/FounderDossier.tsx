@@ -140,7 +140,7 @@ export const FounderDossier: React.FC = () => {
                 href="https://instagram.com/psycodestudio"
                 target="_blank"
                 rel="noreferrer"
-                className="p-2.5 rounded-xl bg-surface-deep border border-border-glass hover:border-purple-400 text-text-muted hover:text-white transition-all"
+                className="p-2.5 rounded-xl bg-surface-deep border border-border-glass hover:border-cyan-400 text-text-muted hover:text-white transition-all"
                 aria-label="Instagram"
               >
                 <Instagram className="w-4 h-4" />
@@ -177,7 +177,7 @@ export const FounderDossier: React.FC = () => {
               </div>
 
               <div className="p-4 rounded-xl bg-surface-deep/60 border border-border-glass">
-                <span className="text-[10px] font-mono text-purple-400 block mb-1">
+                <span className="text-[10px] font-mono text-cyan-400 block mb-1">
                   2026.Q3 · ENTERPRISE AI
                 </span>
                 <span className="text-sm font-bold text-white block">

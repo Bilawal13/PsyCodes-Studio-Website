@@ -334,7 +334,7 @@ export const ProjectDetailsPage: React.FC = () => {
               </p>
               <Link
                 to={`/contact?service=${encodeURIComponent(project.title)}`}
-                className="w-full py-3 rounded-xl bg-gradient-to-r from-primary-container to-secondary-container text-white font-button-text text-button-text font-bold text-center shadow-md hover:opacity-90 transition-all flex items-center justify-center gap-2 text-xs"
+                className="w-full py-3 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-500 hover:from-cyan-300 hover:to-cyan-400 text-slate-950 font-button-text font-button-text font-bold text-center shadow-md shadow-cyan-400/25 hover:shadow-cyan-400/40 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 text-xs"
               >
                 <span>Inquire About This Build</span>
                 <ArrowRight className="w-4 h-4" />
