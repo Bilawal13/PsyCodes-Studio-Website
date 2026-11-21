@@ -119,7 +119,7 @@ export const StudioLogoMark: React.FC<{
         <polygon
           points="60,49 63,58 72,58 64.5,61.5 60,67 55.5,61.5 48,58 57,58"
           fill={starFill}
-          filter={`url(#star-glow-${theme})`}
+          filter={isLight ? undefined : `url(#star-glow-${theme})`}
         />
         <circle cx="60" cy="58" r="1.8" fill={starCenterFill} />
       </svg>
