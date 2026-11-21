@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PsyCodes Studio — Brand Vector Redesign Showcase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Sora', sans-serif; background: #05070D; color: #FFFFFF; padding: 40px 20px; line-height: 1.5; }
+    .container { max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px; }
+    .header { text-align: center; border-bottom: 1px solid rgba(0, 221, 235, 0.2); padding-bottom: 24px; }
+    .header h1 { font-size: 32px; font-weight: 800; letter-spacing: -0.02em; }
+    .header p { color: #8E9BB0; font-size: 14px; margin-top: 8px; font-family: 'JetBrains Mono', monospace; }
+    .grid { display: grid; grid-cols: 1fr; gap: 32px; }
+    @media (min-width: 768px) { .grid-2 { grid-template-columns: 1fr 1fr; } .grid-4 { grid-template-columns: repeat(4, 1fr); } }
+    .card { background: #080C18; border: 1px solid rgba(0, 221, 235, 0.15); border-radius: 16px; padding: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; position: relative; overflow: hidden; }
+    .card.light { background: #FFFFFF; color: #05070A; border-color: #E2E8F0; }
+    .card h3 { font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; font-family: 'JetBrains Mono', monospace; }
+    .card .desc { font-size: 12px; color: #8E9BB0; text-align: center; }
+    .card.light .desc { color: #64748B; }
+    .img-wrap { width: 100%; max-width: 280px; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; }
+    .img-wrap-wide { width: 100%; max-width: 520px; aspect-ratio: 4/1; display: flex; align-items: center; justify-content: center; }
+    img { width: 100%; height: 100%; object-fit: contain; }
+    .scale-row { display: flex; gap: 20px; align-items: flex-end; justify-content: center; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>PsyCodes Studio — Brand Vector Identity System</h1>
+      <p>SWISS MINIMALISM + MODERN ARCHITECTURAL ENGINEERING</p>
+    </div>
+
+    <!-- VERSION A: PRIMARY EMBLEM -->
+    <div>
+      <h2 style="font-size: 20px; margin-bottom: 16px;">Version A — Primary Emblem (Flagship Architectural Identity)</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Dark Canvas (#080C18)</h3>
+          <p class="desc">Engineered primary hierarchy, 2-tier facet bracings, luminous cyan star</p>
+          <div class="img-wrap">
+            <img src="../../public/assets/logo/psycodes_emblem_primary_dark.svg" alt="Version A Dark">
+          </div>
+        </div>
+        <div class="card light">
+          <h3>Light Canvas (#FFFFFF)</h3>
+          <p class="desc">Crisp architectural onyx silhouette, high-contrast cyan star node</p>
+          <div class="img-wrap">
+            <img src="../../public/assets/logo/psycodes_emblem_primary_light.svg" alt="Version A Light">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VERSION B: MINIMAL EMBLEM -->
+    <div>
+      <h2 style="font-size: 20px; margin-bottom: 16px;">Version B — Minimal Emblem (Favicon 32px, App Icon, Avatars)</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Minimal Dark Mark</h3>
+          <p class="desc">Zero micro-line noise, solid 32px stroke weight, instant optical clarity</p>
+          <div class="img-wrap">
+            <img src="../../public/assets/logo/psycodes_emblem_minimal_dark.svg" alt="Version B Dark">
+          </div>
+          <div class="scale-row">
+            <div style="width: 32px; height: 32px;"><img src="../../public/assets/logo/psycodes_emblem_minimal_dark.svg"></div>
+            <div style="width: 48px; height: 48px;"><img src="../../public/assets/logo/psycodes_emblem_minimal_dark.svg"></div>
+            <div style="width: 64px; height: 64px;"><img src="../../public/assets/logo/psycodes_emblem_minimal_dark.svg"></div>
+            <div style="width: 96px; height: 96px;"><img src="../../public/assets/logo/psycodes_emblem_minimal_dark.svg"></div>
+          </div>
+        </div>
+        <div class="card light">
+          <h3>Minimal Light Mark</h3>
+          <p class="desc">Solid onyx silhouette, maximum contrast at tiny dimensions</p>
+          <div class="img-wrap">
+            <img src="../../public/assets/logo/psycodes_emblem_minimal_light.svg" alt="Version B Light">
+          </div>
+          <div class="scale-row">
+            <div style="width: 32px; height: 32px;"><img src="../../public/assets/logo/psycodes_emblem_minimal_light.svg"></div>
+            <div style="width: 48px; height: 48px;"><img src="../../public/assets/logo/psycodes_emblem_minimal_light.svg"></div>
+            <div style="width: 64px; height: 64px;"><img src="../../public/assets/logo/psycodes_emblem_minimal_light.svg"></div>
+            <div style="width: 96px; height: 96px;"><img src="../../public/assets/logo/psycodes_emblem_minimal_light.svg"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VERSION C: MONOCHROME EMBLEM -->
+    <div>
+      <h2 style="font-size: 20px; margin-bottom: 16px;">Version C — Monochrome Emblem (1-Color Print, Laser Engraving, Stencil)</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>1-Color Pure White (#FFFFFF)</h3>
+          <p class="desc">Diamond solid fill with mathematical knockout star aperture</p>
+          <div class="img-wrap">
+            <img src="../../public/assets/logo/psycodes_emblem_monochrome_white.svg" alt="Version C White">
+          </div>
+        </div>
+        <div class="card light">
+          <h3>1-Color Pure Black (#000000)</h3>
+          <p class="desc">100% vector stencil knockout, zero color dependency</p>
+          <div class="img-wrap">
+            <img src="../../public/assets/logo/psycodes_emblem_monochrome_black.svg" alt="Version C Black">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VERSION D: COMPLETE WORDMARK -->
+    <div>
+      <h2 style="font-size: 20px; margin-bottom: 16px;">Version D — Complete Horizontal Wordmark Lockup</h2>
+      <div class="grid grid-1" style="display:flex; flex-direction:column; gap:24px;">
+        <div class="card">
+          <h3>Horizontal Lockup (Dark Palette)</h3>
+          <div class="img-wrap-wide">
+            <img src="../../public/assets/logo/psycodes_wordmark_horizontal_dark.svg" alt="Wordmark Dark">
+          </div>
+        </div>
+        <div class="card light">
+          <h3>Horizontal Lockup (Light Palette)</h3>
+          <div class="img-wrap-wide">
+            <img src="../../public/assets/logo/psycodes_wordmark_horizontal_light.svg" alt="Wordmark Light">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
