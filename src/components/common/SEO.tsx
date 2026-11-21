@@ -9,8 +9,8 @@ interface SEOProps {
 
 export const SEO: React.FC<SEOProps> = ({
   title = 'PsyCodes Studio · Code. Create. Automate.',
-  description = 'High-velocity software architecture, fluid 60fps game mechanics, and autonomous AI systems. Founded in Karachi, PK by Bilawal Feroze.',
-  image = '/banner.png',
+  description = 'High-velocity software architecture, fluid 60fps game mechanics, and autonomous AI systems. Founded by Bilawal Feroze.',
+  image = '/assets/branding/psycodes_social_banner.jpg',
   url = 'https://www.psycodestudio.tech'
 }) => {
   useEffect(() => {
