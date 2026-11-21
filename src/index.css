@@ -9,6 +9,14 @@
     background-color: #0d1225;
     color: #dde1fc;
     font-family: 'Manrope', sans-serif;
+    overflow-y: auto !important;
+    scrollbar-gutter: stable;
+  }
+
+  /* Guarantee Lenis never clips or hides the scrollbar */
+  html.lenis,
+  html.lenis body {
+    overflow-y: auto !important;
   }
 
   main > :first-child {
