@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import { HomeIntroLoader } from '../../components/home/HomeIntroLoader';
 import { HomeHero } from '../../components/home/HomeHero';
 import { KineticMarquee } from '../../components/home/KineticMarquee';
 import { FitLyfeShowcase } from '../../components/home/FitLyfeShowcase';
@@ -29,6 +31,7 @@ export const HomePage: React.FC = () => {
 
   const [selectedGame, setSelectedGame] = useState<Game | null>(null);
   const [isGameModalOpen, setIsGameModalOpen] = useState(false);
+  const [isIntroComplete, setIsIntroComplete] = useState(false);
 
   const handleOpenProjectModal = (slugOrProject: string | Project) => {
     if (typeof slugOrProject === 'string') {
@@ -47,7 +50,23 @@ export const HomePage: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col w-full relative">
+    <>
+      {/* Starting Loading Screen: Logo smoothly goes up on complete */}
+      <HomeIntroLoader onComplete={() => setIsIntroComplete(true)} />
+
+      {/* Main Home Page Content: Smoothly fades in and glides into position */}
+      <motion.div
+        initial={{ opacity: 0, y: 35 }}
+        animate={{
+          opacity: isIntroComplete ? 1 : 0,
+          y: isIntroComplete ? 0 : 35,
+        }}
+        transition={{
+          duration: 0.9,
+          ease: [0.16, 1, 0.3, 1], // Buttery momentum ease-out
+        }}
+        className="flex flex-col w-full relative"
+      >
       {/* Ambient Backdrop Glows - Contained strictly within an inset wrapper so they never cause document scroll */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-r from-primary-container/20 via-tertiary/15 to-secondary-container/20 blur-[140px] rounded-full" />
@@ -129,6 +148,7 @@ export const HomePage: React.FC = () => {
         isOpen={isGameModalOpen}
         onClose={() => setIsGameModalOpen(false)}
       />
-    </div>
+    </motion.div>
+    </>
   );
 };
