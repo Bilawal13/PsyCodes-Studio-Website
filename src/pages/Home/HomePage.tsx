@@ -31,7 +31,6 @@ export const HomePage: React.FC = () => {
 
   const [selectedGame, setSelectedGame] = useState<Game | null>(null);
   const [isGameModalOpen, setIsGameModalOpen] = useState(false);
-  const [isIntroComplete, setIsIntroComplete] = useState(false);
 
   const handleOpenProjectModal = (slugOrProject: string | Project) => {
     if (typeof slugOrProject === 'string') {
@@ -51,22 +50,11 @@ export const HomePage: React.FC = () => {
 
   return (
     <>
-      {/* Starting Loading Screen: Logo smoothly goes up on complete */}
-      <HomeIntroLoader onComplete={() => setIsIntroComplete(true)} />
+      {/* Starting Loading Screen: Logo smoothly lifts up once to reveal the page */}
+      <HomeIntroLoader />
 
-      {/* Main Home Page Content: Smoothly fades in and glides into position */}
-      <motion.div
-        initial={{ opacity: 0, y: 35 }}
-        animate={{
-          opacity: isIntroComplete ? 1 : 0,
-          y: isIntroComplete ? 0 : 35,
-        }}
-        transition={{
-          duration: 0.9,
-          ease: [0.16, 1, 0.3, 1], // Buttery momentum ease-out
-        }}
-        className="flex flex-col w-full relative"
-      >
+      {/* Main Home Page Content: Rock-solid, zero-shift layout revealed as shutter lifts */}
+      <div className="flex flex-col w-full relative">
       {/* Ambient Backdrop Glows - Contained strictly within an inset wrapper so they never cause document scroll */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-r from-primary-container/20 via-tertiary/15 to-secondary-container/20 blur-[140px] rounded-full" />
@@ -148,7 +136,7 @@ export const HomePage: React.FC = () => {
         isOpen={isGameModalOpen}
         onClose={() => setIsGameModalOpen(false)}
       />
-    </motion.div>
+    </div>
     </>
   );
 };
