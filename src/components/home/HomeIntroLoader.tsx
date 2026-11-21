@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { StudioLogoMark } from '../brand/StudioLogo';
 
@@ -8,56 +8,35 @@ interface HomeIntroLoaderProps {
 
 /**
  * HomeIntroLoader - Single-pass architectural shutter preloader inspired by FarTechDev.
- * Renders the 2D Psi Monolith mark, then smoothly lifts up once to reveal the homepage.
- * Guaranteed zero scrollbar layout-shift and zero double-animation.
+ * Pure Framer Motion orchestration: guaranteed to never freeze, zero double-trigger, zero scrollbar jump.
  */
 export const HomeIntroLoader: React.FC<HomeIntroLoaderProps> = ({ onComplete }) => {
-  const [isSliding, setIsSliding] = useState(false);
   const [isDismissed, setIsDismissed] = useState(false);
-  const [progress, setProgress] = useState(0);
-  const hasTriggeredRef = useRef(false);
 
+  // Failsafe timer: under any circumstance, dismiss after 1.8s max
   useEffect(() => {
-    if (hasTriggeredRef.current) return;
-    hasTriggeredRef.current = true;
-
-    const startTime = Date.now();
-    const duration = 1000; // Snappy 1s simulated loading
-
-    const interval = setInterval(() => {
-      const elapsed = Date.now() - startTime;
-      const pct = Math.min(100, Math.round((elapsed / duration) * 100));
-      setProgress(pct);
-
-      if (pct >= 100) {
-        clearInterval(interval);
-        // Small pause at 100% then slide up smoothly
-        setTimeout(() => {
-          setIsSliding(true);
-          if (onComplete) onComplete();
-        }, 120);
-      }
-    }, 20);
-
-    return () => clearInterval(interval);
+    const timer = setTimeout(() => {
+      setIsDismissed(true);
+      if (onComplete) onComplete();
+    }, 1800);
+    return () => clearTimeout(timer);
   }, [onComplete]);
 
-  // Once dismissed, do not render anything
   if (isDismissed) return null;
 
   return (
     <motion.div
       key="home-intro-curtain"
       initial={{ y: 0 }}
-      animate={{ y: isSliding ? '-100%' : 0 }}
+      animate={{ y: '-100%' }}
       transition={{
-        duration: 0.8,
-        ease: [0.76, 0, 0.24, 1], // Smooth momentum shutter lift
+        delay: 0.85, // Show logo & progress for 0.85s
+        duration: 0.75, // Smooth, authoritative upward lift
+        ease: [0.76, 0, 0.24, 1], // Buttery momentum cubic-bezier
       }}
       onAnimationComplete={() => {
-        if (isSliding) {
-          setIsDismissed(true);
-        }
+        setIsDismissed(true);
+        if (onComplete) onComplete();
       }}
       className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#080C14] select-none overflow-hidden touch-none pointer-events-auto"
       style={{ willChange: 'transform' }}
@@ -76,12 +55,14 @@ export const HomeIntroLoader: React.FC<HomeIntroLoaderProps> = ({ onComplete }) 
 
       {/* Brand Mark and Title Container */}
       <motion.div
+        initial={{ opacity: 0, scale: 0.92, y: 12 }}
         animate={{
-          opacity: isSliding ? 0 : 1,
-          y: isSliding ? -60 : 0,
+          opacity: [0, 1, 1, 0],
+          y: [12, 0, 0, -60],
         }}
         transition={{
-          duration: 0.5,
+          times: [0, 0.2, 0.7, 1],
+          duration: 1.5,
           ease: [0.76, 0, 0.24, 1],
         }}
         className="relative z-10 flex flex-col items-center text-center gap-5"
@@ -101,17 +82,19 @@ export const HomeIntroLoader: React.FC<HomeIntroLoaderProps> = ({ onComplete }) 
           </span>
         </div>
 
-        {/* Sleek Technical Progress Bar & Counter */}
+        {/* Sleek Technical Progress Bar */}
         <div className="flex flex-col items-center gap-2 mt-2 w-48">
           <div className="w-full h-[2px] bg-white/10 rounded-full overflow-hidden relative">
-            <div
-              className="h-full bg-gradient-to-r from-cyan-500 to-cyan-300 shadow-[0_0_8px_#00F2FE] transition-all duration-75"
-              style={{ width: `${progress}%` }}
+            <motion.div
+              initial={{ width: '0%' }}
+              animate={{ width: '100%' }}
+              transition={{ duration: 0.8, ease: 'easeInOut' }}
+              className="h-full bg-gradient-to-r from-cyan-500 to-cyan-300 shadow-[0_0_8px_#00F2FE]"
             />
           </div>
           <div className="flex items-center justify-between w-full font-mono text-[10px] text-slate-500">
-            <span className="tracking-widest uppercase">SYSTEM ENGINE</span>
-            <span className="text-cyan-400 font-semibold">{progress}%</span>
+            <span className="tracking-widest uppercase">INITIALIZING SYSTEM</span>
+            <span className="text-cyan-400 font-semibold">100%</span>
           </div>
         </div>
       </motion.div>
